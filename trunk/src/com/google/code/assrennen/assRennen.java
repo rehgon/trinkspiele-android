@@ -30,7 +30,7 @@ public class assRennen extends Activity {
         
         naechsteKarte.setOnClickListener(new OnClickListener() {
 			
-			@Override
+        	
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if(counter==1)
