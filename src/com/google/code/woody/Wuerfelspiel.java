@@ -17,8 +17,8 @@ public abstract class Wuerfelspiel {
 	public int getWuerfelZahl(int welcherWuerfel) {
 		return wuerfelZahl[welcherWuerfel];
 	}
-	public void setWürfelZahl(int wert, int welcherWürfel) {
-			wuerfelZahl[welcherWürfel] = wert;
+	public void setWuerfelZahl(int wert, int welcherWuerfel) {
+			wuerfelZahl[welcherWuerfel] = wert;
 	}
 	public int getErgebnis() {
 		return ergebnis;

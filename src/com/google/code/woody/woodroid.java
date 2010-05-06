@@ -57,10 +57,9 @@ public class woodroid extends Activity implements View.OnClickListener {
 		
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		if (prefs.getString("spielerHinzufuegen", "<unset>") != "")
-			woody.getSpieler().spielerHinzufügen(prefs.getString("spielerHinzufuegen", "<unset>"));
+			woody.getSpieler().spielerHinzufuegen(prefs.getString("spielerHinzufuegen", "<unset>"));
 	}
 	
-	@Override
 	public void onClick(View v) {
 
 		woody.wuerfeln(2);

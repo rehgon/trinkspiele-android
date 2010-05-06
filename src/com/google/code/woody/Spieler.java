@@ -56,7 +56,7 @@ public class Spieler {
 			aktuellerSpielerIndex++;
 	}
 	
-	public void spielerHinzufügen(String name) {
+	public void spielerHinzufuegen(String name) {
 		spielerName.add(name);
 	}
 	
