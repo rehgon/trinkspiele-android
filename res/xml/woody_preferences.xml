@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="Menü">
+
+	<PreferenceCategory android:title="Spieler Optionen">
+		
+		<EditTextPreference 
+			android:dialogTitle="Spieler hinzufügen" android:key="spielerHinzufuegen" android:title="Spieler hinzufügen">
+		</EditTextPreference>
+	
+	<ListPreference android:dialogTitle="Spieler entfernen" android:key="spielerEntfernen" android:title="Spieler entfernen" android:entries="@array/SpielerNamen" android:entryValues="@array/SpielerNamen"></ListPreference>
+</PreferenceCategory>
+</PreferenceScreen>

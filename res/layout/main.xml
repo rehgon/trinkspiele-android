@@ -4,9 +4,17 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<TextView  
+    
+<TextView 
+	android:id="@+id/Titel" 
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+    android:text="Trinkspiele"
+    android:gravity="center" android:textSize="30px" android:textColor="@color/white"/>
+    
+<ListView 
+	android:id="@android:id/list" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:drawSelectorOnTop="false"/>
 </LinearLayout>

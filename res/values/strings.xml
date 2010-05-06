@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, Trinkspiele!</string>
-    <string name="app_name">Trinkspiele</string>
+    <string name="hello">Hello World, woodroid!</string>
+    <string name="app_name">Woodroid</string>
+<color name="background">#FF6600</color>
+<color name="TextColor">#000000</color>
+
+<color name="hintergrundFarbeAssRennen">#006600</color>
+<color name="white">#FFFFFF</color>
 </resources>
