@@ -12,7 +12,11 @@
             </intent-filter>
         </activity>
 
-    </application>
+    <activity android:name="com.google.code.woody.woodroid"></activity>
+<activity android:name="com.google.code.woody.EditPreferences"></activity>
+<activity android:name="com.google.code.assrennen.assRennen"></activity>
+</application>
 
+	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
 
 </manifest> 
