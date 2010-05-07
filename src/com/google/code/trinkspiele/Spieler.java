@@ -1,4 +1,4 @@
-package com.google.code.woody;
+package com.google.code.trinkspiele;
 
 import java.util.ArrayList;
 
