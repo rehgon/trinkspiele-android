@@ -1,7 +1,10 @@
 package com.google.code.woody;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,7 +17,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.code.trinkspiele.EditPreferences;
 import com.google.code.trinkspiele.R;
 import com.google.code.trinkspiele.Spieler;
 
@@ -25,7 +30,6 @@ public class woodroid extends Activity implements View.OnClickListener {
 	Button wuerfelnButton;
 	TextView ausgabe, werIstWoodyLabel, aktuellerSpieler;
 	ImageView wuerfelEinsImage, wuerfelZweiImage;
-	String spielerName[];
 
 	Woody woody;
 
@@ -33,36 +37,26 @@ public class woodroid extends Activity implements View.OnClickListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.xml.woody);
-		
-		
 
 		wuerfelnButton = (Button) findViewById(R.id.Button01);
 		wuerfelnButton.setOnClickListener((OnClickListener) this);
-
 		ausgabe = (TextView) findViewById(R.id.ausgabe);
 		werIstWoodyLabel = (TextView) findViewById(R.id.WerIstWoodyLabel);
 		aktuellerSpieler = (TextView) findViewById(R.id.aktuellerSpieler);
 		wuerfelEinsImage = (ImageView) findViewById(R.id.wuerfelEinsImage);
 		wuerfelZweiImage = (ImageView) findViewById(R.id.wuerfelZweiImage);
-		spielerName = getResources().getStringArray(R.array.SpielerNamen);
 
 		woody = new Woody();
-
-		Spieler.setAktuellerSpielerIndex(0);
-		woody.setWerIstWoody(1);
-	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-		if (prefs.getString("spielerHinzufuegen", "<unset>") != "")
-			Spieler.spielerHinzufuegen(prefs.getString("spielerHinzufuegen", "<unset>"));
+		String s = Spieler.getSpielerNameArrayList().size() + "";
+		woody.setWerIstWoody(1); //nur temporär
 	}
 	
 	public void onClick(View v) {
-
+		
+		if (woody.getNeuerWoody())
+			showDialog(0);
+		woody.setNeuerWoody(false);
+		
 		woody.wuerfeln(2);
 
 		werIstWoodyLabel.setText("Wer ist woody: " + woody.getWerIstWoody());
@@ -71,11 +65,37 @@ public class woodroid extends Activity implements View.OnClickListener {
 		ausgabe.setText(woody.auswerten(woody.getWuerfelZahl(0)
 				+ woody.getWuerfelZahl(1)));
 		
+		
 		repaintImage();
 		
 		Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-		long milliseconds = 1000;  
-		vib.vibrate(milliseconds);
+		vib.vibrate(100);
+	}
+	
+	protected Dialog onCreateDialog(int id) {
+		Dialog dialog;
+		switch (id) {
+		case 0:
+			dialog = neuenWoodyBestimmen();
+			break;
+		default:
+			dialog = null;
+		}
+		return dialog;
+	}
+	
+	private AlertDialog neuenWoodyBestimmen() {
+		
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Neuen Woody bestimmen");
+		builder.setItems(Spieler.convertArrayListToArray(), new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int which) {
+				woody.setWerIstWoody(which);
+				werIstWoodyLabel.setText("Wer ist woody: " + woody.getWerIstWoody());
+			}
+		});
+		AlertDialog alert = builder.create();
+		return alert;
 	}
 
 	private void repaintImage() {
@@ -109,8 +129,8 @@ public class woodroid extends Activity implements View.OnClickListener {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_SPIELER_OPTIONEN, Menu.NONE, "Spieler Optionen");
-		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Beenden");
+		menu.add(Menu.NONE, ID_SPIELER_OPTIONEN, Menu.NONE, "Optionen");
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü");
 		return (super.onCreateOptionsMenu(menu));
 	}
 	
@@ -129,9 +149,5 @@ public class woodroid extends Activity implements View.OnClickListener {
 			return (true);
 		}
 		return (false);
-	}
-	
-	public void addPlayer() {
-		
 	}
 }

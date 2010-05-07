@@ -3,6 +3,7 @@ package com.google.code.assrennen;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -177,7 +178,12 @@ public class assRennen extends Activity {
 			karte.setImageResource(R.drawable.spielkarte);
 			textFenster.setText("restart");
         }
-      }
-        
+
+		@Override
+		public boolean onCreateOptionsMenu(Menu menu) {
+			menu.add(Menu.NONE, 0, Menu.NONE, "Zum Hauptmenü");
+			return (super.onCreateOptionsMenu(menu));
+		}
+}
         
     
