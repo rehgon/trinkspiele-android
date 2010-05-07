@@ -1,5 +1,6 @@
 package com.google.code.assrennen;
 
+import com.google.code.trinkspiele.KartenSpiel;
 
 public class AssRennenLogik extends KartenSpiel {
 	private int aceCounter;

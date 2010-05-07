@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.code.trinkspiele.Wuerfelspiel;
 import com.google.code.trinkspiele.R;
 
 public class woodroid extends Activity implements View.OnClickListener {

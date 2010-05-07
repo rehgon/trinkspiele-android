@@ -1,5 +1,8 @@
 package com.google.code.woody;
 
+import com.google.code.trinkspiele.Spieler;
+import com.google.code.trinkspiele.Wuerfelspiel;
+
 
 
 public class Woody extends Wuerfelspiel {
