@@ -15,8 +15,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.code.trinkspiele.Wuerfelspiel;
 import com.google.code.trinkspiele.R;
+import com.google.code.trinkspiele.Spieler;
 
 public class woodroid extends Activity implements View.OnClickListener {
 	private static final int ID_SPIELER_OPTIONEN = 0;
@@ -48,7 +48,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 
 		woody = new Woody();
 
-		woody.getSpieler().setAktuellerSpielerIndex(0);
+		Spieler.setAktuellerSpielerIndex(0);
 		woody.setWerIstWoody(1);
 	}
 	
@@ -58,7 +58,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 		
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		if (prefs.getString("spielerHinzufuegen", "<unset>") != "")
-			woody.getSpieler().spielerHinzufuegen(prefs.getString("spielerHinzufuegen", "<unset>"));
+			Spieler.spielerHinzufuegen(prefs.getString("spielerHinzufuegen", "<unset>"));
 	}
 	
 	public void onClick(View v) {
@@ -67,7 +67,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 
 		werIstWoodyLabel.setText("Wer ist woody: " + woody.getWerIstWoody());
 		aktuellerSpieler.setText("Aktueller Spieler: "
-				+ woody.getSpieler().getAktuellerSpieler());
+				+ Spieler.getAktuellerSpieler());
 		ausgabe.setText(woody.auswerten(woody.getWuerfelZahl(0)
 				+ woody.getWuerfelZahl(1)));
 		

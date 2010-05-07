@@ -8,23 +8,17 @@ import com.google.code.trinkspiele.Wuerfelspiel;
 public class Woody extends Wuerfelspiel {
 
 	private String werIstWoody;
-	private Spieler spieler;
 	
 	public Woody() {
 		super();
 		werIstWoody = "";
-		spieler = new Spieler("Woody");
-		spieler.spielerSetzen();
 	}
 	
 	public String getWerIstWoody() {
 		return werIstWoody;
 	}
 	public void setWerIstWoody(int index) {
-		werIstWoody = getSpieler().getSpielerName(index);
-	}
-	public Spieler getSpieler() {
-		return spieler;
+		werIstWoody = Spieler.getSpielerName(index);
 	}
 	
 	//Wertet den Wurf aus und liefert die Ausgabe als String zurück
@@ -41,7 +35,7 @@ public class Woody extends Wuerfelspiel {
 				ausgabe = pasch; 
 				break;
 			case 3:
-				if (spieler.getAktuellerSpieler().equals(werIstWoody)) 
+				if (Spieler.getAktuellerSpieler().equals(werIstWoody)) 
 				{	
 					neuenWoodyBestimmen();
 					ausgabe = neuerWoody;
@@ -52,7 +46,7 @@ public class Woody extends Wuerfelspiel {
 			case 4:
 				if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) 
 				{
-					if (spieler.getAktuellerSpieler().equals(werIstWoody)) 
+					if (Spieler.getAktuellerSpieler().equals(werIstWoody)) 
 					{
 						neuenWoodyBestimmen();
 						ausgabe = neuerWoody;
@@ -65,7 +59,7 @@ public class Woody extends Wuerfelspiel {
 				else { ausgabe = pasch; } break;
 			case 5:
 				if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) {
-					if (spieler.getAktuellerSpieler().equals(werIstWoody)) {
+					if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
 						neuenWoodyBestimmen();
 						ausgabe = neuerWoody;
 					} 
@@ -75,13 +69,13 @@ public class Woody extends Wuerfelspiel {
 				else 
 				{
 					ausgabe = nichtsPassiert;
-					spieler.incrementAktuellerSpieler(); 
+					Spieler.incrementAktuellerSpieler(); 
 				} 
 				break;
 			case 6:
 				if (getWuerfelZahl(0) == 3 && getWuerfelZahl(1) == 3) 
 				{
-					if (spieler.getAktuellerSpieler().equals(werIstWoody)) {
+					if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
 						ausgabe = pasch;
 						neuenWoodyBestimmen();
 						ausgabe = "3er Pasch, und es gibt einen neuen Woody";
@@ -91,7 +85,7 @@ public class Woody extends Wuerfelspiel {
 				}
 				else if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) 
 				{
-					if (spieler.getAktuellerSpieler().equals(werIstWoody)) 
+					if (Spieler.getAktuellerSpieler().equals(werIstWoody)) 
 					{
 						neuenWoodyBestimmen();
 						ausgabe = neuerWoody;
@@ -102,13 +96,13 @@ public class Woody extends Wuerfelspiel {
 				else 
 				{
 					ausgabe = nichtsPassiert;
-					spieler.incrementAktuellerSpieler(); 
+					Spieler.incrementAktuellerSpieler(); 
 				} 
 				break;
 			case 7:
 				if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) 
 				{
-					if (spieler.getAktuellerSpieler().equals(werIstWoody)) 
+					if (Spieler.getAktuellerSpieler().equals(werIstWoody)) 
 					{
 						neuenWoodyBestimmen();
 						ausgabe = neuerWoody;
@@ -124,7 +118,7 @@ public class Woody extends Wuerfelspiel {
 			case 8:
 				if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) 
 				{
-					if (spieler.getAktuellerSpieler().equals(werIstWoody)) 
+					if (Spieler.getAktuellerSpieler().equals(werIstWoody)) 
 					{
 						neuenWoodyBestimmen();
 						ausgabe = neuerWoody;
@@ -137,13 +131,13 @@ public class Woody extends Wuerfelspiel {
 				else 
 				{
 					ausgabe = nichtsPassiert;
-					spieler.incrementAktuellerSpieler(); 
+					Spieler.incrementAktuellerSpieler(); 
 				} 
 				break;
 			case 9:
 				if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) 
 				{
-					if (spieler.getAktuellerSpieler().equals(werIstWoody)) 
+					if (Spieler.getAktuellerSpieler().equals(werIstWoody)) 
 					{
 						neuenWoodyBestimmen();
 						ausgabe = neuerWoody;
@@ -162,7 +156,7 @@ public class Woody extends Wuerfelspiel {
 				break;
 			case 11:
 				ausgabe = nichtsPassiert;
-				spieler.incrementAktuellerSpieler(); break;
+				Spieler.incrementAktuellerSpieler(); break;
 			case 12:
 				ausgabe = "JACKPOT!!!, du darfst 12 Schlücke verteilen"; 
 				break;
@@ -173,8 +167,8 @@ public class Woody extends Wuerfelspiel {
 	}
 	
 	public String neuenWoodyBestimmen() {
-		werIstWoody = spieler.getNaechsterSpieler();
-		return spieler.getNaechsterSpieler();
+		werIstWoody = Spieler.getNaechsterSpieler();
+		return Spieler.getNaechsterSpieler();
 	}
 }
 
