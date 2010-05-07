@@ -13,7 +13,7 @@
 	 limitations under the License.
 */
 	 
-package com.google.code.woody;
+package com.google.code.trinkspiele;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

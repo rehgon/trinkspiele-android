@@ -72,6 +72,8 @@ public class Spieler {
 	public static void spielerSetzen() {
 		spielerNameListe.add("Remo");
 		spielerNameListe.add("Raffi");
+		spielerNameListe.add("Tanguy");
+		spielerNameListe.add("Amo");
 	}
 	
 	public static String[] convertArrayListToArray() {

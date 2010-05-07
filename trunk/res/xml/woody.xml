@@ -15,13 +15,13 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" 
 		android:text="wer ist woody:"
-		android:id="@+id/WerIstWoodyLabel" android:textColor="@color/TextColor"/>
+		android:id="@+id/WerIstWoodyLabel" android:textColor="@color/TextColor" android:paddingLeft="5px"/>
 		
 	<TextView 
 		android:text="Aktueller Spieler: " 
 		android:id="@+id/aktuellerSpieler"
 		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content" android:textColor="@color/TextColor"/>
+		android:layout_height="wrap_content" android:textColor="@color/TextColor" android:paddingLeft="5px"/>
 		
 	<TableLayout 
 		android:layout_height="wrap_content" android:layout_width="fill_parent" android:gravity="center">
