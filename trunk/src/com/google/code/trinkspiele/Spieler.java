@@ -4,94 +4,80 @@ import java.util.ArrayList;
 
 public class Spieler {
 
-	private String nameDesSpiels;
-	private int welcherSpielerAlsNaechstes;
-	private int aktuellerSpielerIndex;
-	private ArrayList<String> spielerName;
+	private static int welcherSpielerAlsNaechstes = 0;
+	private static int aktuellerSpielerIndex = 0;
+	private static ArrayList<String> spielerNameListe = new ArrayList<String>();
 	
-	public Spieler(String nameDesSpiels) {
-		this.nameDesSpiels = nameDesSpiels;
-		welcherSpielerAlsNaechstes = 0;
-		aktuellerSpielerIndex = 0;
-		spielerName = new ArrayList<String>();
-	}
-	
-	public String getNameDesSpiels() {
-		return nameDesSpiels;
-	}
-	public void setNameDesSpiels(String name) {
-		this.nameDesSpiels = name;
-	}
-	public int getWelcherSpielerAlsNaechstes() {
+	public static int getWelcherSpielerAlsNaechstes() {
 		return welcherSpielerAlsNaechstes;
 	}	
-	public void setWelcherSpielerAlsNaechstes(int spielerIndex) {
-		this.welcherSpielerAlsNaechstes = spielerIndex;
+	public static void setWelcherSpielerAlsNaechstes(int spielerIndex) {
+		welcherSpielerAlsNaechstes = spielerIndex;
 	}
-	public String getAktuellerSpieler() {
-		return getSpielerName(getAktuellerSpielerIndex());
+	public static String getAktuellerSpieler() {
+		return spielerNameListe.get(aktuellerSpielerIndex);
 	}
-	public int getAktuellerSpielerIndex() {
+	public static int getAktuellerSpielerIndex() {
 		return aktuellerSpielerIndex;
 	}
-	public void setAktuellerSpielerIndex(int spielerIndex) {
-		this.aktuellerSpielerIndex = spielerIndex;
+	public static void setAktuellerSpielerIndex(int spielerIndex) {
+		aktuellerSpielerIndex = spielerIndex;
 	}
-	public ArrayList<String> getSpielerName() {
-		return spielerName;
+	public static ArrayList<String> getSpielerNameArrayList() {
+		return spielerNameListe;
 	}
-	public String getSpielerName(int spielerIndex) {
-		return spielerName.get(spielerIndex);
+	public static String getSpielerName(int spielerIndex) {
+		return spielerNameListe.get(spielerIndex);
 	}
-	public void setSpielerName(ArrayList<String> namensListe) {
-		this.spielerName = namensListe;
+	public static void setSpielerName(ArrayList<String> namensListe) {
+		spielerNameListe = namensListe;
 	}
-	public void setSpielerName(String name) {
-		spielerName.add(name);
+	public static void setSpielerName(String name) {
+		spielerNameListe.add(name);
 	}
-	public void incrementAktuellerSpieler() {
-		if (aktuellerSpielerIndex == (spielerName.size() - 1))
-			this.aktuellerSpielerIndex = 0;
+	public static void incrementAktuellerSpieler() {
+		if (aktuellerSpielerIndex == (spielerNameListe.size() - 1))
+			aktuellerSpielerIndex = 0;
 		else
 			aktuellerSpielerIndex++;
 	}
 	
-	public void spielerHinzufuegen(String name) {
-		spielerName.add(name);
+	public static void spielerHinzufuegen(String name) {
+		spielerNameListe.add(name);
 	}
 	
-	public String getVorigerSpieler() {
+	public static String getVorigerSpieler() {
 		if (getAktuellerSpielerIndex() != 0)
 			return getSpielerName(getAktuellerSpielerIndex() - 1);
 		else
-			return getSpielerName(getSpielerName().size());	
+			return getSpielerName(spielerNameListe.size());	
 	}	
-	public String getNaechsterSpieler() {
-		if (getAktuellerSpielerIndex() == (getSpielerName().size() - 1))
+	public static String getNaechsterSpieler() {
+		if (getAktuellerSpielerIndex() == (spielerNameListe.size() - 1))
 			return getSpielerName(0);
 		else {
 			return getSpielerName(getAktuellerSpielerIndex() + 1);
 		}
 	}
 	
-	public String naechsterSpieler() {
+	public static String naechsterSpieler() {
 		int tmp = welcherSpielerAlsNaechstes; //tmp speichert den Wert von "welcherSpieler" um diesen dann unveraendert returnen zu kaennen
-		if (welcherSpielerAlsNaechstes == getSpielerName().size() - 1)
+		if (welcherSpielerAlsNaechstes == spielerNameListe.size() - 1)
 			welcherSpielerAlsNaechstes = 0;
 		else
 			welcherSpielerAlsNaechstes++;
-		return (getSpielerName().get(tmp) + ":");
+		return (spielerNameListe.get(tmp) + ":");
 	}
 
-	public void spielerSetzen() {
-		spielerName.add("Remo");
-		spielerName.add("Raffi");
+	public static void spielerSetzen() {
+		spielerNameListe.add("Remo");
+		spielerNameListe.add("Raffi");
 	}
 	
-	public String[] convertArrayListToArray() {
-		String[] spielerNameArray = new String[spielerName.size()];
-		for (int i = 0; i < spielerName.size(); i++) {
-			spielerNameArray[i] = spielerName.get(i);
+	public static String[] convertArrayListToArray() {
+		String[] spielerNameArray = new String[spielerNameListe.size()];
+		for (int i = 0; i < spielerNameListe.size(); i++) {
+			spielerNameArray[i] = spielerNameListe.get(i);
 		}
 		return spielerNameArray;
 	}
