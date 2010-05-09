@@ -16,11 +16,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.code.assrennen.assRennen;
+import com.google.code.kingsCup.Cupoid;
 import com.google.code.woody.woodroid;
 
 public class Trinkspiele extends ListActivity {
 	
-	String trinkspieleListe[] = { "Ass Rennen", "Woody" };
+	String trinkspieleListe[] = { "Ass Rennen", "Woody", "Big King's Cup" };
 	Spieler spieler;
 	
     /** Called when the activity is first created. */
@@ -37,21 +38,27 @@ public class Trinkspiele extends ListActivity {
 		if (trinkspieleListe[position] == "Woody") {
 			if (Spieler.getSpielerNameArrayList().size() > 1)
 				startActivity(new Intent(this, woodroid.class));
-			else {
-				zuWenigSpieler();
-			}
-				
+			else
+				zuWenigSpieler(2);
 		}
 		else if (trinkspieleListe[position] == "Ass Rennen")
 			startActivity(new Intent(this, assRennen.class));
+		else if (trinkspieleListe[position] == "Big King's Cup")
+			if (Spieler.getSpielerNameArrayList().size() > 0)
+				startActivity(new Intent(this, Cupoid.class));
+			else
+				zuWenigSpieler(2);
 		else
 			Toast.makeText(this, "failed to load", Toast.LENGTH_LONG).show();
 	}
     
-    private void zuWenigSpieler() {
+    private void zuWenigSpieler(int wievieleMindestens) {
     	AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 		dialog.setTitle("Zu wenig Spieler vorhanden");
-		dialog.setMessage("Es müssen mindestens 2 Spieler vorhanden sein");
+		if (wievieleMindestens == 1)
+			dialog.setMessage("Es muss mindestens 1 Spieler vorhanden sein");
+		else
+			dialog.setMessage("Es müssen mindestens " + wievieleMindestens + "  Spieler vorhanden sein");
 		dialog.setPositiveButton("Spieler hinzufügen", new DialogInterface.OnClickListener() {
 			
 			public void onClick(DialogInterface dialog, int which) {
@@ -104,6 +111,7 @@ public class Trinkspiele extends ListActivity {
 		dialog.setMessage("Geben sie den Namen des neuen Spielers ein:");
 		
 		final EditText input = new EditText(this);
+		input.setSingleLine();
 		dialog.setView(input);
 		
 		dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {

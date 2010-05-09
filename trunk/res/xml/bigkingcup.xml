@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+ 	android:layout_width="fill_parent"
+ 	android:layout_height="fill_parent">
+
+	<TextView 
+		android:id="@+id/bigKingTitel" 
+		android:layout_height="wrap_content" 
+		android:text="Big King's Cup" 
+		android:textSize="30px" 
+		android:padding="10px" 
+		android:layout_width="fill_parent" 
+		android:gravity="center"/>
+		
+	<ImageView
+		android:id="@+id/bigKingImage"
+		android:src="@drawable/spielkarte"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="10px"
+		android:gravity="center"/>
+		
+		
+	<TextView
+		android:id="@+id/bigKingWerHatGezogen"
+		android:text="Um das Spiel zu starten auf den Button klicken"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="10px"
+		android:gravity="center"/>
+		
+	<TextView
+		android:id="@+id/bigKingKategorie"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="5px"
+		android:text=" "
+		android:textSize="20px"
+		android:gravity="center"/>
+	
+	<Button
+		android:id="@+id/bigKingErklaerungButton"
+		android:text="Erklärung zu Kategorie"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:padding="5px"
+		android:layout_gravity="center" 
+		android:visibility="invisible"/>
+		
+	<TextView
+		android:id="@+id/bigKingWerAlsNaechstes"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="5px"
+		android:gravity="center"
+		android:text=" "/>
+
+	<Button 
+		android:text="Karte ziehen" 
+		android:id="@+id/bigKingButton" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:padding="10px"
+		android:layout_gravity="center"/>
+</LinearLayout>

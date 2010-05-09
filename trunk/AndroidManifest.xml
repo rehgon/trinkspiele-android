@@ -16,6 +16,8 @@
 
 <activity android:name="com.google.code.assrennen.assRennen"></activity>
 
+<activity android:name="com.google.code.kingsCup.Cupoid"></activity>
+
 </application>
 
 	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
