@@ -18,11 +18,11 @@ import android.widget.Toast;
 import com.google.code.assrennen.assRennen;
 import com.google.code.kingsCup.Cupoid;
 import com.google.code.woody.woodroid;
+import com.google.code.trinkspiele.Spieler;;
 
 public class Trinkspiele extends ListActivity {
 	
-	String trinkspieleListe[] = { "Ass Rennen", "Woody", "Big King's Cup" };
-	Spieler spieler;
+	String trinkspieleListe[] = { "Ass Rennen", "Big King's Cup", "Woody" };
 	
     /** Called when the activity is first created. */
     @Override
@@ -44,7 +44,7 @@ public class Trinkspiele extends ListActivity {
 		else if (trinkspieleListe[position] == "Ass Rennen")
 			startActivity(new Intent(this, assRennen.class));
 		else if (trinkspieleListe[position] == "Big King's Cup")
-			if (Spieler.getSpielerNameArrayList().size() > 0)
+			if (Spieler.getSpielerNameArrayList().size() > 1)
 				startActivity(new Intent(this, Cupoid.class));
 			else
 				zuWenigSpieler(2);
