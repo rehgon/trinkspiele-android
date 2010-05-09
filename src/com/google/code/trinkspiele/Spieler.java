@@ -50,7 +50,7 @@ public class Spieler {
 		if (getAktuellerSpielerIndex() != 0)
 			return getSpielerName(getAktuellerSpielerIndex() - 1);
 		else
-			return getSpielerName(spielerNameListe.size());	
+			return getSpielerName(spielerNameListe.size() - 1);	
 	}	
 	public static String getNaechsterSpieler() {
 		if (getAktuellerSpielerIndex() == (spielerNameListe.size() - 1))
