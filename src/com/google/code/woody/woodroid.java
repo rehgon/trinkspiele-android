@@ -3,13 +3,8 @@ package com.google.code.woody;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Vibrator;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,14 +12,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.code.trinkspiele.EditPreferences;
 import com.google.code.trinkspiele.R;
 import com.google.code.trinkspiele.Spieler;
 
 public class woodroid extends Activity implements View.OnClickListener {
-	private static final int ID_SPIELER_OPTIONEN = 0;
 	private static final int ID_BEENDEN = 1;
 	
 	Button wuerfelnButton;
@@ -67,7 +59,8 @@ public class woodroid extends Activity implements View.OnClickListener {
 				+ woody.getWuerfelZahl(1)));
 		
 		
-		repaintImage();
+		woody.paint(woody, wuerfelEinsImage, 0);
+		woody.paint(woody, wuerfelZweiImage, 1);
 	}
 	
 	protected Dialog onCreateDialog(int id) {
@@ -96,35 +89,6 @@ public class woodroid extends Activity implements View.OnClickListener {
 		});
 		AlertDialog alert = builder.create();
 		return alert;
-	}
-
-	private void repaintImage() {
-
-		if (woody.getWuerfelZahl(0) == 1)
-			wuerfelEinsImage.setImageResource(R.drawable.w1);
-		else if (woody.getWuerfelZahl(0) == 2)
-			wuerfelEinsImage.setImageResource(R.drawable.w2);
-		else if (woody.getWuerfelZahl(0) == 3)
-			wuerfelEinsImage.setImageResource(R.drawable.w3);
-		else if (woody.getWuerfelZahl(0) == 4)
-			wuerfelEinsImage.setImageResource(R.drawable.w4);
-		else if (woody.getWuerfelZahl(0) == 5)
-			wuerfelEinsImage.setImageResource(R.drawable.w5);
-		else if (woody.getWuerfelZahl(0) == 6)
-			wuerfelEinsImage.setImageResource(R.drawable.w6);
-
-		if (woody.getWuerfelZahl(1) == 1)
-			wuerfelZweiImage.setImageResource(R.drawable.w1);
-		else if (woody.getWuerfelZahl(1) == 2)
-			wuerfelZweiImage.setImageResource(R.drawable.w2);
-		else if (woody.getWuerfelZahl(1) == 3)
-			wuerfelZweiImage.setImageResource(R.drawable.w3);
-		else if (woody.getWuerfelZahl(1) == 4)
-			wuerfelZweiImage.setImageResource(R.drawable.w4);
-		else if (woody.getWuerfelZahl(1) == 5)
-			wuerfelZweiImage.setImageResource(R.drawable.w5);
-		else if (woody.getWuerfelZahl(1) == 6)
-			wuerfelZweiImage.setImageResource(R.drawable.w6);
 	}
 
 	@Override

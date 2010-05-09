@@ -2,6 +2,8 @@ package com.google.code.trinkspiele;
 
 import java.util.Random;
 
+import android.widget.ImageView;
+
 public abstract class Wuerfelspiel {
 	
 	private Random wuerfelGenerator;
@@ -44,6 +46,22 @@ public abstract class Wuerfelspiel {
 			return true;
 		else
 			return false;
+	}
+	
+	public void paint(Wuerfelspiel spiel, ImageView image, int welcherWuerfel) {
+
+		if (spiel.getWuerfelZahl(welcherWuerfel) == 1)
+			image.setImageResource(R.drawable.w1);
+		else if (spiel.getWuerfelZahl(welcherWuerfel) == 2)
+			image.setImageResource(R.drawable.w2);
+		else if (spiel.getWuerfelZahl(welcherWuerfel) == 3)
+			image.setImageResource(R.drawable.w3);
+		else if (spiel.getWuerfelZahl(welcherWuerfel) == 4)
+			image.setImageResource(R.drawable.w4);
+		else if (spiel.getWuerfelZahl(welcherWuerfel) == 5)
+			image.setImageResource(R.drawable.w5);
+		else if (spiel.getWuerfelZahl(welcherWuerfel) == 6)
+			image.setImageResource(R.drawable.w6);
 	}
 }
 
