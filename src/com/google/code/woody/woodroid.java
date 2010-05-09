@@ -2,7 +2,6 @@ package com.google.code.woody;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,11 +16,13 @@ import com.google.code.trinkspiele.R;
 import com.google.code.trinkspiele.Spieler;
 
 public class woodroid extends Activity implements View.OnClickListener {
+	private static final int ID_NEUER_WOODY = 0;
 	private static final int ID_BEENDEN = 1;
 	
 	Button wuerfelnButton;
 	TextView ausgabe, werIstWoodyLabel, aktuellerSpieler;
 	ImageView wuerfelEinsImage, wuerfelZweiImage;
+	AlertDialog.Builder dialog;
 
 	Woody woody;
 
@@ -39,60 +40,62 @@ public class woodroid extends Activity implements View.OnClickListener {
 		wuerfelZweiImage = (ImageView) findViewById(R.id.wuerfelZweiImage);
 
 		woody = new Woody();
-		if (woody.getWerIstWoody() == "")
-			showDialog(0);
+
+		if (woody.getWerIstWoody() == "") {
+			neuenWoodyBestimmen();
+			woody.setNeuerWoody(false);
+		}
 	}
-	
 	
 	public void onClick(View v) {
 		
-		if (woody.getNeuerWoody())
-			showDialog(0);
-		woody.setNeuerWoody(false);
-		
-		woody.wuerfeln(2);
-
-		werIstWoodyLabel.setText("Wer ist woody: " + woody.getWerIstWoody());
-		aktuellerSpieler.setText("Aktueller Spieler: "
-				+ Spieler.getAktuellerSpieler());
-		ausgabe.setText(woody.auswerten(woody.getWuerfelZahl(0)
-				+ woody.getWuerfelZahl(1)));
-		
-		
-		woody.paint(woody, wuerfelEinsImage, 0);
-		woody.paint(woody, wuerfelZweiImage, 1);
-	}
-	
-	protected Dialog onCreateDialog(int id) {
-		Dialog dialog;
-		switch (id) {
-		case 0:
-			dialog = neuenWoodyBestimmen();
-			break;
-		default:
-			dialog = null;
+		if (woody.getNeuerWoody()) {
+			neuenWoodyBestimmen();
+			woody.setNeuerWoody(false);
+			wuerfelnButton.setText("würfeln");
 		}
-		return dialog;
+		else {
+		
+			woody.wuerfeln(2);
+	
+			werIstWoodyLabel.setText("Wer ist woody: " + woody.getWerIstWoody());
+			aktuellerSpieler.setText("Aktueller Spieler: "
+					+ Spieler.getAktuellerSpieler());
+			ausgabe.setText(woody.auswerten(woody.getWuerfelZahl(0)
+					+ woody.getWuerfelZahl(1)));
+			
+			
+			woody.paint(woody, wuerfelEinsImage, 0);
+			woody.paint(woody, wuerfelZweiImage, 1);
+			
+			//Wird noch vor dem AlertDialog angezeigt
+			if (woody.getNeuerWoody()) {
+				wuerfelnButton.setText("neuen Woody bestimmen");
+			}
+		}
 	}
 	
-	private AlertDialog neuenWoodyBestimmen() {
+	private void neuenWoodyBestimmen() {
 		
+		String items[] = Spieler.convertArrayListToArray();
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("Neuen Woody bestimmen");
+		
 		if (woody.getWerIstWoody() == "")
-			builder.setMessage("Wählen sie zu Beginn einen Woody");
-		builder.setItems(Spieler.convertArrayListToArray(), new DialogInterface.OnClickListener() {
+			builder.setTitle("Woody bestimmen");
+		else 
+			builder.setTitle("Neuen Woody bestimmen");
+		builder.setItems(items, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				woody.setWerIstWoody(which);
 				werIstWoodyLabel.setText("Wer ist woody: " + woody.getWerIstWoody());
 			}
 		});
-		AlertDialog alert = builder.create();
-		return alert;
+		builder.show();
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(Menu.NONE, ID_NEUER_WOODY, Menu.NONE, "Neuen Woody wählen");
 		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü");
 		return (super.onCreateOptionsMenu(menu));
 	}
@@ -104,10 +107,13 @@ public class woodroid extends Activity implements View.OnClickListener {
 	
 	private boolean applyMenuChoice(MenuItem item) {
 		switch (item.getItemId()) {
+		case ID_NEUER_WOODY:
+			neuenWoodyBestimmen();
+			return true;
 		case ID_BEENDEN:
 			System.exit(0);
-			return (true);
+			return true;
 		}
-		return (false);
+		return false;
 	}
 }

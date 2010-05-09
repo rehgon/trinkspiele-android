@@ -1,7 +1,6 @@
 package com.google.code.trinkspiele;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -21,7 +20,7 @@ import com.google.code.woody.woodroid;
 
 public class Trinkspiele extends ListActivity {
 	
-	String trinkspieleListe[] = { "Ass Rennen", "Woody", "test" };;
+	String trinkspieleListe[] = { "Ass Rennen", "Woody" };
 	Spieler spieler;
 	
     /** Called when the activity is first created. */
@@ -39,9 +38,7 @@ public class Trinkspiele extends ListActivity {
 			if (Spieler.getSpielerNameArrayList().size() > 1)
 				startActivity(new Intent(this, woodroid.class));
 			else {
-				Toast.makeText(this, "Es müssen mindestens 2 Spieler angemeldet sein", Toast.LENGTH_LONG).show();
-				Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-				vib.vibrate(100);
+				zuWenigSpieler();
 			}
 				
 		}
@@ -51,11 +48,28 @@ public class Trinkspiele extends ListActivity {
 			Toast.makeText(this, "failed to load", Toast.LENGTH_LONG).show();
 	}
     
+    private void zuWenigSpieler() {
+    	AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+		dialog.setTitle("Zu wenig Spieler vorhanden");
+		dialog.setMessage("Es müssen mindestens 2 Spieler vorhanden sein");
+		dialog.setPositiveButton("Spieler hinzufügen", new DialogInterface.OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) {
+				AlertDialog.Builder dialog2 = spielerHinzufügen();
+				dialog2.show();
+			}
+		});
+		dialog.setNegativeButton("Abbrechen", null);
+		dialog.show();
+		Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+		vib.vibrate(100);
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-    	menu.add(Menu.NONE, 0, Menu.NONE, "Spieler hinzufügen");
-    	menu.add(Menu.NONE, 1, Menu.NONE, "Spieler entfernen");
-    	menu.add(Menu.NONE, 2, Menu.NONE, "Beenden");
+    	menu.add(Menu.NONE, 0, Menu.NONE, "Spieler hinzufügen").setIcon(R.drawable.add);
+    	menu.add(Menu.NONE, 1, Menu.NONE, "Spieler entfernen").setIcon(R.drawable.remove);
+    	menu.add(Menu.NONE, 2, Menu.NONE, "Beenden").setIcon(R.drawable.close);;
     	return (super.onCreateOptionsMenu(menu));
     }
     
@@ -65,36 +79,22 @@ public class Trinkspiele extends ListActivity {
     }
 	
 	private boolean applyMenuChoice(MenuItem item) {
+		AlertDialog.Builder dialog;
+		
 		switch (item.getItemId()) {
 		case 0:
-			showDialog(0);
+			dialog = spielerHinzufügen();
+			dialog.show();
 			return true;
 		case 1:
-			showDialog(1);
+			dialog = spielerEntfernen();
+			dialog.show();
 			return true;
 		case 2:
 			System.exit(0);
 			return true;
 		}
 		return (false);
-	}
-	
-	protected Dialog onCreateDialog(int id) {
-	    AlertDialog.Builder dialog;
-	    switch(id) {
-	    case 0:
-	    	dialog = spielerHinzufügen();
-	    	break;
-	    case 1:
-	        dialog = spielerEntfernen();
-	        break;
-	    default:
-	        dialog = null;
-	    }
-	    
-	    AlertDialog creator = dialog.create();
-	    onResume();
-	    return creator;
 	}
 	
 	private AlertDialog.Builder spielerHinzufügen() {
@@ -118,7 +118,6 @@ public class Trinkspiele extends ListActivity {
 		return dialog;
 	}
 	
-	//Funktioniert noch nicht. Man kann zwar auswählen, aber der Name verschwindet nicht
 	private AlertDialog.Builder spielerEntfernen() {
 
 			String items[] = Spieler.convertArrayListToArray();
@@ -131,6 +130,11 @@ public class Trinkspiele extends ListActivity {
 			        Spieler.getSpielerNameArrayList().remove(item);
 			    }
 			});
+			if (items.length == 0) {
+				dialog = new AlertDialog.Builder(this);
+				dialog.setMessage("Es sind keine Spieler vorhanden");
+				dialog.setPositiveButton("Ok", null);
+			}
 			return dialog;
 	}
 }
