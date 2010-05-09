@@ -3,13 +3,16 @@ package com.google.code.trinkspiele;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,12 +32,19 @@ public class Trinkspiele extends ListActivity {
         setListAdapter(new ArrayAdapter<String>(this, 
         		android.R.layout.simple_list_item_1,
         		trinkspieleListe));
-        Spieler.spielerSetzen(); //wieder löschen
     }
     
     public void onListItemClick(ListView parent, View v, int position, long id) {
-		if (trinkspieleListe[position] == "Woody")
-			startActivity(new Intent(this, woodroid.class));
+		if (trinkspieleListe[position] == "Woody") {
+			if (Spieler.getSpielerNameArrayList().size() > 1)
+				startActivity(new Intent(this, woodroid.class));
+			else {
+				Toast.makeText(this, "Es müssen mindestens 2 Spieler angemeldet sein", Toast.LENGTH_LONG).show();
+				Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+				vib.vibrate(100);
+			}
+				
+		}
 		else if (trinkspieleListe[position] == "Ass Rennen")
 			startActivity(new Intent(this, assRennen.class));
 		else
@@ -57,10 +67,10 @@ public class Trinkspiele extends ListActivity {
 	private boolean applyMenuChoice(MenuItem item) {
 		switch (item.getItemId()) {
 		case 0:
-			startActivity(new Intent(this, EditPreferences.class));
+			showDialog(0);
 			return true;
 		case 1:
-			showDialog(0);
+			showDialog(1);
 			return true;
 		case 2:
 			System.exit(0);
@@ -70,31 +80,57 @@ public class Trinkspiele extends ListActivity {
 	}
 	
 	protected Dialog onCreateDialog(int id) {
-	    Dialog dialog;
+	    AlertDialog.Builder dialog;
 	    switch(id) {
 	    case 0:
+	    	dialog = spielerHinzufügen();
+	    	break;
+	    case 1:
 	        dialog = spielerEntfernen();
 	        break;
 	    default:
 	        dialog = null;
 	    }
-	    return dialog;
+	    
+	    AlertDialog creator = dialog.create();
+	    onResume();
+	    return creator;
+	}
+	
+	private AlertDialog.Builder spielerHinzufügen() {
+		
+		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+		dialog.setTitle("Spieler hinzufügen");
+		dialog.setMessage("Geben sie den Namen des neuen Spielers ein:");
+		
+		final EditText input = new EditText(this);
+		dialog.setView(input);
+		
+		dialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) {
+				String eingabe = input.getText().toString();
+				Spieler.getSpielerNameArrayList().add(eingabe);
+			}
+		});
+		
+		dialog.setNegativeButton("Abbrechen", null);
+		return dialog;
 	}
 	
 	//Funktioniert noch nicht. Man kann zwar auswählen, aber der Name verschwindet nicht
-	private AlertDialog spielerEntfernen() {
+	private AlertDialog.Builder spielerEntfernen() {
 
 			String items[] = Spieler.convertArrayListToArray();
 
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setTitle("Spieler entfernen");
-			builder.setItems(items, new DialogInterface.OnClickListener() {
+			AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+			dialog.setTitle("Spieler entfernen");
+			dialog.setItems(items, new DialogInterface.OnClickListener() {
 			    public void onClick(DialogInterface dialog, int item) {
 			        Toast.makeText(getApplicationContext(), (Spieler.getSpielerName(item) + " wurde entfernt"), Toast.LENGTH_SHORT).show();
 			        Spieler.getSpielerNameArrayList().remove(item);
 			    }
 			});
-			AlertDialog alert = builder.create();
-			return alert;
+			return dialog;
 	}
 }

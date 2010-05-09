@@ -47,9 +47,10 @@ public class woodroid extends Activity implements View.OnClickListener {
 		wuerfelZweiImage = (ImageView) findViewById(R.id.wuerfelZweiImage);
 
 		woody = new Woody();
-		String s = Spieler.getSpielerNameArrayList().size() + "";
-		woody.setWerIstWoody(1); //nur temporär
+		if (woody.getWerIstWoody() == "")
+			showDialog(0);
 	}
+	
 	
 	public void onClick(View v) {
 		
@@ -67,9 +68,6 @@ public class woodroid extends Activity implements View.OnClickListener {
 		
 		
 		repaintImage();
-		
-		Vibrator vib = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-		vib.vibrate(100);
 	}
 	
 	protected Dialog onCreateDialog(int id) {
@@ -88,6 +86,8 @@ public class woodroid extends Activity implements View.OnClickListener {
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setTitle("Neuen Woody bestimmen");
+		if (woody.getWerIstWoody() == "")
+			builder.setMessage("Wählen sie zu Beginn einen Woody");
 		builder.setItems(Spieler.convertArrayListToArray(), new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				woody.setWerIstWoody(which);
@@ -129,7 +129,6 @@ public class woodroid extends Activity implements View.OnClickListener {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_SPIELER_OPTIONEN, Menu.NONE, "Optionen");
 		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü");
 		return (super.onCreateOptionsMenu(menu));
 	}
@@ -141,9 +140,6 @@ public class woodroid extends Activity implements View.OnClickListener {
 	
 	private boolean applyMenuChoice(MenuItem item) {
 		switch (item.getItemId()) {
-		case ID_SPIELER_OPTIONEN:
-			startActivity(new Intent(this, EditPreferences.class));
-			return (true);
 		case ID_BEENDEN:
 			System.exit(0);
 			return (true);
