@@ -170,7 +170,6 @@ public class assRennen extends Activity {
         		karte.setImageResource(R.drawable.karo3);
         	else if(neuesSpiel.kartenHalter[0].contains("Karo 2"))
             	karte.setImageResource(R.drawable.karo2);
-        	
         }
         private void restarting()
         {
