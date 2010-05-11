@@ -10,15 +10,25 @@
 			</intent-filter>
 		</activity>
 
-		<activity android:name="com.google.code.woody.woodroid"></activity>
+		<activity 
+			android:name="com.google.code.woody.woodroid"
+			android:screenOrientation="portrait"></activity>
 
-		<activity android:name="com.google.code.assrennen.assRennen"></activity>
+		<activity 
+			android:name="com.google.code.assrennen.assRennen"
+			android:screenOrientation="portrait"></activity>
 
-		<activity android:name="com.google.code.kingsCup.Cupoid"></activity>
+		<activity 
+			android:name="com.google.code.kingsCup.Cupoid"
+			android:screenOrientation="portrait"></activity>
 
-		<activity android:name="com.google.code.simonSays.SimonSays"></activity>
+		<activity 
+			android:name="com.google.code.simonSays.SimonSays"
+			android:screenOrientation="portrait"></activity>
 	
-<activity android:name="com.google.code.siebenSaeuft.siebensauft"></activity>
+		<activity 
+			android:name="com.google.code.siebenSaeuft.siebensauft"
+			android:screenOrientation="portrait"></activity>
 </application>
 
 	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>

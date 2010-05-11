@@ -36,7 +36,7 @@ public class Woody extends Wuerfelspiel {
 		String WoodyMussTrinken = "Der Woody(" + getWerIstWoody()
 				+ ") muss trinken";
 		String nichtsPassiert = "Nichts passiert, " + Spieler.getNaechsterSpieler() + " ist dran";
-		String neuerWoody = "Es muss ein neueer Woody gewählt werden";
+		String neuerWoody = Spieler.getAktuellerSpieler() + " darf einen neuen Woody wählen";
 		String pasch = super.getWuerfelZahl(0) + "er Pasch, " + Spieler.getAktuellerSpieler() + " darf "
 				+ super.getWuerfelZahl(0) + " Schlücke verteilen";
 
@@ -82,7 +82,7 @@ public class Woody extends Wuerfelspiel {
 					ausgabe = pasch;
 					setNeuerWoody(true);
 					ausgabe = "3er Pasch, " + Spieler.getAktuellerSpieler() + " darf " +
-					"3 Schlücke verteilen, und es muss ein neuer Woody gewählt werden";
+					"3 Schlücke verteilen, und " + neuerWoody;
 				} else
 					ausgabe = "3er Pasch, " + Spieler.getAktuellerSpieler() + " darf 3 Schlücke verteilen und der Woody(" + getWerIstWoody()
 							+ ") muss einen trinken";

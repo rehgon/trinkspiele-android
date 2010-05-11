@@ -17,7 +17,6 @@ package com.google.code.simonSays;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
-import android.app.AlertDialog.Builder;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.database.Cursor;

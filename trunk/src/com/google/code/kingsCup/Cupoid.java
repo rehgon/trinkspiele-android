@@ -28,7 +28,7 @@ public class Cupoid extends Activity {
 
 	BigKingsCup cup;
 	ImageView image;
-	TextView werHatGezogen, kategorie, werAlsNaechstes;
+	TextView werHatGezogen, kategorie, werAlsNaechstes, questionMaster, daumenMaster;
 	Button erklaerung, button;
 	int wert;
 	String symbol;
@@ -39,13 +39,15 @@ public class Cupoid extends Activity {
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.xml.bigkingcup);
+		setContentView(R.layout.bigkingcup);
 		
 		cup = new BigKingsCup();
 		image = (ImageView) findViewById(R.id.bigKingImage);
 		werHatGezogen = (TextView) findViewById(R.id.bigKingWerHatGezogen);
 		kategorie = (TextView) findViewById(R.id.bigKingKategorie);
 		werAlsNaechstes = (TextView) findViewById(R.id.bigKingWerAlsNaechstes);
+		questionMaster = (TextView) findViewById(R.id.bigKingQuestionMasterTextView);
+		daumenMaster = (TextView) findViewById(R.id.bigKingDaumenMasterTextView);
 		progress = (ProgressBar) findViewById(R.id.progress);
 		klokartenBesitzer = new ArrayList<String>();
 		dialog = new AlertDialog.Builder(this);
@@ -93,6 +95,8 @@ public class Cupoid extends Activity {
 					button.setText("Neustart");
 					image.setImageResource(R.drawable.deckblatt);
 					klokartenBesitzer = new ArrayList<String>();
+					questionMaster.setText("");
+					daumenMaster.setText("");
 					cup = new BigKingsCup();
 					cup.setKingCounter(1);
 					progress.setProgress(0);
@@ -111,6 +115,11 @@ public class Cupoid extends Activity {
 					if (cup.KategorieBestimmen(karte[0]).equals("KLOKARTE")) {
 						klokartenBesitzer.add(Spieler.getVorigerSpieler());
 					}
+					//Daumenmaster und Questionmaster TextViews aktualisieren
+					if(cup.KategorieBestimmen(karte[0]).equals("QUESTION MASTER"))
+						questionMaster.setText(Spieler.getVorigerSpieler());
+					if(cup.KategorieBestimmen(karte[0]).equals("THUMB MASTER"))
+						daumenMaster.setText(Spieler.getVorigerSpieler());
 				}
 			}
 		});
