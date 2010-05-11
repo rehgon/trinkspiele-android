@@ -68,8 +68,7 @@
 		android:paddingBottom="10px"
 		android:textColor="@color/TextColorWoodroid" 
 		android:layout_width="fill_parent" 
-		android:lines="2" 
-		android:gravity="center" android:textSize="15px"/>
+		android:gravity="center" android:textSize="15px" android:lines="3"/>
 		
 	<Button 
 		android:id="@+id/Button01"

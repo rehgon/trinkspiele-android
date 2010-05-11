@@ -27,7 +27,7 @@ public class assRennen extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.xml.assrennen);
+        setContentView(R.layout.assrennen);
         neuesSpiel = new AssRennenLogik();
         textFenster = (TextView)findViewById(R.id.TextAusgabe);
         karte = (ImageView)findViewById(R.id.ImageView01);
