@@ -174,11 +174,12 @@ public class woodroid extends Activity implements View.OnClickListener {
 			mAccelCurrent = (float) Math.sqrt((double) (x * x + y * y + z * z));
 			float delta = mAccelCurrent - mAccelLast;
 			mAccel = mAccel * 0.9f + delta; // perform low-cut filter
+			
 			// Mein Stuff
 			if (mAccel > 3 && !woody.getNeuerWoody()) {
 				handleEvent();
 				try {
-					Thread.sleep(2000);
+					Thread.sleep(1500);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -34,10 +34,10 @@ public class Trinkspiele extends ListActivity {
         		android.R.layout.simple_list_item_1,
         		trinkspieleListe));
         //wieder löschen
-        Spieler.getSpielerNameArrayList().add("Remo");
-        Spieler.getSpielerNameArrayList().add("Simi");
-        Spieler.getSpielerNameArrayList().add("Raffi");
-        Spieler.getSpielerNameArrayList().add("Amo");
+        Spieler.getSpielerNameArrayList().add("Remo Blättler");
+        Spieler.getSpielerNameArrayList().add("Simon Illi");
+        Spieler.getSpielerNameArrayList().add("Raffael Affolter");
+        Spieler.getSpielerNameArrayList().add("Amaury Lemaerchal");
     }
     
     public void onListItemClick(ListView parent, View v, int position, long id) {
@@ -122,6 +122,8 @@ public class Trinkspiele extends ListActivity {
 	
 	private AlertDialog.Builder spielerHinzufügen() {
 		
+		final Toast zuVieleZeichenToast = Toast.makeText(this, "Fehler: Name darf maximal 20 Zeichen enthalten", 
+				Toast.LENGTH_SHORT); //Wird nur angezeigt falls Name > 20 Zeichen
 		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 		dialog.setTitle("Spieler hinzufügen");
 		dialog.setMessage("Geben sie den Namen des neuen Spielers ein:");
@@ -134,10 +136,12 @@ public class Trinkspiele extends ListActivity {
 			
 			public void onClick(DialogInterface dialog, int which) {
 				String eingabe = input.getText().toString();
-				Spieler.getSpielerNameArrayList().add(eingabe);
+				if (eingabe.length() <= 20)
+					Spieler.getSpielerNameArrayList().add(eingabe);
+				else
+					zuVieleZeichenToast.show();
 			}
 		});
-		
 		dialog.setNegativeButton("Abbrechen", null);
 		return dialog;
 	}

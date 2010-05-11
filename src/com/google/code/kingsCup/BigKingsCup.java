@@ -36,7 +36,7 @@ public class BigKingsCup extends KartenSpiel {
 			ausgabe += "REIM";
 		}
 		else if (wert == 4) {
-			ausgabe += "QUESTIONMASTER";
+			ausgabe += "QUESTION MASTER";
 		}
 		else if (wert == 5) {
 			ausgabe += "COUNTER";
@@ -48,7 +48,7 @@ public class BigKingsCup extends KartenSpiel {
 			ausgabe += "FETTNÄPFCHEN";
 		}
 		else if (wert == 8) {
-			ausgabe += "DAUMENMASTER";
+			ausgabe += "THUMB MASTER";
 		}
 		else if (wert == 9) {
 			ausgabe += "REGEL AUSDENKEN";
