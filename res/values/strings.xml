@@ -10,4 +10,18 @@
 <color name="black">#000000</color>
 <color name="TextColorAssrennen">#000000</color>
 
+
+<dimen name="titelGroesse">30px</dimen>
+<color name="simonTextColor">#FFFFFF</color>
+<color name="simonBackgroundColor">#000000</color>
+
+<string name="ok">OK</string>
+<string name="cancel">Cancel</string>
+<string name="add_title">Add Constant</string>
+<string name="delete_title">Delete Constant: Are You Sure?</string>
+<color name="siebenSaeuftBackground">#FF6600</color>
+<color name="siebenSaeuftTextColor">#000000</color>
+<color name="bigKingBackgroundColor">#006600</color>
+<color name="bigKingTextColor">#000000</color>
 </resources>
+

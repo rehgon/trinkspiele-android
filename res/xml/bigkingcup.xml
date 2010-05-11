@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
  	android:layout_width="fill_parent"
- 	android:layout_height="fill_parent">
+ 	android:layout_height="fill_parent" android:background="@color/bigKingBackgroundColor">
 
 	<TextView 
 		android:id="@+id/bigKingTitel" 
@@ -12,11 +12,12 @@
 		android:textSize="30px" 
 		android:padding="10px" 
 		android:layout_width="fill_parent" 
-		android:gravity="center"/>
+		android:gravity="center" 
+		android:textColor="@color/bigKingTextColor"/>
 		
 	<ImageView
 		android:id="@+id/bigKingImage"
-		android:src="@drawable/spielkarte"
+		android:src="@drawable/deckblatt"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:padding="10px"
@@ -29,16 +30,19 @@
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:paddingTop="10px"
-		android:gravity="center"/>
+		android:gravity="center"
+		android:lines="2" 
+		android:textColor="@color/bigKingTextColor"/>
 		
 	<TextView
 		android:id="@+id/bigKingKategorie"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:paddingBottom="5px"
-		android:text=" "
 		android:textSize="20px"
-		android:gravity="center"/>
+		android:gravity="center"
+		android:lines="1"
+		android:textColor="@color/bigKingTextColor"/>
 	
 	<Button
 		android:id="@+id/bigKingErklaerungButton"
@@ -55,7 +59,8 @@
 		android:layout_height="wrap_content"
 		android:padding="5px"
 		android:gravity="center"
-		android:text=" "/>
+		android:lines="1"
+		android:textColor="@color/bigKingTextColor"/>
 
 	<Button 
 		android:text="Karte ziehen" 
@@ -64,4 +69,33 @@
 		android:layout_height="wrap_content"
 		android:padding="10px"
 		android:layout_gravity="center"/>
+		
+	<TableLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="horizontal">
+		
+		<TableRow
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent">
+		
+			<TextView
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:text="Fortschritt: "
+				android:textColor="@color/bigKingTextColor"/>
+		</TableRow>
+		
+		<TableRow>
+			<ProgressBar 
+				android:id="@+id/progress" 
+				android:layout_width="fill_parent" 
+				android:layout_height="wrap_content"
+				android:max="52"
+				style="?android:attr/progressBarStyleHorizontal"/>	
+		</TableRow>
+	</TableLayout>
+
 </LinearLayout>
+
+

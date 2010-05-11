@@ -1,16 +1,23 @@
 package com.google.code.kingsCup;
 
-import com.google.code.trinkspiele.Spieler;
 import com.google.code.trinkspiele.KartenSpiel;
+import com.google.code.trinkspiele.Spieler;
 
 public class BigKingsCup extends KartenSpiel {
 	int kingCounter;
 	
 	public BigKingsCup() {
 		super();
-		kingCounter = 0;
-		geordnetesDeckGenerieren();
+		kingCounter = 1;
 		deckMischen();
+	}
+	
+	public int getKingCounter() {
+		return kingCounter;
+	}
+	
+	public void setKingCounter(int newCount) {
+		kingCounter = newCount;
 	}
 	
 	public String werHatGezogen(String karte) {
@@ -77,7 +84,11 @@ public class BigKingsCup extends KartenSpiel {
 		
 		int wert = kartenWertBestimmen(karte);
 		
-		if (wert == 2) {
+		if (wert == 1) {
+			ausgabe =
+					"Schlichtes Hochpuschen des Kollektivpegels.";
+		}
+		else if (wert == 2) {
 			ausgabe =
 					"Der Spieler sucht sich ein Genre aus (z.B. Obstarten, Getränkemarken, Zigaretten) und " +
 					"nennt einen Begriff daraus. Nun muss reihum jeweils ein weiterer genannt werden, " +
@@ -147,24 +158,18 @@ public class BigKingsCup extends KartenSpiel {
 					"Alle Mädels müssen trinken.";
 		}
 		else if (wert == 13) {
-			kingCounter++;
 			ausgabe =
-				"Aktueller Stand: " + kingCounter + "/4\n\n" +
 				"Der Spieler füllt das grosse Glas in der Mitte mit einem beliebigen Getränk seiner " +
 				"Wahl, so dass es im Anschluss zu einem Viertel gefüllt ist. Der Spieler, welcher " +
 				"den zweiten König zieht, füllt das Glas bis zur Hälfte, der Dritte zu drei " +
 				"Vierteln. Der vierte König muss seinen eigenen Glasinhalt dazukippen und das " +
-				"grosse Glas (den Big King's Cup) leer-exen! PROST!";
+				"grosse Glas (den Big King's Cup) leer-exen!";
 			
 			if (kingCounter == 4) {
 				ausgabe = 
 					Spieler.getVorigerSpieler() + " muss seinen eigenen Glasinhalt noch in den Big King's " +
 				 	"Cup dazuschütten und dann alles ausexen. HOPP!!!";
 			}	
-		}
-		else if (wert == 1) {
-			ausgabe =
-					"Schlichtes Hochpuschen des Kollektivpegels.";
 		}
 		else {
 			ausgabe = 

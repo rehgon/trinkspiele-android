@@ -2,8 +2,10 @@ package com.google.code.assrennen;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -11,8 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.code.trinkspiele.R;
+import com.google.code.trinkspiele.Trinkspiele;
 
 public class assRennen extends Activity {
+	private static final int ID_BEENDEN = 0;
 	int counter = 0;
 	Button naechsteKarte;
 	AssRennenLogik neuesSpiel;
@@ -174,14 +178,28 @@ public class assRennen extends Activity {
         private void restarting()
         {
 			naechsteKarte.setText("neue Karte");
-			karte.setImageResource(R.drawable.spielkarte);
+			karte.setImageResource(R.drawable.deckblatt);
 			textFenster.setText("restart");
         }
 
 		@Override
 		public boolean onCreateOptionsMenu(Menu menu) {
-			menu.add(Menu.NONE, 0, Menu.NONE, "Zum Hauptmenü");
+			menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü");
 			return (super.onCreateOptionsMenu(menu));
+		}
+		
+		@Override
+		public boolean onOptionsItemSelected(MenuItem item) {
+			return (applyMenuChoice(item) || super.onOptionsItemSelected(item));
+		}
+		
+		private boolean applyMenuChoice(MenuItem item) {
+			switch (item.getItemId()) {
+			case ID_BEENDEN:
+				startActivity(new Intent(this, Trinkspiele.class));
+				return true;
+			}
+			return false;
 		}
 }
         

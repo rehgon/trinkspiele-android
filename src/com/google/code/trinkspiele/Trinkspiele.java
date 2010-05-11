@@ -17,12 +17,13 @@ import android.widget.Toast;
 
 import com.google.code.assrennen.assRennen;
 import com.google.code.kingsCup.Cupoid;
+import com.google.code.siebenSaeuft.siebensauft;
+import com.google.code.simonSays.SimonSays;
 import com.google.code.woody.woodroid;
-import com.google.code.trinkspiele.Spieler;;
 
 public class Trinkspiele extends ListActivity {
 	
-	String trinkspieleListe[] = { "Ass Rennen", "Big King's Cup", "Woody" };
+	String trinkspieleListe[] = { "Ass Rennen", "Big King's Cup", "Sieben Säuft", "Simon Says", "Woody" };
 	
     /** Called when the activity is first created. */
     @Override
@@ -32,33 +33,48 @@ public class Trinkspiele extends ListActivity {
         setListAdapter(new ArrayAdapter<String>(this, 
         		android.R.layout.simple_list_item_1,
         		trinkspieleListe));
+        //wieder löschen
+        Spieler.getSpielerNameArrayList().add("Remo");
+        Spieler.getSpielerNameArrayList().add("Simi");
+        Spieler.getSpielerNameArrayList().add("Raffi");
+        Spieler.getSpielerNameArrayList().add("Amo");
     }
     
     public void onListItemClick(ListView parent, View v, int position, long id) {
-		if (trinkspieleListe[position] == "Woody") {
+    	if (trinkspieleListe[position] == "Ass Rennen") {
+			startActivity(new Intent(this, assRennen.class));
+    	}
+    	else if (trinkspieleListe[position] == "Big King's Cup") {
+			if (Spieler.getSpielerNameArrayList().size() > 1)
+				startActivity(new Intent(this, Cupoid.class));
+			else
+				zuWenigSpieler(2);
+    	}
+    	else if (trinkspieleListe[position] == "Sieben Säuft") {
+    		startActivity(new Intent(this, siebensauft.class));
+    	}
+    	else if (trinkspieleListe[position] == "Simon Says") {
+    		startActivity(new Intent(this, SimonSays.class));
+    	}
+    	else if (trinkspieleListe[position] == "Woody") {
 			if (Spieler.getSpielerNameArrayList().size() > 1)
 				startActivity(new Intent(this, woodroid.class));
 			else
 				zuWenigSpieler(2);
 		}
-		else if (trinkspieleListe[position] == "Ass Rennen")
-			startActivity(new Intent(this, assRennen.class));
-		else if (trinkspieleListe[position] == "Big King's Cup")
-			if (Spieler.getSpielerNameArrayList().size() > 1)
-				startActivity(new Intent(this, Cupoid.class));
-			else
-				zuWenigSpieler(2);
-		else
+		else {
 			Toast.makeText(this, "failed to load", Toast.LENGTH_LONG).show();
+		}
 	}
     
     private void zuWenigSpieler(int wievieleMindestens) {
     	AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 		dialog.setTitle("Zu wenig Spieler vorhanden");
-		if (wievieleMindestens == 1)
-			dialog.setMessage("Es muss mindestens 1 Spieler vorhanden sein");
+		if (wievieleMindestens - Spieler.getSpielerNameArrayList().size() > 1)
+			dialog.setMessage("Sie müssen noch mindestens " + (wievieleMindestens - Spieler.getSpielerNameArrayList().size()) +
+					" Spieler hinzufügen");
 		else
-			dialog.setMessage("Es müssen mindestens " + wievieleMindestens + "  Spieler vorhanden sein");
+			dialog.setMessage("Es muss noch mindestens 1 Spieler hinzugefügt werden");
 		dialog.setPositiveButton("Spieler hinzufügen", new DialogInterface.OnClickListener() {
 			
 			public void onClick(DialogInterface dialog, int which) {
