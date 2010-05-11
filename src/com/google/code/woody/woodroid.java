@@ -41,7 +41,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.xml.woody);
+		setContentView(R.layout.woody);
 
 		wuerfelnButton = (Button) findViewById(R.id.Button01);
 		wuerfelnButton.setOnClickListener((OnClickListener) this);

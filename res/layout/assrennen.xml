@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:gravity="center" 
+	android:background="@color/hintergrundFarbeAssRennen"
+	android:layout_height="fill_parent">
+	
+	<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:text="Ass Rennen"
+		android:textSize="30px" 
+		android:gravity="center"
+		android:paddingBottom="20px" 
+		android:paddingTop="10px" android:textColor="@color/TextColorAssrennen"/>
+
+	<TableLayout 
+		android:id="@+id/TableLayout01"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:gravity="center"/>
+		
+	<ImageView 
+		android:id="@+id/ImageView01"
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:src="@drawable/deckblatt"/>
+		
+	<TextView 
+		android:layout_height="wrap_content"
+		android:gravity="center" 
+		android:layout_width="fill_parent"
+		android:paddingBottom="10px" 
+		android:text="Bitte neue Karte ziehen"
+		android:id="@+id/TextAusgabe" 
+		android:lines="6" 
+		android:paddingTop="10px" android:textColor="@color/TextColorAssrennen"/>
+
+	<Button 
+		android:id="@+id/Button01" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:gravity="center"
+		android:textColor="@color/TextColorAssrennen" 
+		android:text="Karte ziehen"/>
+
+</LinearLayout>
