@@ -18,6 +18,7 @@ public class KartenSpiel {
 		kartenSymbole = new String[] { "Karo", "Kreuz", "Herz", "Pik" };
 		kartenWerte = new String[] { "2", "3", "4", "5", "6", "7",
 				"8", "9", "10", "Bube", "Dame", "König", "Ass"};
+		geordnetesDeckGenerieren();
 	}
 	
 	public ArrayList<String> getDeck() {
@@ -69,12 +70,17 @@ public class KartenSpiel {
 	}
 	
 	public String[] kartenZiehen(int wieviele) {
-		String[] karte = { "Deck enthält zu wenig Karten" };
-		if (wieviele > deck.size())
+		String[] karte;
+		if (wieviele <= deck.size()) {
 			karte = new String[wieviele];
-		for (int i = 0; i < karte.length; i++) {
-				karte[i] = deck.get(i);
-				deck.remove(i);
+			for (int i = 0; i < karte.length; i++) {
+					karte[i] = deck.get(i);
+					deck.remove(i);
+			}
+		}
+		else {
+			 karte = new String[1];
+			 karte[0] = "Deck enthält zu wenig Karten";
 		}
 		return karte;
 	}

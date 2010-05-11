@@ -1,5 +1,7 @@
 package com.google.code.woody;
 
+import java.util.Random;
+
 import com.google.code.trinkspiele.Spieler;
 import com.google.code.trinkspiele.Wuerfelspiel;
 
@@ -33,14 +35,15 @@ public class Woody extends Wuerfelspiel {
 		String ausgabe = "";
 		String WoodyMussTrinken = "Der Woody(" + getWerIstWoody()
 				+ ") muss trinken";
-		String nichtsPassiert = "Nichts passiert, du musst weitergeben";
-		String neuerWoody = "Es gibt einen neuen Woody";
-		String pasch = super.getWuerfelZahl(0) + "er Pasch, du darfst "
+		String nichtsPassiert = "Nichts passiert, " + Spieler.getNaechsterSpieler() + " ist dran";
+		String neuerWoody = "Es muss ein neueer Woody gewählt werden";
+		String pasch = super.getWuerfelZahl(0) + "er Pasch, " + Spieler.getAktuellerSpieler() + " darf "
 				+ super.getWuerfelZahl(0) + " Schlücke verteilen";
 
 		switch (ergebnis) {
 		case 2:
-			ausgabe = pasch;
+			ausgabe = super.getWuerfelZahl(0) + "er Pasch, " + Spieler.getAktuellerSpieler() +
+				" darf 1 Schluck verteilen";
 			break;
 		case 3:
 			if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
@@ -78,9 +81,10 @@ public class Woody extends Wuerfelspiel {
 				if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
 					ausgabe = pasch;
 					setNeuerWoody(true);
-					ausgabe = "3er Pasch, und es gibt einen neuen Woody";
+					ausgabe = "3er Pasch, " + Spieler.getAktuellerSpieler() + " darf " +
+					"3 Schlücke verteilen, und es muss ein neuer Woody gewählt werden";
 				} else
-					ausgabe = "3er Pasch, und der Woody(" + getWerIstWoody()
+					ausgabe = "3er Pasch, " + Spieler.getAktuellerSpieler() + " darf 3 Schlücke verteilen und der Woody(" + getWerIstWoody()
 							+ ") muss einen trinken";
 			} else if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) {
 				if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
@@ -99,11 +103,11 @@ public class Woody extends Wuerfelspiel {
 					setNeuerWoody(true);
 					ausgabe = neuerWoody;
 				} else {
-					ausgabe = "Dein linker Nachbar und der Woody("
+					ausgabe = Spieler.getAktuellerSpieler() +"'s linker Nachbar(" + Spieler.getVorigerSpieler() + ") und der Woody("
 							+ werIstWoody + ") müssen trinken";
 				}
 			} else
-				ausgabe = "Dein linker Nachbar muss einen trinken";
+				ausgabe = Spieler.getAktuellerSpieler() +"'s linker Nachbar(" + Spieler.getVorigerSpieler() + ") muss einen trinken";
 			break;
 		case 8:
 			if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) {
@@ -125,14 +129,15 @@ public class Woody extends Wuerfelspiel {
 					setNeuerWoody(true);
 					ausgabe = neuerWoody;
 				} else
-					ausgabe = "Dein rechter Nachbar und der Woody("
+					ausgabe = Spieler.getAktuellerSpieler() + "'s rechter Nachbar(" + Spieler.getNaechsterSpieler() + ") und der Woody("
 							+ getWerIstWoody() + ") müssen trinken";
 			} else
-				ausgabe = "Dein rechter Nachbar muss einen trinken";
+				ausgabe = Spieler.getAktuellerSpieler() + "'s rechter Nachbar(" + Spieler.getNaechsterSpieler() + ") muss einen trinken";
 			break;
 		case 10:
 			if (getWuerfelZahl(0) == 5 && getWuerfelZahl(1) == 5)
-				ausgabe = "5er Pasch, und alle nehmen einen Schluck";
+				ausgabe = "5er Pasch, " + Spieler.getAktuellerSpieler() + " darf " +
+				" 5 Schlücke verteilen, und alle nehmen einen Schluck... Cheers!!!";
 			else
 				ausgabe = "Alle nehmen einen Schluck... Cheers!!!";
 			break;
@@ -141,12 +146,19 @@ public class Woody extends Wuerfelspiel {
 			Spieler.incrementAktuellerSpieler();
 			break;
 		case 12:
-			ausgabe = "JACKPOT!!!, du darfst 12 Schlücke verteilen";
+			ausgabe = "JACKPOT!!!, " + Spieler.getAktuellerSpieler() + " darf 12 Schlücke verteilen";
 			break;
 		default:
 			ausgabe = "Critical Error!!!";
 			break;
 		}
 		return ausgabe;
+	}
+	
+	public String spielerAmAnfangBestimmen() {
+		Random generator = new Random();
+		int spielerIndex = generator.nextInt(Spieler.getSpielerNameArrayList().size());
+		String welcherSpieler = Spieler.getSpielerNameArrayList().get(spielerIndex);
+		return welcherSpieler;
 	}
 }

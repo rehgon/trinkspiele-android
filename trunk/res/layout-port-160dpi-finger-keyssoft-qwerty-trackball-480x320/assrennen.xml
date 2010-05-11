@@ -27,7 +27,7 @@
 		android:id="@+id/ImageView01"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
-		android:src="@drawable/spielkarte"/>
+		android:src="@drawable/deckblatt"/>
 		
 	<TextView 
 		android:layout_height="wrap_content"

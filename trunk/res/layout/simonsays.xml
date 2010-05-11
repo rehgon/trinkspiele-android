@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  
+ 	<TextView 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content" 
+		android:text="Simon Says" 
+		android:gravity="center"
+		android:paddingBottom="20px" 
+		android:paddingTop="10px" 
+		android:textColor="@color/simonTextColor" 
+		android:textSize="30px"/>
+		
+	<TextView  
+		android:id="@+id/simonAusgabe" 
+		android:layout_width="fill_parent" 
+		android:layout_height="wrap_content"
+		android:text=" "
+		android:padding="10px"
+		android:lines="6" android:background="@color/white" android:textColor="@color/black"/>
+		
+	<Button 
+		android:text="    Simon Says    " 
+		android:id="@+id/simonBefehlAbrufen" 
+		android:layout_gravity="center"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/>
+	
+	<Button 
+		android:text="  neuer Befehl  " 
+		android:id="@+id/simonNeuerBefehl" 
+		android:layout_gravity="center"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -16,7 +16,7 @@
 		
 	<ImageView
 		android:id="@+id/bigKingImage"
-		android:src="@drawable/spielkarte"
+		android:src="@drawable/deckblatt"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
 		android:padding="10px"

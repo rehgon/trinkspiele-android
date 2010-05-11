@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@color/siebenSaeuftBackground">
+
+
+
+	<TextView android:id="@+id/TextView01" android:textSize="30px"
+		android:text="Sieben säuft" android:layout_height="wrap_content"
+		android:layout_width="fill_parent" android:gravity="center"
+		android:paddingBottom="20px" android:textColor="@color/siebenSaeuftTextColor"></TextView>
+	<TableLayout android:layout_height="wrap_content"
+		android:gravity="center" android:layout_width="fill_parent">
+		<TableRow android:gravity="center">
+			<ImageView android:id="@+id/ImageView01" android:src="@drawable/w1"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+			<ImageView android:id="@+id/ImageView02" android:src="@drawable/w1"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
+		</TableRow>
+	</TableLayout>
+
+	<TextView android:layout_height="wrap_content"
+		android:gravity="center" android:layout_width="fill_parent"
+		android:text="Zum Starten bitte Button drücken" android:id="@+id/Textausgabe"
+		android:paddingTop="20px" android:paddingBottom="10px"
+		android:textColor="@color/siebenSaeuftTextColor" android:lines="5"></TextView>
+	<Button android:id="@+id/Button01" android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:layout_gravity="center"
+		android:text="Würfeln"></Button>
+</LinearLayout>
