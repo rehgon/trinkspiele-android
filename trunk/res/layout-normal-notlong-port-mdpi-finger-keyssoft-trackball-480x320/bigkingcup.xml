@@ -9,11 +9,10 @@
 		android:id="@+id/bigKingTitel" 
 		android:layout_height="wrap_content" 
 		android:text="Big King's Cup" 
-		android:textSize="30px" 
-		android:padding="10px" 
 		android:layout_width="fill_parent" 
 		android:gravity="center" 
-		android:textColor="@color/bigKingTextColor"/>
+		android:textColor="@color/bigKingTextColor" 
+		android:textSize="@dimen/titelSize" android:padding="@dimen/titelPadding"/>
 		
 	<ImageView
 		android:id="@+id/bigKingImage"
@@ -93,11 +92,10 @@
 		
 		<TableRow android:layout_marginLeft="5px" android:layout_marginRight="5px">
 			<ProgressBar 
-				android:id="@+id/progress" 
 				android:layout_width="fill_parent" 
 				android:layout_height="wrap_content"
 				android:max="52"
-				style="?android:attr/progressBarStyleHorizontal" android:layout_weight="1"/>
+				style="?android:attr/progressBarStyleHorizontal" android:layout_weight="1" android:id="@+id/progressBarKarten"/>
 				
 			<TextView
 				android:id="@+id/bigKingQuestionMasterTextView"

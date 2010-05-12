@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:background="@color/kartenOrakelBackground" 
+  android:layout_width="fill_parent" 
+  android:layout_height="fill_parent" 
+  android:orientation="vertical">
+  
+	<TextView 
+		android:text="Karten Orakel"
+		android:layout_height="wrap_content"  
+		android:gravity="center" 
+		android:padding="@dimen/titelPadding" 
+		android:textSize="@dimen/titelSize" 
+		android:textColor="@color/kartenOrakelTextColor" 
+		android:layout_width="fill_parent"/>
+		
+	
+		
+	<ImageButton 
+		android:layout_height="wrap_content" 
+		android:src="@drawable/deckblatt" 
+		android:layout_gravity="center" 
+		android:id="@+id/kartenOrakelImage" android:layout_width="wrap_content" android:padding="0px"/><TextView android:id="@+id/kartenOrakelAusgabe" android:layout_height="wrap_content" android:textColor="@color/kartenOrakelTextColor" android:layout_width="fill_parent" android:padding="10px" android:text="Auf den Stapel klicken um zu beginnen" android:gravity="center|top" android:lines="8"/>
+		
+	
+<TableLayout 
+	android:layout_height="fill_parent" 
+	android:layout_width="fill_parent" android:gravity="bottom">
+	
+	<TableRow 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"><Button android:text="tiefer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:padding="10px" android:visibility="invisible" android:id="@+id/kartenOrakeltieferButton"/><Button android:text="höher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:padding="10px" android:visibility="invisible" android:id="@+id/kartenOrakelHoeherButton"/></TableRow>
+		
+		
+		
+		
+		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Richtig: 0" android:id="@+id/kartenOrakelRichtigTextView"></TextView>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Falsch: 0" android:id="@+id/kartenOrakelFalschTextView"></TextView>
+<ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/progressBarKarten" android:max="52" style="?android:attr/progressBarStyleHorizontal"></ProgressBar>
+</TableLayout>
+</LinearLayout>
