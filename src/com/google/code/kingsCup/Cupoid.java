@@ -48,7 +48,7 @@ public class Cupoid extends Activity {
 		werAlsNaechstes = (TextView) findViewById(R.id.bigKingWerAlsNaechstes);
 		questionMaster = (TextView) findViewById(R.id.bigKingQuestionMasterTextView);
 		daumenMaster = (TextView) findViewById(R.id.bigKingDaumenMasterTextView);
-		progress = (ProgressBar) findViewById(R.id.progress);
+		progress = (ProgressBar) findViewById(R.id.progressBarKarten);
 		klokartenBesitzer = new ArrayList<String>();
 		dialog = new AlertDialog.Builder(this);
 		erklaerung = (Button) findViewById(R.id.bigKingErklaerungButton);
@@ -101,7 +101,7 @@ public class Cupoid extends Activity {
 					cup.setKingCounter(1);
 					progress.setProgress(0);
 				} else {
-					symbol = karte[0].substring(0, karte[0].indexOf(" "));
+					symbol = cup.kartenSymbolBestimmen(karte[0]);
 					wert = cup.kartenWertBestimmen(karte[0]);
 					cup.paint(cup, image, symbol, wert);
 					cup.werHatGezogen(karte[0]);

@@ -124,6 +124,10 @@ public class KartenSpiel {
 			return false;
 	}
 	
+	public String kartenSymbolBestimmen(String karte) {
+		return karte.substring(0, karte.indexOf(" "));
+	}
+	
 	public int kartenWertBestimmen(String karte) {
 		String wert = karte.substring(karte.indexOf(" ") + 1);
 		

@@ -29,6 +29,10 @@
 		<activity 
 			android:name="com.google.code.siebenSaeuft.siebensauft"
 			android:screenOrientation="portrait"></activity>
+			
+		<activity 
+			android:name="com.google.code.kartenOrakel.KartenOrakloid"
+			android:screenOrientation="portrait"></activity>
 </application>
 
 	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
