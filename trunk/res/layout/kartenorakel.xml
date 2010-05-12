@@ -37,8 +37,8 @@
 		
 		
 		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
-<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Richtig: 0" android:id="@+id/kartenOrakelRichtigTextView"></TextView>
-<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Falsch: 0" android:id="@+id/kartenOrakelFalschTextView"></TextView>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/kartenOrakelRichtigTextView" android:text="Richtige: 0"></TextView>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/kartenOrakelFalschTextView" android:text="Falsche: 0"></TextView>
 <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/progressBarKarten" android:max="52" style="?android:attr/progressBarStyleHorizontal"></ProgressBar>
 </TableLayout>
 </LinearLayout>
