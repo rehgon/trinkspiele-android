@@ -117,26 +117,19 @@ public class KartenOrakloid extends Activity {
 	private void resultatAnzeigen() {
 		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
 		dialog.setTitle("Resultat");
-		String message;
-		if (orakel.getAnzahlRichtigeTreffer() > 35) {
-			message =
-					"\nRichtig phrophezeit: " + orakel.getAnzahlRichtigeTreffer() + " mal\n" +
-					"\nFalsch prophezeit: " + orakel.getAnzahlFalscheTreffer() + " mal\n" +
-					"Titel: Gott";
-		}
+		String message = 
+			"Richtig prophezeit:\n " + orakel.getAnzahlRichtigeTreffer() + " mal\n\n" +
+			"Falsch prophezeit:\n " + orakel.getAnzahlFalscheTreffer() + " mal\n\n";
+		if (orakel.getAnzahlRichtigeTreffer() > 32)
+			message += "Titel:\nGott";
 		else if (orakel.getAnzahlRichtigeTreffer() > 26) {
-			message =
-					"\nRichtig phrophezeit: " + orakel.getAnzahlRichtigeTreffer() + " mal\n" +
-					"\nFalsch prophezeit: " + orakel.getAnzahlFalscheTreffer() + " mal\n" +
-					"Titel: Passables Orakel";
+			message += "Titel:\nPassables Orakel";
 		}
 		else {
-			message = 
-					"\nRichtig phrophezeit: " + orakel.getAnzahlRichtigeTreffer() + " mal\n" +
-					"\nFalsch prophezeit: " + orakel.getAnzahlFalscheTreffer() + " mal\n" +
-					"Titel: Scharlatan";
+			message += "Titel:\nScharlatan";
 		}
 		dialog.setMessage(message);
+		dialog.setPositiveButton("Ok", null);
 		dialog.show();
 	}
 }
