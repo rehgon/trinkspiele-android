@@ -54,7 +54,6 @@ public class Cupoid extends Activity {
 		erklaerung = (Button) findViewById(R.id.bigKingErklaerungButton);
 		erklaerung.setOnClickListener(new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				
 				// Eine nicht editierbare Seek Bar soll angezeigt werden, falls wenn ein König
@@ -78,7 +77,6 @@ public class Cupoid extends Activity {
 		button = (Button) findViewById(R.id.bigKingButton);
 		button.setOnClickListener(new OnClickListener() {
 
-			@Override
 			public void onClick(View v) {
 				
 				//Progress Bars aktualisieren

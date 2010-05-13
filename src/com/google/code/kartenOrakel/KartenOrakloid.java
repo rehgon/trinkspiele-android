@@ -38,8 +38,7 @@ public class KartenOrakloid extends Activity {
 
 		//onclick listener für Kartenstapel
 		image.setOnClickListener(new View.OnClickListener() {
-
-			@Override
+			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if (istNeuesSpiel) {
@@ -60,8 +59,7 @@ public class KartenOrakloid extends Activity {
 
 		// onclick listener für tiefer Button
 		tieferButton.setOnClickListener(new View.OnClickListener() {
-
-			@Override
+			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				karte = orakel.kartenZiehen(1);
@@ -74,8 +72,7 @@ public class KartenOrakloid extends Activity {
 
 		// onclick listener für höher Button
 		hoeherButton.setOnClickListener(new View.OnClickListener() {
-
-			@Override
+			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				karte = orakel.kartenZiehen(1);
