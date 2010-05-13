@@ -60,13 +60,11 @@ public class woodroid extends Activity implements View.OnClickListener {
 		wuerfelnButton.setText("neuen Woody wählen");
 
 		
-
+		// Sensor Initialisierung
 		mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
 		mSensorManager.registerListener(mSensorListener, mSensorManager
 				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
 				SensorManager.SENSOR_DELAY_NORMAL);
-
-		// Sensor Initialisierung
 		mAccel = 0.00f;
 		mAccelCurrent = SensorManager.GRAVITY_EARTH;
 		mAccelLast = SensorManager.GRAVITY_EARTH;
@@ -165,7 +163,10 @@ public class woodroid extends Activity implements View.OnClickListener {
 
 	// Sensor Definierung
 	private final SensorEventListener mSensorListener = new SensorEventListener() {
-
+		
+		long lastTimeStamp = System.currentTimeMillis();
+		
+		@Override
 		public void onSensorChanged(SensorEvent se) {
 			float x = se.values[0];
 			float y = se.values[1];
@@ -176,14 +177,9 @@ public class woodroid extends Activity implements View.OnClickListener {
 			mAccel = mAccel * 0.9f + delta; // perform low-cut filter
 			
 			// Mein Stuff
-			if (mAccel > 3 && !woody.getNeuerWoody()) {
+			if (mAccel > 3 && !woody.getNeuerWoody() && (System.currentTimeMillis() - lastTimeStamp) > 2000) {
+				lastTimeStamp = System.currentTimeMillis();
 				handleEvent();
-				try {
-					Thread.sleep(1500);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
 			}
 		}
 
