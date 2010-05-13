@@ -26,9 +26,8 @@ public class siebensauft extends Activity {
         wuerfel1=(ImageView)findViewById(R.id.ImageView01);
         wuerfel2=(ImageView)findViewById(R.id.ImageView02);
         wuerfeln=(Button)findViewById(R.id.Button01);
-        wuerfeln.setOnClickListener(new OnClickListener() {
-    
-			@Override
+        wuerfeln.setOnClickListener(new View.OnClickListener() {
+			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String ausgabe = neuesSpiel.chat();
