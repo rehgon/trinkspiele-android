@@ -31,11 +31,13 @@ public class Meieroid extends Activity {
 					image.setImageResource(R.drawable.wuerfelbecher_gross);
 					wuerfelEins.setVisibility(4);
 					wuerfelZwei.setVisibility(4);
+					wuerfelSichtbar = false;
 				}
 				else {
 					image.setImageResource(R.drawable.wuerfelbecher_klein);
 					wuerfelEins.setVisibility(0);
 					wuerfelZwei.setVisibility(0);
+					wuerfelSichtbar = true;
 				}
 			}
 		});
