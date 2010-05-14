@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_height="fill_parent" 
+  android:layout_width="fill_parent"
+  android:orientation="vertical">
+  
+	<TextView
+		android:layout_height="wrap_content" 
+		android:layout_width="fill_parent" 
+		android:text="Meier" 
+		android:gravity="center" 
+		android:padding="@dimen/titelPadding" 
+		android:textSize="@dimen/titelTextSize"/>
+		
+	<ImageView
+		android:id="@+id/meierImage"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:src="@drawable/wuerfelbecher_klein" 
+		android:maxHeight="30px" 
+		android:maxWidth="30px" 
+		android:cropToPadding="false" android:layout_gravity="center"/>
+		
+	<TableLayout 
+		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:gravity="center">
+			
+		<TableRow 
+			android:gravity="center" 
+			android:padding="10px">	
+			
+			<ImageView 
+				android:id="@+id/wuerfelEinsImage"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:src="@drawable/w1"/>
+			
+			<ImageView 
+				android:id="@+id/wuerfelZweiImage"
+				android:orientation="horizontal" 
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" 
+				android:src="@drawable/w1" 
+				android:layout_gravity="center"/>
+		</TableRow>
+	</TableLayout>
+
+</LinearLayout>
