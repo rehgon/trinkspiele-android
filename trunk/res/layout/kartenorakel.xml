@@ -12,7 +12,7 @@
 		android:layout_height="wrap_content"  
 		android:gravity="center" 
 		android:padding="@dimen/titelPadding" 
-		android:textSize="@dimen/titelSize" 
+		android:textSize="@dimen/titelTextSize" 
 		android:textColor="@color/kartenOrakelTextColor" 
 		android:layout_width="fill_parent"/>
 		

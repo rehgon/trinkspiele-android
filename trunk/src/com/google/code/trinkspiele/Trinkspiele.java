@@ -18,13 +18,21 @@ import android.widget.Toast;
 import com.google.code.assrennen.assRennen;
 import com.google.code.kartenOrakel.KartenOrakloid;
 import com.google.code.kingsCup.Cupoid;
+import com.google.code.meier.Meieroid;
 import com.google.code.siebenSaeuft.siebensauft;
 import com.google.code.simonSays.SimonSays;
 import com.google.code.woody.woodroid;
 
 public class Trinkspiele extends ListActivity {
 	
-	String trinkspieleListe[] = { "Ass Rennen", "Big King's Cup", "Karten Orakel", "Sieben Säuft", "Simon Says", "Woody" };
+	String trinkspieleListe[] = { 
+			"Ass Rennen", 
+			"Big King's Cup", 
+			"Karten Orakel", 
+			"Meier", 
+			"Sieben Säuft", 
+			"Simon Says", 
+			"Woody" };
 	
     /** Called when the activity is first created. */
     @Override
@@ -53,6 +61,12 @@ public class Trinkspiele extends ListActivity {
     	}
     	else if (trinkspieleListe[position] == "Karten Orakel") {
     		startActivity(new Intent(this, KartenOrakloid.class));
+    	}
+    	else if (trinkspieleListe[position] == "Meier") {
+    		if (Spieler.getSpielerNameArrayList().size() > 1)
+				startActivity(new Intent(this, Meieroid.class));
+			else
+				zuWenigSpieler(2);
     	}
     	else if (trinkspieleListe[position] == "Sieben Säuft") {
     		startActivity(new Intent(this, siebensauft.class));
