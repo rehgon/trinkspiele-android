@@ -12,7 +12,7 @@
 		android:layout_width="fill_parent" 
 		android:gravity="center" 
 		android:textColor="@color/bigKingTextColor" 
-		android:textSize="@dimen/titelSize" android:padding="@dimen/titelPadding"/>
+		android:textSize="@dimen/titelTextSize" android:padding="@dimen/titelPadding"/>
 		
 	<ImageView
 		android:id="@+id/bigKingImage"
