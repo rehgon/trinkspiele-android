@@ -4,11 +4,22 @@ import java.util.Random;
 
 import android.widget.ImageView;
 
-public abstract class Wuerfelspiel {
+public abstract class Wuerfelspiel extends Spiel {
 	
 	private Random wuerfelGenerator;
 	private int[] wuerfelZahl;
 	private int ergebnis;
+	
+	int[] diceDrawablesLocations = { 
+			R.drawable.delete, 
+			R.drawable.w1, 
+			R.drawable.w2, 
+			R.drawable.w3, 
+			R.drawable.w4, 
+			R.drawable.w5,
+			R.drawable.w6
+	};
+	
 	
 	public Wuerfelspiel() {
 		wuerfelGenerator = new Random();
@@ -48,20 +59,25 @@ public abstract class Wuerfelspiel {
 			return false;
 	}
 	
-	public void paint(Wuerfelspiel spiel, ImageView image, int welcherWuerfel) {
-
-		if (spiel.getWuerfelZahl(welcherWuerfel) == 1)
-			image.setImageResource(R.drawable.w1);
-		else if (spiel.getWuerfelZahl(welcherWuerfel) == 2)
-			image.setImageResource(R.drawable.w2);
-		else if (spiel.getWuerfelZahl(welcherWuerfel) == 3)
-			image.setImageResource(R.drawable.w3);
-		else if (spiel.getWuerfelZahl(welcherWuerfel) == 4)
-			image.setImageResource(R.drawable.w4);
-		else if (spiel.getWuerfelZahl(welcherWuerfel) == 5)
-			image.setImageResource(R.drawable.w5);
-		else if (spiel.getWuerfelZahl(welcherWuerfel) == 6)
-			image.setImageResource(R.drawable.w6);
+	public void paint(Wuerfelspiel spiel, ImageView image, int wuerfelZahl) {
+		try {
+			image.setImageResource(diceDrawablesLocations[wuerfelZahl]);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void paintBackground(Wuerfelspiel spiel, ImageView image, int wuerfelZahl) {
+		try {
+			image.setBackgroundResource(diceDrawablesLocations[wuerfelZahl]);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
+	}
+	
+	//Wird später von den einzelnen Spielklassen überschrieben
+	public String getHelpMessage() {
+		return "";
 	}
 }
 

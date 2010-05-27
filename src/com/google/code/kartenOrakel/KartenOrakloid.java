@@ -2,7 +2,10 @@ package com.google.code.kartenOrakel;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -10,8 +13,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.code.trinkspiele.R;
+import com.google.code.trinkspiele.Trinkspiele;
 
 public class KartenOrakloid extends Activity {
+	private static final int ID_HELP = 0;
+	private static final int ID_BEENDEN = 1;
+	
 	private TextView ausgabe, richtigLabel, falschLabel;
 	private ImageButton image;
 	private Button tieferButton, hoeherButton;
@@ -98,7 +105,7 @@ public class KartenOrakloid extends Activity {
 
 	private void reset() {
 		resultatAnzeigen();
-		ausgabe.setText("Alle Karten durch, klicken sie auf den Stapel"
+		ausgabe.setText("Alle Karten durch, klicken sie auf den Stapel, "
 				+ "um neu zu starten");
 		istNeuesSpiel = true;
 		image.setImageResource(R.drawable.deckblatt);
@@ -128,5 +135,30 @@ public class KartenOrakloid extends Activity {
 		dialog.setMessage(message);
 		dialog.setPositiveButton("Ok", null);
 		dialog.show();
+	}
+	
+	//Erstellt die Optionen für das Menü
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.info);
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.close);
+		return (super.onCreateOptionsMenu(menu));
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return (applyMenuChoice(item) || super.onOptionsItemSelected(item));
+	}
+
+	//Bestimmt, was passiert, wenn auf eine bestimmte Option im Menü geklickt wird
+	private boolean applyMenuChoice(MenuItem item) {
+		switch (item.getItemId()) {
+			case ID_BEENDEN:
+				startActivity(new Intent(this, Trinkspiele.class));
+				return true;
+			case ID_HELP:
+				orakel.createHelperDialog(this, orakel.getHelpMessage());
+			}
+		return false;
 	}
 }
