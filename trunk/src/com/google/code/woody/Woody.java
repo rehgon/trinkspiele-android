@@ -161,4 +161,19 @@ public class Woody extends Wuerfelspiel {
 		String welcherSpieler = Spieler.getSpielerNameArrayList().get(spielerIndex);
 		return welcherSpieler;
 	}
+	
+	//Setzt den Text für die Spielerklärung
+	public String getHelpMessage() {
+		String s = 
+			"Es wird reihum, offen gewürfelt. " +
+			"Zu Beginn muss sich jemand freiwillig zum Woody ernennen. " + 
+			"Der Woody trinkt immer wenn eine 3 in einem Würfel vorkommt oder wenn die Summe 3 ergibt. " +
+			"Wenn der Woody selbst eine 3 würfelt, darf er einen neuen Woody wählen. " +
+			"Der Woody kann auch jederzeit über das Optionsmenü geändert werden. " +
+			"Hat ein Spieler einen Pasch, so darf er die Menge an Schlücken verteilen die auf einem Würfel steht. " +
+			"Eine Ausnahme besteht darin, wenn der Spieler zwei sechsen würfelt, dann darf er die Summe aus beiden Würfeln verteilen. " +
+			"Hat ein Spieler die Summe 7 gewürfelt, muss sein linker Nachbar trinken, bei 9 der rechte Nachbar. " +
+			"Diese Möglichkeiten sind kummulierbar (Bsp.: wenn jemand 3 & 4 würfelt muss der linke Nachbar und der Woody trinken.";
+		return s;
+	}
 }

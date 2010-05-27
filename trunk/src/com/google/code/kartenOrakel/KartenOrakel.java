@@ -71,4 +71,13 @@ public class KartenOrakel extends KartenSpiel {
 		}
 		return ausgabe;
 	}	
+	
+	@Override
+	public String getHelpMessage() {
+		String s =
+			"Simples Spiel für zwischendurch. " +
+			"Es geht einfach darum zu raten ob die nächste Karte " +
+			"höher oder tiefer sein wird als die aktuelle";
+		return s;
+	}
 }

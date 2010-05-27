@@ -6,11 +6,77 @@ import java.util.Random;
 
 import android.widget.ImageView;
 
-public class KartenSpiel {
+public abstract class KartenSpiel extends Spiel {
 	private Random generator = new Random();
 	private ArrayList<String> deck = new ArrayList<String>();
 	private String[] kartenSymbole;
 	private String[] kartenWerte;
+	
+	int[] cardDrawablesLocationPik = {
+			R.drawable.pikass,
+			R.drawable.pik2,
+			R.drawable.pik3,
+			R.drawable.pik4,
+			R.drawable.pik5,
+			R.drawable.pik6,
+			R.drawable.pik7,
+			R.drawable.pik8,
+			R.drawable.pik9,
+			R.drawable.pik10,
+			R.drawable.pik_bube,
+			R.drawable.pik_dame,
+			R.drawable.pik_koenig
+	};
+	
+	int[] cardDrawablesLocationKaro = {
+			R.drawable.karoass,
+			R.drawable.karo2,
+			R.drawable.karo3,
+			R.drawable.karo4,
+			R.drawable.karo5,
+			R.drawable.karo6,
+			R.drawable.karo7,
+			R.drawable.karo8,
+			R.drawable.karo9,
+			R.drawable.karo10,
+			R.drawable.karo_bube,
+			R.drawable.karo_dame,
+			R.drawable.karo_koenig
+	};
+	
+	int[] cardDrawablesLocationHerz = {
+			R.drawable.herzass,
+			R.drawable.herz2,
+			R.drawable.herz3,
+			R.drawable.herz4,
+			R.drawable.herz5,
+			R.drawable.herz6,
+			R.drawable.herz7,
+			R.drawable.herz8,
+			R.drawable.herz9,
+			R.drawable.herz10,
+			R.drawable.herz_bube,
+			R.drawable.herz_dame,
+			R.drawable.herz_koenig
+	};
+	
+	int[] cardDrawablesLocationKreuz = {
+			R.drawable.kreuzass,
+			R.drawable.kreuz2,
+			R.drawable.kreuz3,
+			R.drawable.kreuz4,
+			R.drawable.kreuz5,
+			R.drawable.kreuz6,
+			R.drawable.kreuz7,
+			R.drawable.kreuz8,
+			R.drawable.kreuz9,
+			R.drawable.kreuz10,
+			R.drawable.kreuz_bube,
+			R.drawable.kreuz_dame,
+			R.drawable.kreuz_koenig
+	};
+	
+	
 	
 	public KartenSpiel() {
 		generator = new Random();
@@ -145,119 +211,33 @@ public class KartenSpiel {
 	
 	public void paint(KartenSpiel spiel, ImageView image, String symbol, int wert) {
 		
-		if (symbol.equals("Pik")) {
-			if (wert == 13)
-				image.setImageResource(R.drawable.pik_koenig);
-			else if (wert == 12)
-				image.setImageResource(R.drawable.pik_dame);
-			else if (wert == 11)
-				image.setImageResource(R.drawable.pik_bube);
-			else if (wert == 10)
-				image.setImageResource(R.drawable.pik10);
-			else if (wert == 9)
-				image.setImageResource(R.drawable.pik9);
-			else if (wert == 8)
-				image.setImageResource(R.drawable.pik8);
-			else if (wert == 7)
-				image.setImageResource(R.drawable.pik7);
-			else if (wert == 6)
-				image.setImageResource(R.drawable.pik6);
-			else if (wert == 5)
-				image.setImageResource(R.drawable.pik5);
-			else if (wert == 4)
-				image.setImageResource(R.drawable.pik4);
-			else if (wert == 3)
-				image.setImageResource(R.drawable.pik3);
-			else if (wert == 2)
-				image.setImageResource(R.drawable.pik2);
-			else if (wert == 1)
-				image.setImageResource(R.drawable.pikass);			
+		//Wert muss um 1 reduziert werden, da Array bei 0 beginnt
+		wert--;
+		
+		try {
+			if (symbol.equals("Pik")) {
+				image.setImageResource(cardDrawablesLocationPik[wert]);			
+			}
+			else if (symbol.equals("Karo")) {
+				image.setImageResource(cardDrawablesLocationKaro[wert]);
+			}
+			else if (symbol.equals("Herz")) {
+				image.setImageResource(cardDrawablesLocationHerz[wert]);
+			}
+			else if (symbol.equals("Kreuz")) {
+				image.setImageResource(cardDrawablesLocationKreuz[wert]);
+			}
+			else {
+				image.setImageResource(R.drawable.cancel);
+			}
 		}
-		else if (symbol.equals("Karo")) {
-			if (wert == 13)
-				image.setImageResource(R.drawable.karo_koenig);
-			else if (wert == 12)
-				image.setImageResource(R.drawable.karo_dame);
-			else if (wert == 11)
-				image.setImageResource(R.drawable.karo_bube);
-			else if (wert == 10)
-				image.setImageResource(R.drawable.karo10);
-			else if (wert == 9)
-				image.setImageResource(R.drawable.karo9);
-			else if (wert == 8)
-				image.setImageResource(R.drawable.karo8);
-			else if (wert == 7)
-				image.setImageResource(R.drawable.karo7);
-			else if (wert == 6)
-				image.setImageResource(R.drawable.karo6);
-			else if (wert == 5)
-				image.setImageResource(R.drawable.karo5);
-			else if (wert == 4)
-				image.setImageResource(R.drawable.karo4);
-			else if (wert == 3)
-				image.setImageResource(R.drawable.karo3);
-			else if (wert == 2)
-				image.setImageResource(R.drawable.karo2);
-			else if (wert == 1)
-				image.setImageResource(R.drawable.karoass);
+		catch(Exception e) {
+			e.printStackTrace();
 		}
-		else if (symbol.equals("Herz")) {
-			if (wert == 13)
-				image.setImageResource(R.drawable.herz_koenig);
-			else if (wert == 12)
-				image.setImageResource(R.drawable.herz_dame);
-			else if (wert == 11)
-				image.setImageResource(R.drawable.herz_bube);
-			else if (wert == 10)
-				image.setImageResource(R.drawable.herz10);
-			else if (wert == 9)
-				image.setImageResource(R.drawable.herz9);
-			else if (wert == 8)
-				image.setImageResource(R.drawable.herz8);
-			else if (wert == 7)
-				image.setImageResource(R.drawable.herz7);
-			else if (wert == 6)
-				image.setImageResource(R.drawable.herz6);
-			else if (wert == 5)
-				image.setImageResource(R.drawable.herz5);
-			else if (wert == 4)
-				image.setImageResource(R.drawable.herz4);
-			else if (wert == 3)
-				image.setImageResource(R.drawable.herz3);
-			else if (wert == 2)
-				image.setImageResource(R.drawable.herz2);
-			else if (wert == 1)
-				image.setImageResource(R.drawable.herzass);
-		}
-		else if (symbol.equals("Kreuz")) {
-			if (wert == 13)
-				image.setImageResource(R.drawable.kreuz_koenig);
-			else if (wert == 12)
-				image.setImageResource(R.drawable.kreuz_dame);
-			else if (wert == 11)
-				image.setImageResource(R.drawable.kreuz_bube);
-			else if (wert == 10)
-				image.setImageResource(R.drawable.kreuz10);
-			else if (wert == 9)
-				image.setImageResource(R.drawable.kreuz9);
-			else if (wert == 8)
-				image.setImageResource(R.drawable.kreuz8);
-			else if (wert == 7)
-				image.setImageResource(R.drawable.kreuz7);
-			else if (wert == 6)
-				image.setImageResource(R.drawable.kreuz6);
-			else if (wert == 5)
-				image.setImageResource(R.drawable.kreuz5);
-			else if (wert == 4)
-				image.setImageResource(R.drawable.kreuz4);
-			else if (wert == 3)
-				image.setImageResource(R.drawable.kreuz3);
-			else if (wert == 2)
-				image.setImageResource(R.drawable.kreuz2);
-			else if (wert == 1)
-				image.setImageResource(R.drawable.kreuzass);
-		}
-		else
-			image.setImageResource(R.drawable.close);
+	}
+	
+	//Wird später von den einzelnen Spielklassen überschrieben
+	public String getHelpMessage() {
+		return "";
 	}
 }

@@ -1,17 +1,23 @@
 package com.google.code.meier;
 import java.util.Random;
 
+import com.google.code.trinkspiele.Spieler;
+
 
 public class Meier {
 	
 	private int wuerfel1, wuerfel2, ergebnis, vorigeZahl, gelogeneZahl;
 	private Random zufallsZahl = new Random();
+	private boolean zuBeginnLuegen, zahlZuTief, glaubtDassGelogen;
 	
 	public Meier() {
 		wuerfel1 = 0;
 		wuerfel2 = 0;
 		ergebnis = 0;
 		vorigeZahl = 0;
+		zuBeginnLuegen = false;
+		zahlZuTief = false;
+		glaubtDassGelogen = false;
 	}
 	public int getErgebnis() {
 		return ergebnis;
@@ -43,29 +49,29 @@ public class Meier {
 	}
 	
 	public boolean hatGelogen() {
-		 	if(!istHoeher())
+		 	if(!istHoeher(ergebnis, this.vorigeZahl))
 		 		return true;
 		 	else
 		 		return false;
 	 }
 	 
-	public boolean istHoeher() {
-		 if (istPaschOderMeier(ergebnis) == true && istPaschOderMeier(vorigeZahl) == true) { //2x Pasch
+	public boolean istHoeher(int jetztigeZahl, int vorigeZahl) {
+		 if (istPaschOderMeier(jetztigeZahl) == true && istPaschOderMeier(vorigeZahl) == true) { //2x Pasch
 			 if (vorigeZahl == 21)
 				 return false;
-			 else if (ergebnis == 21) //if Ergebnis == Meier
+			 else if (jetztigeZahl == 21) //if Ergebnis == Meier
 				 return true;
-			 else if (ergebnis > vorigeZahl)
+			 else if (jetztigeZahl> vorigeZahl)
 				 return true;
 			 else //ergebnis <= vorigeZahl
 				 return false;
 		 }
-		 else if (istPaschOderMeier(ergebnis) == true && istPaschOderMeier(vorigeZahl) == false)
+		 else if (istPaschOderMeier(jetztigeZahl) == true && istPaschOderMeier(vorigeZahl) == false)
 			 return true;
-		 else if (istPaschOderMeier(ergebnis) == false && istPaschOderMeier(vorigeZahl) == true)
+		 else if (istPaschOderMeier(jetztigeZahl) == false && istPaschOderMeier(vorigeZahl) == true)
 			 return false;
 		 else {
-			 if (ergebnis > vorigeZahl)
+			 if (jetztigeZahl > vorigeZahl)
 				 return true;
 			 else
 				 return false;
@@ -85,9 +91,46 @@ public class Meier {
 			return false;
 	}
 	
-	public String wasGewuerfelt() {
+	public String wuerfelZug() {
+		String ausgabe = "Du hast " + getErgebnis() + " gewürfelt. ";
+		if (getVorigeZahl() == 0) {
+			ausgabe += "Möchtest du gleich zu Beginn lügen?";
+			zuBeginnLuegen = true;
+		}
+		else if (getVorigeZahl() > getErgebnis()) {
+			ausgabe += "Die Zahl ist tiefer als die des vorigen Spielers, du musst lügen";
+			zahlZuTief = true;
+		}
+		else if (getVorigeZahl() < getErgebnis()) {
+			ausgabe += "Die Zahl ist höher als die des vorigen Spielers, möchtest du trotzdem lügen?";
+			zahlZuTief = false;
+		}
+		return ausgabe;
+	}
+	
+	public String glaubeFrage() {
+		String ausgabe = "Glauben sie " + Spieler.getVorigerSpieler() + ", dass er ";
+		if (gelogeneZahl == 0) { ausgabe += getVorigeZahl();   }
+		else 				   { ausgabe += getGelogeneZahl(); }
+		ausgabe += " gewürfelt hat?";
+		return ausgabe;
+	}
+	
+	public String naechsterSpielerDran() {
+		return Spieler.getAktuellerSpieler() + " ist dran";
+	}
+	
+	public String wurfAuswerten() {
+		
 		String ausgabe = "";
-		ausgabe = "Sie haben " + getErgebnis() + " gewürfelt. Möchten sie gleich zu Beginn lügen?";
+		if (glaubtDassGelogen) {
+			if (gelogeneZahl == 0)
+				ausgabe = "Falsch, der Spieler hat die Wahrheit gesagt";
+			else
+				ausgabe = "Richtig, der Spieler hat gelogen";
+		}
+		else
+			setErgebnis(getGelogeneZahl());
 		return ausgabe;
 	}
 	

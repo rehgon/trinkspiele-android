@@ -24,7 +24,8 @@ import com.google.code.trinkspiele.Trinkspiele;
 
 public class Cupoid extends Activity {
 	private static final int ID_KLOKARTE_ENTFERNEN = 0;
-	private static final int ID_BEENDEN = 1;
+	private static final int ID_HELP = 1;
+	private static final int ID_BEENDEN = 2;
 
 	BigKingsCup cup;
 	ImageView image;
@@ -54,9 +55,10 @@ public class Cupoid extends Activity {
 		erklaerung = (Button) findViewById(R.id.bigKingErklaerungButton);
 		erklaerung.setOnClickListener(new OnClickListener() {
 
+			//Klick auf den "Erklärung" Button
 			public void onClick(View v) {
 				
-				// Eine nicht editierbare Seek Bar soll angezeigt werden, falls wenn ein König
+				// Eine nicht editierbare Seek Bar soll angezeigt werden, wenn ein König
 				// erscheint und auf den Erklärung Button geklickt wird
 				if (kategorie.getText().equals("KING'S CUP")) {
 					SeekBar cupProgress = new SeekBar(getApplicationContext());
@@ -77,6 +79,7 @@ public class Cupoid extends Activity {
 		button = (Button) findViewById(R.id.bigKingButton);
 		button.setOnClickListener(new OnClickListener() {
 
+			//Klick auf den "ziehen" Button
 			public void onClick(View v) {
 				
 				//Progress Bars aktualisieren
@@ -85,6 +88,8 @@ public class Cupoid extends Activity {
 					cup.setKingCounter(cup.getKingCounter() + 1);
 
 				karte = cup.kartenZiehen(1);
+				
+				//Wenn keine Karten mehr vorhanden sind
 				if (karte[0].equals("Deck enthält zu wenig Karten")) {
 					werHatGezogen.setText("");
 					kategorie.setText("ALLE KARTEN DURCH");
@@ -98,9 +103,11 @@ public class Cupoid extends Activity {
 					cup = new BigKingsCup();
 					cup.setKingCounter(1);
 					progress.setProgress(0);
+				//Wenn noch Karten vorhanden sind
 				} else {
 					symbol = cup.kartenSymbolBestimmen(karte[0]);
 					wert = cup.kartenWertBestimmen(karte[0]);
+					
 					cup.paint(cup, image, symbol, wert);
 					cup.werHatGezogen(karte[0]);
 					werHatGezogen.setText(cup.werHatGezogen(karte[0]));
@@ -125,8 +132,8 @@ public class Cupoid extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_KLOKARTE_ENTFERNEN, Menu.NONE,
-				"Klokarte entfernen").setIcon(R.drawable.remove);
+		menu.add(Menu.NONE, ID_KLOKARTE_ENTFERNEN, Menu.NONE, "Klokarte entfernen").setIcon(R.drawable.remove);
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.info);
 		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.close);
 		return (super.onCreateOptionsMenu(menu));
 	}
@@ -140,6 +147,9 @@ public class Cupoid extends Activity {
 		switch (item.getItemId()) {
 		case ID_KLOKARTE_ENTFERNEN:
 			klokarteEntfernen();
+			return true;
+		case ID_HELP:
+			cup.createHelperDialog(this, cup.getHelpMessage());
 			return true;
 		case ID_BEENDEN:
 			startActivity(new Intent(this, Trinkspiele.class));

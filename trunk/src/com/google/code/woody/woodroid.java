@@ -24,7 +24,8 @@ import com.google.code.trinkspiele.Trinkspiele;
 
 public class woodroid extends Activity implements View.OnClickListener {
 	private static final int ID_NEUER_WOODY = 0;
-	private static final int ID_BEENDEN = 1;
+	private static final int ID_HELP = 1;
+	private static final int ID_BEENDEN = 2;
 
 	Button wuerfelnButton;
 	TextView ausgabe, werIstWoodyLabel, aktuellerSpieler;
@@ -95,10 +96,11 @@ public class woodroid extends Activity implements View.OnClickListener {
 			neuenWoodyBestimmen();
 			woody.setNeuerWoody(false);
 			wuerfelnButton.setText("würfeln");
-		} else {
+		} 
+		else {
 
 			woody.wuerfeln(2);
-
+			
 			werIstWoodyLabel
 					.setText("Wer ist woody: " + woody.getWerIstWoody());
 			aktuellerSpieler.setText("Aktueller Spieler: "
@@ -106,8 +108,8 @@ public class woodroid extends Activity implements View.OnClickListener {
 			ausgabe.setText(woody.auswerten(woody.getWuerfelZahl(0)
 					+ woody.getWuerfelZahl(1)));
 
-			woody.paint(woody, wuerfelEinsImage, 0);
-			woody.paint(woody, wuerfelZweiImage, 1);
+			woody.paint(woody, wuerfelEinsImage, woody.getWuerfelZahl(0));
+			woody.paint(woody, wuerfelZweiImage, woody.getWuerfelZahl(1));
 
 			// Wird noch vor dem AlertDialog angezeigt
 			if (woody.getNeuerWoody()) {
@@ -116,6 +118,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 		}
 	}
 
+	//Zeigt einen Dialog, wo man einen neuen Woody bestimmen muss
 	private void neuenWoodyBestimmen() {
 
 		String items[] = Spieler.convertArrayListToArray();
@@ -137,10 +140,12 @@ public class woodroid extends Activity implements View.OnClickListener {
 		builder.show();
 	}
 
+	//Erstellt die Optionen für das Menü
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_NEUER_WOODY, Menu.NONE, "Neuen Woody wählen");
-		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü");
+		menu.add(Menu.NONE, ID_NEUER_WOODY, Menu.NONE, "Neuen Woody wählen").setIcon(R.drawable.add);
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.info);
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.close);
 		return (super.onCreateOptionsMenu(menu));
 	}
 
@@ -149,6 +154,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 		return (applyMenuChoice(item) || super.onOptionsItemSelected(item));
 	}
 
+	//Bestimmt, was passiert, wenn auf eine bestimmte Option im Menü geklickt wird
 	private boolean applyMenuChoice(MenuItem item) {
 		switch (item.getItemId()) {
 		case ID_NEUER_WOODY:
@@ -157,6 +163,8 @@ public class woodroid extends Activity implements View.OnClickListener {
 		case ID_BEENDEN:
 			startActivity(new Intent(this, Trinkspiele.class));
 			return true;
+		case ID_HELP:
+			woody.createHelperDialog(this, woody.getHelpMessage());
 		}
 		return false;
 	}
@@ -175,7 +183,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 			float delta = mAccelCurrent - mAccelLast;
 			mAccel = mAccel * 0.9f + delta; // perform low-cut filter
 			
-			// Mein Stuff
+			// Führt einen Spielzug aus wenn man schüttelt, danach kann man 2 Sekunden lang nicht mehr schütteln
 			if (mAccel > 3 && !woody.getNeuerWoody() && (System.currentTimeMillis() - lastTimeStamp) > 2000) {
 				lastTimeStamp = System.currentTimeMillis();
 				handleEvent();
