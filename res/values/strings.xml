@@ -24,11 +24,14 @@
 
 <string name="delete_title">Delete Constant: Are You Sure?</string>
 <string name="add_title">Add Constant</string>
-<string name="abbrechen">Cancel</string><string name="ok">Ok</string>
+<string name="abbrechen">Cancel</string>
+<string name="ok">Ok</string>
+<string name="neustart">Restart</string>
 <string name="hilfe">help</string>
 <string name="kritischer_fehler">Critical error!!!</string>
 <string name="zum_hauptmenue">Return to Main Menu</string>
 <string name="beenden">Quit</string>
+<string name="fortschritt">Progress:</string>
 
 <string name="karten_herz">Hearts</string>
 <string name="karten_karo">Diamonds</string>
@@ -87,6 +90,49 @@
 <string name="assrennen_ass_rennen">Ace Race</string>
 
 <string name="bigkingscup_big_kings_cup">Big King\'s Cup</string>
+<string name="bigkingscup_um_das_spiel_zu_starten_button_klicken">Click on the button to start the game</string>
+<string name="bigkingscup_kings_cup">KING'S CUP</string>
+<string name="bigkingscup_erklaerung">Explanation:</string>
+<string name="bigkingscup_alle_karten_durch">Pile is empty</string>
+<string name="bigkingscup_klicke_auf_den_button_um_nue_zu_starten">Click on the Button to restart</string>
+<string name="bigkingscup_karte_ziehen">draw a card</string>
+<string name="bigkingscup_erklaeung_zu_kategoerie">Explanation to the Category</string>
+<string name="bigkingscup_klokarte">TOILET CARD</string>
+<string name="bigkingscup_question_master">QUESTION MASTER</string>
+<string name="bigkingscup_thumb_master">THUMB MASTER</string>
+<string name="bigkingscup_klokarte_entfernen">Remove toilet card</string>
+<string name="bigkingscup_keine_klokarten_vorhanden">There are no toilet cards</string>
+<string name="bigkingscup_klokarte_von">Toilet card of</string>
+<string name="bigkingscup_wurde_entfernt">has been removed</string>
+<string name="bigkingscup_alle_trinken">EVERYBODY DRINKS</string>
+<string name="bigkingscup_kategorie">CATEGORY</string>
+<string name="bigkingscup_reim">RHYME</string>
+<string name="bigkingscup_counter">COUNTER</string>
+<string name="bigkingscup_fettnaepfchen">SELF PUNCH</string>
+<string name="bigkingscup_regel_ausdenken">RULE CREATOR</string>
+<string name="bigkingscup_zehn_schluecke_verteilen">DISTRIBUTE 10 SIPS</string>
+<string name="bigkingscup_maenner_trinken">MEN DRINK</string>
+<string name="bigkingscup_maedels_trinken">GIRLS DRINK</string>
+<string name="bigkingscup_kritischer_fehler">CRITICAL ERROR</string>
+<string name="bigkingscup_case_eins">Schlichtes Hochpuschen des Kollektivpegels.</string>
+<string name="bigkingscup_case_zwei">Der Spieler sucht sich ein Genre aus (z.B. Obstarten, Getränkemarken, Zigaretten) und nennt einen Begriff daraus. Nun muss reihum jeweils ein weiterer genannt werden, solange bis einem Spieler kein Begriff mehr einfällt, einen bereits genannten Begriff noch einmal nennt oder sich sonstwie vertut. Dieser muss dann trinken.</string>
+<string name="bigkingscup_case_drei">Der Spieler sucht sich ein beliebiges Wort aus (z.B. Tisch) und nun geht es wieder reihum. Jeder muss ein sich darauf reimendes Wort (z.B. Fisch,..) nennen. Der erste, dem keins mehr einfällt trinkt.</string>
+<string name="bigkingscup_case_vier">Dem Spieler, der eine 4 zieht, dürfen keine Fragen mehr beantwortet werden, egal welcher Art. Dies kann und soll er natürlich ausnutzen, um die anderen zum trinken zu bringen, denn wer antwortet, muss trinken. Der Spieler hat den Status Questionmaster solange, bis ein anderer Spieler eine 4 zieht.</string>
+<string name="bigkingscup_case_fuenf">Der Spieler sucht sich eine Zahl zwischen 3 und 9 aus. Nun geht es reihum und es wird gezählt. Jedoch muss bei jeder Zahl, welche durch die ausgewählte teilbar ist oder in der diese Ziffer vorkommt, nicht die Zahl sondern ein vorher festzulegendes Wort genannt werden (Empfehlung: FICKEN). Das sieht dann folgendermassen aus (bei der gewählten Zahl 3): 1, 2, ficken, 4, 5, ficken, 7, 8, ficken, 10, 11, ficken, ficken, 14, usw. Wer sich vertut, inwiefern auch immer, muss trinken.</string>
+<string name="bigkingscup_case_sechs">Da vor allem Bier gut auf die Blase geht, ist es sehr nützlich, sich auf der Toilette dem Harndrangs zu entledigen. Dies ist aber nur im Besitz einer Klokarte erlaubt. Klokarten können übrigens über das Optionsmenü wieder entfernt werden, sobald jemand eine einlösen möchte.</string>
+<string name="bigkingscup_case_sieben">Trinke selber</string>
+<string name="bigkingscup_case_acht">Der Spieler ist nun analog zum Questionmaster der Thumbmaster. Dies bedeutet, dass er beliebig oft und nach Lust und Laune seinen Daumen auf die Tischkante legen kann. Nun müssen alle anderen ebenfalls ihren Daumen auf die Tischkante legen. Der letzte, der es checkt, muss trinken.</string>
+<string name="bigkingscup_case_neun">Die 9 ist mit die beliebteste Karte, denn hier darf sich der Spieler selbst eine beliebige Regel ausdenken, die dann das gesamte restliche Spiel über gilt. Sehr zu empfehlende Vorschläge sind:\n- Man darf generell keine Namen mehr nennen oder alle Leute heissen McLovin\n- Man darf auf niemanden mehr zeigen\n- (beliebig ausbaufähig)</string>
+<string name="bigkingscup_case_zehn">Der Spieler darf an die übrigen Mitspieler zehn Schlücke verteilen.</string>
+<string name="bigkingscup_case_elf">Alle Kerle müssen trinken.</string>
+<string name="bigkingscup_case_zwoelf">Alle Mädels müssen trinken.</string>
+<string name="bigkingscup_case_dreizehn_eins">muss seinen eigenen Glasinhalt noch in den Big King's Cup dazuschütten und dann alles ausexen. HOPP!!!</string>
+<string name="bigkingscup_case_dreizehn_zwei">Der Spieler füllt das grosse Glas in der Mitte mit einem beliebigen Getränk seiner Wahl, so dass es im Anschluss zu einem Viertel gefüllt ist. Der Spieler, welcher den zweiten König zieht, füllt das Glas bis zur Hälfte, der Dritte zu drei Vierteln. Der vierte König muss seinen eigenen Glasinhalt dazukippen und das grosse Glas (den Big King's Cup) leer-exen!</string>
+<string name="bigkingscup_als_naechstes_ist">It\'s</string>
+<string name="bigkingscup_dran">\'s turn</string>
+<string name="bigkingscup_help_message">Es wird reihum gezogen. Es kann solange gespielt werden wie gewünscht; Jedoch werden, sobald alle Karten durch sind die Werte wieder zurückgesetzt. Die Bedeutung der einzelnen Karten können über den \"Erklärung\" Button eingesehen werden.</string>
+
+
 
 <string name="meier_meier">Meier</string>
 
@@ -104,5 +150,5 @@
 <string name="trinkspiele_wurde_entfernt">has been removed</string>
 <string name="trinkspiele_fehler_name_darf_max_zwanzig_zeichen_enthalten">failed: Players must not have more than 20 letters</string>
 <string name="trinkspiele_gib_den_namen_des_neuen_spielers_ein">Type in the name of the new Player</string>
-<string name="trinkspiele_es_sind_keine_spieler_vorhanden">Player's list is already empty</string>
+<string name="trinkspiele_es_sind_keine_spieler_vorhanden">Player\'s list is already empty</string>
 </resources>
