@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -60,16 +61,15 @@ public class Cupoid extends Activity {
 				
 				// Eine nicht editierbare Seek Bar soll angezeigt werden, wenn ein König
 				// erscheint und auf den Erklärung Button geklickt wird
-				if (kategorie.getText().equals("KING'S CUP")) {
+				if (kategorie.getText().equals(getString(R.string.bigkingscup_kings_cup))) {
 					SeekBar cupProgress = new SeekBar(getApplicationContext());
 					cupProgress.setMax(4);
 					cupProgress.setProgress(cup.getKingCounter());
 					dialog.setView(cupProgress);
 				}
-				dialog.setTitle("Erklärung: " + cup.KategorieBestimmen(symbol + " " + wert));
-				dialog.setMessage(cup
-						.erklaerungZuKategorie(symbol + " " + wert));
-				dialog.setPositiveButton("Ok", null);
+				dialog.setTitle(getString(R.string.bigkingscup_erklaerung) + " " + cup.KategorieBestimmen(symbol + " " + wert));
+				dialog.setMessage(cup.erklaerungZuKategorie(symbol + " " + wert));
+				dialog.setPositiveButton(getString(R.string.ok), null);
 				dialog.show();
 				//nötig um die evtl. hinzugefügte Seekbar(nachdem Karte == König) wieder zu entfernen 
 				dialog.setView(null);
@@ -84,18 +84,18 @@ public class Cupoid extends Activity {
 				
 				//Progress Bars aktualisieren
 				progress.incrementProgressBy(1);
-				if (kategorie.getText().equals("KING'S CUP")) 
+				if (kategorie.getText().equals(getString(R.string.bigkingscup_big_kings_cup))) 
 					cup.setKingCounter(cup.getKingCounter() + 1);
 
 				karte = cup.kartenZiehen(1);
 				
 				//Wenn keine Karten mehr vorhanden sind
-				if (karte[0].equals("Deck enthält zu wenig Karten")) {
+				if (karte[0].equals(getString(R.string.karten_deck_enthaelt_zu_wenig_karten))) {
 					werHatGezogen.setText("");
-					kategorie.setText("ALLE KARTEN DURCH");
+					kategorie.setText(getString(R.string.bigkingscup_alle_karten_durch));
 					erklaerung.setVisibility(4);
-					werAlsNaechstes.setText("Klick auf den Button um neu zu starten");
-					button.setText("Neustart");
+					werAlsNaechstes.setText(getString(R.string.bigkingscup_klicke_auf_den_button_um_nue_zu_starten));
+					button.setText(getString(R.string.neustart));
 					image.setImageResource(R.drawable.deckblatt);
 					klokartenBesitzer = new ArrayList<String>();
 					questionMaster.setText("");
@@ -115,15 +115,15 @@ public class Cupoid extends Activity {
 					kategorie.setTextSize(20);
 					erklaerung.setVisibility(0);
 					werAlsNaechstes.setText(cup.werAlsNaechstesDran());
-					button.setText("Karte ziehen");
+					button.setText(getString(R.string.bigkingscup_karte_ziehen));
 					// Wenn eine Klokarte gezogen wurde
-					if (cup.KategorieBestimmen(karte[0]).equals("KLOKARTE")) {
+					if (cup.KategorieBestimmen(karte[0]).equals(getString(R.string.bigkingscup_klokarte))) {
 						klokartenBesitzer.add(Spieler.getVorigerSpieler());
 					}
 					//Daumenmaster und Questionmaster TextViews aktualisieren
-					if(cup.KategorieBestimmen(karte[0]).equals("QUESTION MASTER"))
+					if(cup.KategorieBestimmen(karte[0]).equals(getString(R.string.bigkingscup_question_master)))
 						questionMaster.setText(Spieler.getVorigerSpieler());
-					if(cup.KategorieBestimmen(karte[0]).equals("THUMB MASTER"))
+					if(cup.KategorieBestimmen(karte[0]).equals(getString(R.string.bigkingscup_thumb_master)))
 						daumenMaster.setText(Spieler.getVorigerSpieler());
 				}
 			}
@@ -132,9 +132,9 @@ public class Cupoid extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_KLOKARTE_ENTFERNEN, Menu.NONE, "Klokarte entfernen").setIcon(R.drawable.ic_menu_close);
-		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.ic_menu_info);
-		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.ic_menu_close);
+		menu.add(Menu.NONE, ID_KLOKARTE_ENTFERNEN, Menu.NONE, getString(R.string.bigkingscup_klokarte_entfernen)).setIcon(R.drawable.ic_menu_close);
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, getString(R.string.hilfe)).setIcon(R.drawable.ic_menu_info);
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, getString(R.string.zum_hauptmenue)).setIcon(R.drawable.ic_menu_close);
 		return (super.onCreateOptionsMenu(menu));
 	}
 
@@ -160,21 +160,21 @@ public class Cupoid extends Activity {
 
 	private void klokarteEntfernen() {
 		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-		dialog.setTitle("Klokarte entfernen");
+		dialog.setTitle(getString(R.string.bigkingscup_klokarte_entfernen));
 		String klokartenBesitzerString[] = new String[klokartenBesitzer.size()];
 		for (int i = 0; i < klokartenBesitzerString.length; i++) {
 			klokartenBesitzerString[i] = klokartenBesitzer.get(i);
 		}
 
 		if (klokartenBesitzer.size() == 0) {
-			dialog.setMessage("Keine Klokarten vorhanden");
-			dialog.setPositiveButton("Ok", null);
+			dialog.setMessage(getString(R.string.bigkingscup_keine_klokarten_vorhanden));
+			dialog.setPositiveButton(getString(R.string.ok), null);
 		} else {
 			dialog.setItems(klokartenBesitzerString,
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int item) {
-							Toast.makeText( getApplicationContext(),("Klokarte von " + 
-									klokartenBesitzer.get(item) + " wurde entfernt"), Toast.LENGTH_SHORT).show();
+							Toast.makeText( getApplicationContext(),(getString(R.string.bigkingscup_klokarte_von) + " " + 
+									klokartenBesitzer.get(item) + " " + getString(R.string.bigkingscup_wurde_entfernt)), Toast.LENGTH_SHORT).show();
 							klokartenBesitzer.remove(item);
 						}
 					});

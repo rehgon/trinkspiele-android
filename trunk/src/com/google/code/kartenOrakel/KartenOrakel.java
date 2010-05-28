@@ -44,7 +44,7 @@ public class KartenOrakel extends KartenSpiel {
 		karten[0] = karte;
 		
 		String symbol = kartenSymbolBestimmen(karte);
-		String wert = karte.substring(karte.indexOf(" "));
+		String wert = karte.substring(karte.indexOf(" ") + 1);
 		
 		//Nicht ins xml verlagert, da sonst im englischen der Kartenwert und symbol vertauscht sind
 		if (karte.contains("Diamonds") || karte.contains("Hearts") ||

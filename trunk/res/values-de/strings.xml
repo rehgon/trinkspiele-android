@@ -4,10 +4,12 @@
 
 <string name="abbrechen">Abbrechen</string>
 <string name="ok">Ok</string>
+<string name="neustart">Nuestart</string>
 <string name="hilfe">Hilfe</string>
 <string name="kritischer_fehler">Kritischer Fehler!!!</string>
 <string name="zum_hauptmenue">Zum Hauptmenü</string>
 <string name="beenden">Beenden</string>
+<string name="fortschritt">Fortschritt:</string>
 
 <string name="karten_herz">Herz</string>
 <string name="karten_karo">Karo</string>
@@ -66,6 +68,47 @@
 <string name="assrennen_ass_rennen">Ass Rennen</string>
 
 <string name="bigkingscup_big_kings_cup">Big King\'s Cup</string>
+<string name="bigkingscup_um_das_spiel_zu_starten_button_klicken">Um das Spiel zu starten auf den Button klicken</string>
+<string name="bigkingscup_kings_cup">KING'S CUP</string>
+<string name="bigkingscup_erklaerung">Erklärung:</string>
+<string name="bigkingscup_alle_karten_durch">Alle Karten durch</string>
+<string name="bigkingscup_klicke_auf_den_button_um_nue_zu_starten">Klicke auf den Button um neu zu starten</string>
+<string name="bigkingscup_karte_ziehen">Karte ziehen</string>
+<string name="bigkingscup_erklaeung_zu_kategoerie">Erklärung zu Kategorie</string>
+<string name="bigkingscup_klokarte">KLOKARTE</string>
+<string name="bigkingscup_question_master">QUESTION MASTER</string>
+<string name="bigkingscup_thumb_master">THUMB MASTER</string>
+<string name="bigkingscup_klokarte_entfernen">Klokarte entfernen</string>
+<string name="bigkingscup_keine_klokarten_vorhanden">Keine Klokarten vorhanden</string>
+<string name="bigkingscup_klokarte_von">Klokarte von</string>
+<string name="bigkingscup_wurde_entfernt">wurde entfernt</string>
+<string name="bigkingscup_alle_trinken">ALLE TRINKEN</string>
+<string name="bigkingscup_kategorie">KATEGORIE</string>
+<string name="bigkingscup_reim">REIM</string>
+<string name="bigkingscup_counter">COUNTER</string>
+<string name="bigkingscup_fettnaepfchen">FETTNÄPFCHEN</string>
+<string name="bigkingscup_regel_ausdenken">REGEL AUSDENKEN</string>
+<string name="bigkingscup_zehn_schluecke_verteilen">10 SCHLÜCKE VERTEILEN</string>
+<string name="bigkingscup_maenner_trinken">MÄNNER TRINKEN</string>
+<string name="bigkingscup_maedels_trinken">MÄDELS TRINKEN</string>
+<string name="bigkingscup_kritischer_fehler">KRITISCHER FEHLER</string>
+<string name="bigkingscup_case_eins">Schlichtes Hochpuschen des Kollektivpegels.</string>
+<string name="bigkingscup_case_zwei">Der Spieler sucht sich ein Genre aus (z.B. Obstarten, Getränkemarken, Zigaretten) und nennt einen Begriff daraus. Nun muss reihum jeweils ein weiterer genannt werden, solange bis einem Spieler kein Begriff mehr einfällt, einen bereits genannten Begriff noch einmal nennt oder sich sonstwie vertut. Dieser muss dann trinken.</string>
+<string name="bigkingscup_case_drei">Der Spieler sucht sich ein beliebiges Wort aus (z.B. Tisch) und nun geht es wieder reihum. Jeder muss ein sich darauf reimendes Wort (z.B. Fisch,..) nennen. Der erste, dem keins mehr einfällt trinkt.</string>
+<string name="bigkingscup_case_vier">Dem Spieler, der eine 4 zieht, dürfen keine Fragen mehr beantwortet werden, egal welcher Art. Dies kann und soll er natürlich ausnutzen, um die anderen zum trinken zu bringen, denn wer antwortet, muss trinken. Der Spieler hat den Status Questionmaster solange, bis ein anderer Spieler eine 4 zieht.</string>
+<string name="bigkingscup_case_fuenf">Der Spieler sucht sich eine Zahl zwischen 3 und 9 aus. Nun geht es reihum und es wird gezählt. Jedoch muss bei jeder Zahl, welche durch die ausgewählte teilbar ist oder in der diese Ziffer vorkommt, nicht die Zahl sondern ein vorher festzulegendes Wort genannt werden (Empfehlung: FICKEN). Das sieht dann folgendermassen aus (bei der gewählten Zahl 3): 1, 2, ficken, 4, 5, ficken, 7, 8, ficken, 10, 11, ficken, ficken, 14, usw. Wer sich vertut, inwiefern auch immer, muss trinken.</string>
+<string name="bigkingscup_case_sechs">Da vor allem Bier gut auf die Blase geht, ist es sehr nützlich, sich auf der Toilette dem Harndrangs zu entledigen. Dies ist aber nur im Besitz einer Klokarte erlaubt. Klokarten können übrigens über das Optionsmenü wieder entfernt werden, sobald jemand eine einlösen möchte.</string>
+<string name="bigkingscup_case_sieben">Trinke selber</string>
+<string name="bigkingscup_case_acht">Der Spieler ist nun analog zum Questionmaster der Thumbmaster. Dies bedeutet, dass er beliebig oft und nach Lust und Laune seinen Daumen auf die Tischkante legen kann. Nun müssen alle anderen ebenfalls ihren Daumen auf die Tischkante legen. Der letzte, der es checkt, muss trinken.</string>
+<string name="bigkingscup_case_neun">Die 9 ist mit die beliebteste Karte, denn hier darf sich der Spieler selbst eine beliebige Regel ausdenken, die dann das gesamte restliche Spiel über gilt. Sehr zu empfehlende Vorschläge sind:\n- Man darf generell keine Namen mehr nennen oder alle Leute heissen McLovin\n- Man darf auf niemanden mehr zeigen\n- (beliebig ausbaufähig)</string>
+<string name="bigkingscup_case_zehn">Der Spieler darf an die übrigen Mitspieler zehn Schlücke verteilen.</string>
+<string name="bigkingscup_case_elf">Alle Kerle müssen trinken.</string>
+<string name="bigkingscup_case_zwoelf">Alle Mädels müssen trinken.</string>
+<string name="bigkingscup_case_dreizehn_eins">muss seinen eigenen Glasinhalt noch in den Big King's Cup dazuschütten und dann alles ausexen. HOPP!!!</string>
+<string name="bigkingscup_case_dreizehn_zwei">Der Spieler füllt das grosse Glas in der Mitte mit einem beliebigen Getränk seiner Wahl, so dass es im Anschluss zu einem Viertel gefüllt ist. Der Spieler, welcher den zweiten König zieht, füllt das Glas bis zur Hälfte, der Dritte zu drei Vierteln. Der vierte König muss seinen eigenen Glasinhalt dazukippen und das grosse Glas (den Big King's Cup) leer-exen!</string>
+<string name="bigkingscup_als_naechstes_ist">Als nächstes ist</string>
+<string name="bigkingscup_dran">" dran"</string>
+<string name="bigkingscup_help_message">Es wird reihum gezogen. Es kann solange gespielt werden wie gewünscht; Jedoch werden, sobald alle Karten durch sind die Werte wieder zurückgesetzt. Die Bedeutung der einzelnen Karten können über den \"Erklärung\" Button eingesehen werden.</string>
 
 <string name="meier_meier">Meier</string>
 

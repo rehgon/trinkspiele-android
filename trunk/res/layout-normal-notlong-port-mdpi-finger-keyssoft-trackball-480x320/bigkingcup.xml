@@ -8,11 +8,10 @@
 	<TextView 
 		android:id="@+id/bigKingTitel" 
 		android:layout_height="wrap_content" 
-		android:text="Big King's Cup" 
 		android:layout_width="fill_parent" 
 		android:gravity="center" 
 		android:textColor="@color/bigKingTextColor" 
-		android:textSize="@dimen/titelTextSize" android:padding="@dimen/titelPadding"/>
+		android:textSize="@dimen/titelTextSize" android:padding="@dimen/titelPadding" android:text="@string/bigkingscup_big_kings_cup"/>
 		
 	<ImageView
 		android:id="@+id/bigKingImage"
@@ -25,10 +24,9 @@
 		
 	<TextView
 		android:id="@+id/bigKingWerHatGezogen"
-		android:text="Um das Spiel zu starten auf den Button klicken"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:textColor="@color/bigKingTextColor" android:ellipsize="start" android:lines="2" android:gravity="center|top" android:paddingTop="5px"/>
+		android:textColor="@color/bigKingTextColor" android:ellipsize="start" android:lines="2" android:gravity="center|top" android:paddingTop="5px" android:text="@string/bigkingscup_um_das_spiel_zu_starten_button_klicken"/>
 		
 	<TextView
 		android:id="@+id/bigKingKategorie"
@@ -41,11 +39,10 @@
 	
 	<Button
 		android:id="@+id/bigKingErklaerungButton"
-		android:text="Erklärung zu Kategorie"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center" 
-		android:visibility="invisible" android:padding="10px"/>
+		android:visibility="invisible" android:padding="10px" android:text="@string/bigkingscup_erklaeung_zu_kategoerie"/>
 		
 	<TextView
 		android:id="@+id/bigKingWerAlsNaechstes"
@@ -57,12 +54,11 @@
 		android:textColor="@color/bigKingTextColor" android:ellipsize="middle"/>
 
 	<Button 
-		android:text="Karte ziehen" 
 		android:id="@+id/bigKingButton" 
 		android:layout_width="wrap_content" 
 		android:layout_height="wrap_content"
 		android:padding="10px"
-		android:layout_gravity="center"/>
+		android:layout_gravity="center" android:text="@string/bigkingscup_karte_ziehen"/>
 		
 	<TableLayout
 		android:layout_width="fill_parent"
@@ -76,8 +72,7 @@
 			<TextView
 				android:layout_width="wrap_content" 
 				android:layout_height="wrap_content"
-				android:text="Fortschritt: "
-				android:textColor="@color/bigKingTextColor" android:layout_weight="1" android:lines="1" android:width="50px"/>
+				android:textColor="@color/bigKingTextColor" android:layout_weight="1" android:lines="1" android:width="50px" android:text="@string/fortschritt"/>
 				
 			<TextView
 				android:text="Question Master:"
