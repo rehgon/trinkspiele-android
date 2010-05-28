@@ -68,11 +68,11 @@ public class SimonSays extends ListActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ADD_ID, Menu.NONE, "Add").setIcon(R.drawable.add)
+		menu.add(Menu.NONE, ADD_ID, Menu.NONE, "Add").setIcon(R.drawable.ic_menu_add)
 				.setAlphabeticShortcut('a');
 		menu.add(Menu.NONE, CLOSE_ID, Menu.NONE, "Close").setIcon(
 				R.drawable.eject).setAlphabeticShortcut('c');
-		menu.add(Menu.NONE, DELETE_ID, Menu.NONE, "Delete").setIcon(R.drawable.remove);
+		menu.add(Menu.NONE, DELETE_ID, Menu.NONE, "Delete").setIcon(R.drawable.ic_menu_close);
 
 		return (super.onCreateOptionsMenu(menu));
 	}
@@ -128,7 +128,7 @@ public class SimonSays extends ListActivity {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						processAdd(wrapper);
 					}
-				}).setNegativeButton(R.string.cancel,
+				}).setNegativeButton(R.string.abbrechen,
 				new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
 						// ignore, just dismiss
@@ -146,7 +146,7 @@ public class SimonSays extends ListActivity {
 										int whichButton) {
 									processDelete(rowId);
 								}
-							}).setNegativeButton(R.string.cancel,
+							}).setNegativeButton(R.string.abbrechen,
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int whichButton) {

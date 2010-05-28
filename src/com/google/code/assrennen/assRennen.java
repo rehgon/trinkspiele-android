@@ -29,7 +29,7 @@ public class assRennen extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.assrennen);
-        neuesSpiel = new AssRennenLogik();
+        neuesSpiel = new AssRennenLogik(getApplicationContext());
         textFenster = (TextView)findViewById(R.id.TextAusgabe);
         karte = (ImageView)findViewById(R.id.ImageView01);
         naechsteKarte = (Button)findViewById(R.id.Button01);
@@ -47,7 +47,11 @@ public class assRennen extends Activity {
 				else
 				{
 					String ausgabe = neuesSpiel.assRennenkarteZiehen();
+					
 					neuesSpiel.paint(neuesSpiel, karte, neuesSpiel.getAktuellesKartenSymbol(), neuesSpiel.getAktuellerKartenWert());
+
+					neuesSpiel.paint(neuesSpiel, karte, neuesSpiel.getAktuellesKartenSymbol(), neuesSpiel.getAktuellerKartenWert());
+
 					textFenster.setText(ausgabe);
 				}
 				
@@ -55,7 +59,7 @@ public class assRennen extends Activity {
 				{
 					naechsteKarte.setText("Neustart");
 					counter = 1;
-					neuesSpiel = new AssRennenLogik();
+					neuesSpiel = new AssRennenLogik(getApplicationContext());
 				}
 				else if(counter==1)
 				{	
@@ -69,8 +73,6 @@ public class assRennen extends Activity {
         
         }
        
-        
-      
         private void restarting()
         {
 			naechsteKarte.setText("neue Karte");
@@ -80,8 +82,8 @@ public class assRennen extends Activity {
 
 		@Override
 		public boolean onCreateOptionsMenu(Menu menu) {
-			menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.info);
-			menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.close);
+			menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.ic_menu_info);
+			menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.ic_menu_close);
 			return (super.onCreateOptionsMenu(menu));
 		}
 		

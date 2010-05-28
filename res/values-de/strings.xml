@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">SaufOMat</string>
+
+<string name="abbrechen">Abbrechen</string>
+<string name="ok">Ok</string>
+<string name="hilfe">Hilfe</string>
+<string name="kritischer_fehler">Kritischer Fehler!!!</string>
+<string name="zum_hauptmenue">Zum Hauptmenü</string>
+<string name="beenden">Beenden</string>
+
+<string name="karten_herz">Herz</string>
+<string name="karten_karo">Karo</string>
+<string name="karten_kreuz">Kreuz</string>
+<string name="karten_pik">Pik</string>
+<string name="karten_bube">Bube</string>
+<string name="karten_dame">Dame</string>
+<string name="karten_koenig">König</string>
+<string name="karten_ass">Ass</string>
+<string name="karten_deck_enthaelt_zu_wenig_karten">Deck enthält zu wenig Karten</string>
+
+<string name="woody_zu_beginn_muss_ein_woody_gewaehlt_werden__">Zu Beginn muss ein Woody gewählt werden, auf den Button klicken um fortzufahren</string>
+<string name="woody_aktueller_spieler">Aktueller Spieler</string>
+<string name="woody_wuerfeln">würfeln</string>
+<string name="woody_wer_ist_woody">Wer ist Woody</string>
+<string name="woody_neuen_woody_bestimmen">Neuen Woody bestimmen</string>
+<string name="woody_woody_bestimmen">Woody bestimmen</string>
+<string name="woody_woody_ist">Woody ist</string>
+<string name="woody_ist_dran_mit_wuerfeln">" ist dran mit würfeln"</string>
+<string name="woody_woody">Woody</string>
+<string name="woody_muss_trinken">muss trinken</string>
+<string name="woody_der_woody">der Woody</string>
+<string name="woody_nichts_passiert">Nichts passiert</string>
+<string name="woody_darf_einen_neuen_woody_waehlen">darf einen neuen Woody wählen</string>
+<string name="woody_er_pasch">er Pasch</string>
+<string name="woody_schluecke_verteilen">Schlücke verteilen</string>
+<string name="woody_darf_einen_schluck_verteilen">darf 1 Schluck verteilen</string>
+<string name="woody_darf">darf</string>
+<string name="woody_und">und</string>
+<string name="woody_s_linker_nachbar">\'s linker Nachbar</string>
+<string name="woody_s_rechter_nachbar">\'s rechter Nachbar</string>
+<string name="woody_muessen_trinken">müssen trinken</string>
+<string name="woody_alle_nehmen_einen_Schluck">alle nehmen einen Schluck</string>
+<string name="woody_jackpot">JACKPOT!!!</string>
+<string name="woody_Der_woody">Der Woody</string>
+<string name="woody_help_message">Es wird reihum, offen gewürfelt. Zu Beginn muss sich jemand freiwillig zum Woody ernennen. Der Woody trinkt immer wenn eine 3 in einem Würfel vorkommt oder wenn die Summe 3 ergibt. Wenn der Woody selbst eine 3 würfelt, darf er einen neuen Woody wählen. Der Woody kann auch jederzeit über das Optionsmenü geändert werden. Hat ein Spieler einen Pasch, so darf er die Menge an Schlücken verteilen die auf einem Würfel steht. Eine Ausnahme besteht darin, wenn der Spieler zwei sechsen würfelt, dann darf er die Summe aus beiden Würfeln verteilen. Hat ein Spieler die Summe 7 gewürfelt, muss sein linker Nachbar trinken, bei 9 der rechte Nachbar. Diese Möglichkeiten sind kummulierbar (Bsp.: wenn jemand 3 &amp; 4 würfelt muss der linke Nachbar und der Woody trinken.</string><string name="woody___nur_eng__its"></string>
+
+<string name="orakel_Diese_und_die_vorige_karte_sind_gleichwertig_nichts_passiert">Diese und die vorige Karte sind gleichwertig,\nnichts passiert.\n\n</string>
+<string name="orakel_karte_tatsaechlich_hoeher">Die Karte ist tatsächlich höher,\nsie lagen richtig.\n\n</string>
+<string name="orakel_karte_leider_tiefer">Die Karte ist leider tiefer,\nsie lagen falsch.\n\n</string>
+<string name="orakel_karte_tatsaechlich_tiefer">Die Karte ist tatsächlich tiefer,\nsie lagen richtig.\n\n</string>
+<string name="orakel_karte_leider_hoeher">Die Karte ist leider höher,\nsie lagen falsch.\n\n</string>
+<string name="orakel_glauben_sie_karte_hoeher_oder_tiefer">Glauben sie die nächste Karte, die sie ziehen\nwird höher oder tiefer sein als diese?</string>
+<string name="orakel_help_message">Simples Spiel für zwischendurch. Es geht einfach darum zu raten ob die nächste Karte höher oder tiefer sein wird als die aktuelle Karte.</string>
+<string name="orakel_richtige">Richtige:</string>
+<string name="orakel_falsche">Falsche:</string>
+<string name="orakel_richtige_O">Richtige: 0</string>
+<string name="orakel_falsche_O">Falsche: 0</string>
+<string name="orakel_karten_durch_stapel_um_neustart">Alle Karten durch, klicken sie auf den Stapel, um neu zu starten.</string>
+<string name="orakel_tiefer">Tiefer</string>
+<string name="orakel_hoeher">Höher</string>
+<string name="orakel_karten_orakel">Karten Orakel</string>
+<string name="orakel_klicke_stapel_um_zu_beginnen">Klicke auf den Stapel um zu beginnen</string>
+<string name="orakel_resultat">Resultat</string>
+
+<string name="assrennen_ass_rennen">Ass Rennen</string>
+
+<string name="bigkingscup_big_kings_cup">Big King\'s Cup</string>
+
+<string name="meier_meier">Meier</string>
+
+<string name="siebensaeuft_siebensaeuft">Sieben säuft</string>
+
+<string name="simon_says_simon_says">Simon says</string>
+
+<string name="trinkspiele_titel">Trinkspiele</string>
+<string name="trinkspiele_zu_wenig_spieler_vorhanden">Zu wenig Spieler vorhanden</string>
+<string name="trinkspiele_du_musst_noch_mindestens">Du musst noch mindestens</string>
+<string name="trinkspiele_noch_spieler_hinzufuegen">Spieler hinzufügen</string>
+<string name="trinkspiele_spieler_hinzufuegen">Spieler hinzufügen</string>
+<string name="trinkspiele_du_musst_noch_mindestens_1_spieler_hinzufuegen">Du muss noch mindestens 1 Spieler hinzufügen</string>
+<string name="trinkspiele_spieler_entfernen">Spieler entfernen</string>
+<string name="trinkspiele_wurde_entfernt">wurde entfernt</string>
+<string name="trinkspiele_fehler_name_darf_max_zwanzig_zeichen_enthalten">Fehler: Name darf maximal 20 Zeichen enthalten</string>
+<string name="trinkspiele_gib_den_namen_des_neuen_spielers_ein">Gib den Namen des neuen Spielers ein:</string>
+<string name="trinkspiele_es_sind_keine_spieler_vorhanden">Es sind keine Spieler vorhanden</string>
+</resources>

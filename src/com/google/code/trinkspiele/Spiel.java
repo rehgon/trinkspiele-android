@@ -9,7 +9,7 @@ public abstract class Spiel {
 	public void createHelperDialog(Context context, String message) {
 
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
-		builder.setTitle("Hilfe");
+		builder.setTitle(context.getString(R.string.hilfe));
 		builder.setMessage(message);
 		builder.setPositiveButton("Ok", null);
 		builder.show();

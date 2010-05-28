@@ -1,13 +1,17 @@
 package com.google.code.kingsCup;
 
+import android.content.Context;
+
 import com.google.code.trinkspiele.KartenSpiel;
 import com.google.code.trinkspiele.Spieler;
 
 public class BigKingsCup extends KartenSpiel {
 	int kingCounter;
+	Context context;
 	
-	public BigKingsCup() {
-		super();
+	public BigKingsCup(Context context) {
+		super(context);
+		this.context = context;
 		kingCounter = 1;
 		deckMischen();
 	}

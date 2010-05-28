@@ -42,7 +42,7 @@ public class Cupoid extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.bigkingcup);
 		
-		cup = new BigKingsCup();
+		cup = new BigKingsCup(getApplicationContext());
 		image = (ImageView) findViewById(R.id.bigKingImage);
 		werHatGezogen = (TextView) findViewById(R.id.bigKingWerHatGezogen);
 		kategorie = (TextView) findViewById(R.id.bigKingKategorie);
@@ -100,7 +100,7 @@ public class Cupoid extends Activity {
 					klokartenBesitzer = new ArrayList<String>();
 					questionMaster.setText("");
 					daumenMaster.setText("");
-					cup = new BigKingsCup();
+					cup = new BigKingsCup(getApplicationContext());
 					cup.setKingCounter(1);
 					progress.setProgress(0);
 				//Wenn noch Karten vorhanden sind
@@ -132,9 +132,9 @@ public class Cupoid extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_KLOKARTE_ENTFERNEN, Menu.NONE, "Klokarte entfernen").setIcon(R.drawable.remove);
-		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.info);
-		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.close);
+		menu.add(Menu.NONE, ID_KLOKARTE_ENTFERNEN, Menu.NONE, "Klokarte entfernen").setIcon(R.drawable.ic_menu_close);
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.ic_menu_info);
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.ic_menu_close);
 		return (super.onCreateOptionsMenu(menu));
 	}
 

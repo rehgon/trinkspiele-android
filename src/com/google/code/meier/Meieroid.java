@@ -85,7 +85,6 @@ public class Meieroid extends Activity {
 		builder.setTitle("Wähle eine Zahl");
 		builder.setSingleChoiceItems(charNumbers, 0, new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
 				String s = (String) charNumbers[which];
