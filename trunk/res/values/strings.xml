@@ -91,7 +91,7 @@
 
 <string name="bigkingscup_big_kings_cup">Big King\'s Cup</string>
 <string name="bigkingscup_um_das_spiel_zu_starten_button_klicken">Click on the button to start the game</string>
-<string name="bigkingscup_kings_cup">KING'S CUP</string>
+<string name="bigkingscup_kings_cup">KING\'S CUP</string>
 <string name="bigkingscup_erklaerung">Explanation:</string>
 <string name="bigkingscup_alle_karten_durch">Pile is empty</string>
 <string name="bigkingscup_klicke_auf_den_button_um_nue_zu_starten">Click on the Button to restart</string>
@@ -126,8 +126,8 @@
 <string name="bigkingscup_case_zehn">Der Spieler darf an die übrigen Mitspieler zehn Schlücke verteilen.</string>
 <string name="bigkingscup_case_elf">Alle Kerle müssen trinken.</string>
 <string name="bigkingscup_case_zwoelf">Alle Mädels müssen trinken.</string>
-<string name="bigkingscup_case_dreizehn_eins">muss seinen eigenen Glasinhalt noch in den Big King's Cup dazuschütten und dann alles ausexen. HOPP!!!</string>
-<string name="bigkingscup_case_dreizehn_zwei">Der Spieler füllt das grosse Glas in der Mitte mit einem beliebigen Getränk seiner Wahl, so dass es im Anschluss zu einem Viertel gefüllt ist. Der Spieler, welcher den zweiten König zieht, füllt das Glas bis zur Hälfte, der Dritte zu drei Vierteln. Der vierte König muss seinen eigenen Glasinhalt dazukippen und das grosse Glas (den Big King's Cup) leer-exen!</string>
+<string name="bigkingscup_case_dreizehn_eins">muss seinen eigenen Glasinhalt noch in den Big King\'s Cup dazuschütten und dann alles ausexen. HOPP!!!</string>
+<string name="bigkingscup_case_dreizehn_zwei">Der Spieler füllt das grosse Glas in der Mitte mit einem beliebigen Getränk seiner Wahl, so dass es im Anschluss zu einem Viertel gefüllt ist. Der Spieler, welcher den zweiten König zieht, füllt das Glas bis zur Hälfte, der Dritte zu drei Vierteln. Der vierte König muss seinen eigenen Glasinhalt dazukippen und das grosse Glas (den Big King\'s Cup) leer-exen!</string>
 <string name="bigkingscup_als_naechstes_ist">It\'s</string>
 <string name="bigkingscup_dran">\'s turn</string>
 <string name="bigkingscup_help_message">Es wird reihum gezogen. Es kann solange gespielt werden wie gewünscht; Jedoch werden, sobald alle Karten durch sind die Werte wieder zurückgesetzt. Die Bedeutung der einzelnen Karten können über den \"Erklärung\" Button eingesehen werden.</string>
