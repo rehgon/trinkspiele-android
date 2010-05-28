@@ -1,5 +1,7 @@
 package com.google.code.assrennen;
 
+import android.content.Context;
+
 import com.google.code.trinkspiele.KartenSpiel;
 
 public class AssRennenLogik extends KartenSpiel {
@@ -7,8 +9,11 @@ public class AssRennenLogik extends KartenSpiel {
 	public String[] kartenHalter;
 	private String aktuellesKartenSymbol;
 	private int aktuellerKartenWert;
+	Context context;
 	
-	public AssRennenLogik() {
+	public AssRennenLogik(Context context) {
+		super(context);
+		this.context = context;
 		super.geordnetesDeckGenerieren();
 		super.deckMischen();
 		aceCounter = 0;
@@ -17,12 +22,11 @@ public class AssRennenLogik extends KartenSpiel {
 	public int getAceCounter() {
 		return aceCounter;
 	}
-	public String getAktuellesKartenSymbol()
-	{
+
+	public String getAktuellesKartenSymbol() {
 		return aktuellesKartenSymbol;
 	}
-	public int getAktuellerKartenWert()
-	{
+	public int getAktuellerKartenWert() {
 		return aktuellerKartenWert;
 	}
 	
@@ -30,7 +34,12 @@ public class AssRennenLogik extends KartenSpiel {
 		String ausgabe = "";
 		
 		while (aceCounter < 4) {
+			
 				String[] karte = super.kartenZiehen(1);
+				aktuellesKartenSymbol = kartenSymbolBestimmen(karte[0]);
+				aktuellerKartenWert = kartenWertBestimmen(karte[0]);
+				
+
 				aktuellesKartenSymbol = kartenSymbolBestimmen(karte[0]);
 				aktuellerKartenWert = kartenWertBestimmen(karte[0]);
 				kartenHalter = karte;

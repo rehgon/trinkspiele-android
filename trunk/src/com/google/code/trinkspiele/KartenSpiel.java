@@ -4,6 +4,7 @@ package com.google.code.trinkspiele;
 import java.util.ArrayList;
 import java.util.Random;
 
+import android.content.Context;
 import android.widget.ImageView;
 
 public abstract class KartenSpiel extends Spiel {
@@ -11,6 +12,7 @@ public abstract class KartenSpiel extends Spiel {
 	private ArrayList<String> deck = new ArrayList<String>();
 	private String[] kartenSymbole;
 	private String[] kartenWerte;
+	Context context;
 	
 	int[] cardDrawablesLocationPik = {
 			R.drawable.pikass,
@@ -78,12 +80,33 @@ public abstract class KartenSpiel extends Spiel {
 	
 	
 	
-	public KartenSpiel() {
+	public KartenSpiel(Context context) {
+		this.context = context;
 		generator = new Random();
 		deck = new ArrayList<String>();
-		kartenSymbole = new String[] { "Karo", "Kreuz", "Herz", "Pik" };
-		kartenWerte = new String[] { "2", "3", "4", "5", "6", "7",
-				"8", "9", "10", "Bube", "Dame", "König", "Ass"};
+		
+		kartenSymbole = new String[] { 
+				context.getString(R.string.karten_karo),
+				context.getString(R.string.karten_herz),
+				context.getString(R.string.karten_pik),
+				context.getString(R.string.karten_kreuz)
+		};
+		kartenWerte = new String[] { 
+				"2", 
+				"3", 
+				"4", 
+				"5", 
+				"6", 
+				"7", 
+				"8", 
+				"9", 
+				"10", 
+				context.getString(R.string.karten_bube), 
+				context.getString(R.string.karten_dame), 
+				context.getString(R.string.karten_koenig), 
+				context.getString(R.string.karten_ass)
+		};
+		
 		geordnetesDeckGenerieren();
 	}
 	
@@ -146,7 +169,7 @@ public abstract class KartenSpiel extends Spiel {
 		}
 		else {
 			 karte = new String[1];
-			 karte[0] = "Deck enthält zu wenig Karten";
+			 karte[0] = context.getString(R.string.karten_deck_enthaelt_zu_wenig_karten);
 		}
 		return karte;
 	}
@@ -215,20 +238,20 @@ public abstract class KartenSpiel extends Spiel {
 		wert--;
 		
 		try {
-			if (symbol.equals("Pik")) {
+			if (symbol.equals("Pik") || symbol.equals("Spades")) {
 				image.setImageResource(cardDrawablesLocationPik[wert]);			
 			}
-			else if (symbol.equals("Karo")) {
+			else if (symbol.equals("Karo") || symbol.equals("Diamonds")) {
 				image.setImageResource(cardDrawablesLocationKaro[wert]);
 			}
-			else if (symbol.equals("Herz")) {
+			else if (symbol.equals("Herz") || symbol.equals("Hearts")) {
 				image.setImageResource(cardDrawablesLocationHerz[wert]);
 			}
-			else if (symbol.equals("Kreuz")) {
+			else if (symbol.equals("Kreuz") || symbol.equals("Clubs")) {
 				image.setImageResource(cardDrawablesLocationKreuz[wert]);
 			}
 			else {
-				image.setImageResource(R.drawable.cancel);
+				image.setImageResource(R.drawable.ic_menu_cancel);
 			}
 		}
 		catch(Exception e) {

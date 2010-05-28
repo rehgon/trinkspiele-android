@@ -8,7 +8,7 @@
   android:orientation="vertical">
   
 	<TextView 
-		android:text="Karten Orakel"
+		android:text="@string/orakel_karten_orakel"
 		android:layout_height="wrap_content"  
 		android:gravity="center" 
 		android:padding="@dimen/titelPadding" 
@@ -22,7 +22,19 @@
 		android:layout_height="wrap_content" 
 		android:src="@drawable/deckblatt" 
 		android:layout_gravity="center" 
-		android:id="@+id/kartenOrakelImage" android:layout_width="wrap_content" android:padding="0px"/><TextView android:id="@+id/kartenOrakelAusgabe" android:layout_height="wrap_content" android:textColor="@color/kartenOrakelTextColor" android:layout_width="fill_parent" android:padding="10px" android:text="Auf den Stapel klicken um zu beginnen" android:gravity="center|top" android:lines="8"/>
+		android:id="@+id/kartenOrakelImage" 
+		android:layout_width="wrap_content" 
+		android:padding="0px"/>
+	
+	<TextView 
+		android:id="@+id/kartenOrakelAusgabe" 
+		android:layout_height="wrap_content" 
+		android:textColor="@color/kartenOrakelTextColor" 
+		android:layout_width="fill_parent" 
+		android:padding="10px" 
+		android:text="@string/orakel_klicke_stapel_um_zu_beginnen"
+		android:gravity="center|top" 
+		android:lines="8"/>
 		
 	
 <TableLayout 
@@ -31,14 +43,18 @@
 	
 	<TableRow 
 		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content"><Button android:text="tiefer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:padding="10px" android:visibility="invisible" android:id="@+id/kartenOrakeltieferButton"/><Button android:text="höher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:padding="10px" android:visibility="invisible" android:id="@+id/kartenOrakelHoeherButton"/></TableRow>
+		android:layout_height="wrap_content">
+		
+		<Button android:text="@string/orakel_tiefer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:padding="10px" android:visibility="invisible" android:id="@+id/kartenOrakeltieferButton"/>
+		
+		<Button android:text="@string/orakel_hoeher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:padding="10px" android:visibility="invisible" android:id="@+id/kartenOrakelHoeherButton"/></TableRow>
 		
 		
 		
 		
 		<TableRow android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
-<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/kartenOrakelRichtigTextView" android:text="Richtige: 0"></TextView>
-<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/kartenOrakelFalschTextView" android:text="Falsche: 0"></TextView>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/kartenOrakelRichtigTextView" android:text="@string/orakel_richtige_O"></TextView>
+<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/kartenOrakelFalschTextView" android:text="@string/orakel_falsche_O"></TextView>
 <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/progressBarKarten" android:max="52" style="?android:attr/progressBarStyleHorizontal"></ProgressBar>
 </TableLayout>
 </LinearLayout>

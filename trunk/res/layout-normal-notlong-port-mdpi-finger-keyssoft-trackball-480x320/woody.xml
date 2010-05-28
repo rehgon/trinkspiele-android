@@ -13,22 +13,20 @@
 		android:text="WOODY" 
 		android:textColor="@color/TextColorWoodroid" 
 		android:padding="10px" 
-		android:gravity="center" android:shadowRadius="2" android:drawableRight="@drawable/info" android:drawableLeft="@drawable/info" android:shadowColor="#FFFFFF"/>
+		android:gravity="center" android:shadowRadius="2" android:shadowColor="#FFFFFF"/>
 	<TextView 
 		android:layout_height="wrap_content" 
-		android:text="wer ist woody:"
 		android:id="@+id/WerIstWoodyLabel" 
 		android:paddingLeft="5px" 
 		android:textColor="@color/TextColorWoodroid" 
-		android:layout_width="fill_parent" android:paddingRight="5px" android:textSize="16px"/>
+		android:layout_width="fill_parent" android:paddingRight="5px" android:textSize="16px" android:text="@string/woody_wer_ist_woody"/>
 		
 	<TextView 
-		android:text="Aktueller Spieler: " 
 		android:id="@+id/aktuellerSpieler"
 		android:layout_height="wrap_content" 
 		android:paddingLeft="5px" 
 		android:textColor="@color/TextColorWoodroid" 
-		android:layout_width="fill_parent" android:paddingRight="5px" android:textSize="16px"/>
+		android:layout_width="fill_parent" android:paddingRight="5px" android:textSize="16px" android:text="@string/woody_aktueller_spieler"/>
 		
 	<TableLayout 
 		android:layout_height="wrap_content"
@@ -69,8 +67,7 @@
 		android:id="@+id/Button01"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="würfeln" 
-		android:layout_gravity="center"></Button>
+		android:layout_gravity="center" android:text="@string/woody_wuerfeln"></Button>
 
 
 </LinearLayout>

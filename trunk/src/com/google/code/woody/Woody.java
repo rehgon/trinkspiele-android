@@ -1,7 +1,9 @@
 package com.google.code.woody;
 
 import java.util.Random;
+import android.content.Context;
 
+import com.google.code.trinkspiele.R;
 import com.google.code.trinkspiele.Spieler;
 import com.google.code.trinkspiele.Wuerfelspiel;
 
@@ -9,11 +11,13 @@ public class Woody extends Wuerfelspiel {
 
 	private String werIstWoody;
 	private boolean neuerWoody;
+	private Context context;
 
-	public Woody() {
+	public Woody(Context context) {
 		super();
 		werIstWoody = "";
 		neuerWoody = false;
+		this.context = context;
 	}
 
 	public String getWerIstWoody() {
@@ -33,17 +37,22 @@ public class Woody extends Wuerfelspiel {
 	public String auswerten(int ergebnis) {
 
 		String ausgabe = "";
-		String WoodyMussTrinken = "Der Woody(" + getWerIstWoody()
-				+ ") muss trinken";
-		String nichtsPassiert = "Nichts passiert, " + Spieler.getNaechsterSpieler() + " ist dran";
-		String neuerWoody = Spieler.getAktuellerSpieler() + " darf einen neuen Woody wählen";
-		String pasch = super.getWuerfelZahl(0) + "er Pasch, " + Spieler.getAktuellerSpieler() + " darf "
-				+ super.getWuerfelZahl(0) + " Schlücke verteilen";
+		
+		String WoodyMussTrinken = 	context.getString(R.string.woody_Der_woody) + "(" + getWerIstWoody() +
+									") " + context.getString(R.string.woody_muss_trinken);
+		
+		String nichtsPassiert = 	context.getString(R.string.woody_nichts_passiert)+ ", " + context.getString(R.string.woody___nur_eng__its) + 
+									Spieler.getNaechsterSpieler() + context.getString(R.string.woody_ist_dran_mit_wuerfeln);
+		
+		String neuerWoody = 		Spieler.getAktuellerSpieler() + " " + context.getString(R.string.woody_darf_einen_neuen_woody_waehlen);
+		
+		String pasch = 				super.getWuerfelZahl(0) + context.getString(R.string.woody_er_pasch) + ", " + Spieler.getAktuellerSpieler() + " " + context.getString(R.string.woody_darf) +
+									" " + super.getWuerfelZahl(0) + " " + context.getString(R.string.woody_schluecke_verteilen);
 
 		switch (ergebnis) {
 		case 2:
-			ausgabe = super.getWuerfelZahl(0) + "er Pasch, " + Spieler.getAktuellerSpieler() +
-				" darf 1 Schluck verteilen";
+			ausgabe = super.getWuerfelZahl(0) + context.getString(R.string.woody_er_pasch) +" " + Spieler.getAktuellerSpieler() +
+				" " + context.getString(R.string.woody_darf_einen_schluck_verteilen);
 			break;
 		case 3:
 			if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
@@ -81,11 +90,14 @@ public class Woody extends Wuerfelspiel {
 				if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
 					ausgabe = pasch;
 					setNeuerWoody(true);
-					ausgabe = "3er Pasch, " + Spieler.getAktuellerSpieler() + " darf " +
-					"3 Schlücke verteilen, und " + neuerWoody;
+					ausgabe = getWuerfelZahl(0) + context.getString(R.string.woody_er_pasch) + ", " + 
+					Spieler.getAktuellerSpieler() + " " + context.getString(R.string.woody_darf) + " " +
+					getWuerfelZahl(0) + " " + context.getString(R.string.woody_schluecke_verteilen) + " " + context.getString(R.string.woody_und)+ " " + neuerWoody;
 				} else
-					ausgabe = "3er Pasch, " + Spieler.getAktuellerSpieler() + " darf 3 Schlücke verteilen und der Woody(" + getWerIstWoody()
-							+ ") muss einen trinken";
+					ausgabe = getWuerfelZahl(0) + context.getString(R.string.woody_er_pasch) + ", " + 
+						Spieler.getAktuellerSpieler() + " " + context.getString(R.string.woody_darf) + " " +
+						getWuerfelZahl(0) + " " + context.getString(R.string.woody_schluecke_verteilen) + " " + context.getString(R.string.woody_und)+ 
+						" " + context.getString(R.string.woody_der_woody)+ "(" + getWerIstWoody() + ") " + context.getString(R.string.woody_muss_trinken);
 			} else if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) {
 				if (Spieler.getAktuellerSpieler().equals(werIstWoody)) {
 					setNeuerWoody(true);
@@ -103,11 +115,11 @@ public class Woody extends Wuerfelspiel {
 					setNeuerWoody(true);
 					ausgabe = neuerWoody;
 				} else {
-					ausgabe = Spieler.getAktuellerSpieler() +"'s linker Nachbar(" + Spieler.getVorigerSpieler() + ") und der Woody("
-							+ werIstWoody + ") müssen trinken";
+					ausgabe = Spieler.getAktuellerSpieler() + context.getString(R.string.woody_s_linker_nachbar) + "(" + Spieler.getVorigerSpieler() + ") " +
+					context.getString(R.string.woody_und) + " " + context.getString(R.string.woody_der_woody) + "(" + werIstWoody + ") "  + context.getString(R.string.woody_muessen_trinken);
 				}
 			} else
-				ausgabe = Spieler.getAktuellerSpieler() +"'s linker Nachbar(" + Spieler.getVorigerSpieler() + ") muss einen trinken";
+				ausgabe = Spieler.getAktuellerSpieler() + context.getString(R.string.woody_s_linker_nachbar) + "(" + Spieler.getVorigerSpieler() + ") " + context.getString(R.string.woody_muss_trinken);
 			break;
 		case 8:
 			if (getWuerfelZahl(0) == 3 || getWuerfelZahl(1) == 3) {
@@ -129,27 +141,27 @@ public class Woody extends Wuerfelspiel {
 					setNeuerWoody(true);
 					ausgabe = neuerWoody;
 				} else
-					ausgabe = Spieler.getAktuellerSpieler() + "'s rechter Nachbar(" + Spieler.getNaechsterSpieler() + ") und der Woody("
-							+ getWerIstWoody() + ") müssen trinken";
+					ausgabe = Spieler.getAktuellerSpieler() + context.getString(R.string.woody_s_linker_nachbar) + "(" + Spieler.getNaechsterSpieler() + ") " + context.getString(R.string.woody_und) + " " + context.getString(R.string.woody_der_woody) +
+							"(" + getWerIstWoody() + ") " + context.getString(R.string.woody_muessen_trinken);
 			} else
-				ausgabe = Spieler.getAktuellerSpieler() + "'s rechter Nachbar(" + Spieler.getNaechsterSpieler() + ") muss einen trinken";
+				ausgabe = Spieler.getAktuellerSpieler() + context.getString(R.string.woody_s_rechter_nachbar) + "(" + Spieler.getNaechsterSpieler() + ") " + context.getString(R.string.woody_muss_trinken);
 			break;
 		case 10:
 			if (getWuerfelZahl(0) == 5 && getWuerfelZahl(1) == 5)
-				ausgabe = "5er Pasch, " + Spieler.getAktuellerSpieler() + " darf " +
-				" 5 Schlücke verteilen, und alle nehmen einen Schluck... Cheers!!!";
+				ausgabe = getWuerfelZahl(0) + context.getString(R.string.woody_er_pasch) + ", " + Spieler.getAktuellerSpieler() + " " + context.getString(R.string.woody_darf) + " " +
+				getWuerfelZahl(0) + " " + context.getString(R.string.woody_schluecke_verteilen) + ", " + context.getString(R.string.woody_und) + " " +  context.getString(R.string.woody_alle_nehmen_einen_Schluck);
 			else
-				ausgabe = "Alle nehmen einen Schluck... Cheers!!!";
+				ausgabe = context.getString(R.string.woody_alle_nehmen_einen_Schluck);
 			break;
 		case 11:
 			ausgabe = nichtsPassiert;
 			Spieler.incrementAktuellerSpieler();
 			break;
 		case 12:
-			ausgabe = "JACKPOT!!!, " + Spieler.getAktuellerSpieler() + " darf 12 Schlücke verteilen";
+			ausgabe = context.getString(R.string.woody_jackpot) + " " + Spieler.getAktuellerSpieler() + " " + context.getString(R.string.woody_darf) + " " + getErgebnis() + " " +context.getString(R.string.woody_schluecke_verteilen);
 			break;
 		default:
-			ausgabe = "Critical Error!!!";
+			ausgabe = context.getString(R.string.kritischer_fehler);
 			break;
 		}
 		return ausgabe;
@@ -164,16 +176,6 @@ public class Woody extends Wuerfelspiel {
 	
 	//Setzt den Text für die Spielerklärung
 	public String getHelpMessage() {
-		String s = 
-			"Es wird reihum, offen gewürfelt. " +
-			"Zu Beginn muss sich jemand freiwillig zum Woody ernennen. " + 
-			"Der Woody trinkt immer wenn eine 3 in einem Würfel vorkommt oder wenn die Summe 3 ergibt. " +
-			"Wenn der Woody selbst eine 3 würfelt, darf er einen neuen Woody wählen. " +
-			"Der Woody kann auch jederzeit über das Optionsmenü geändert werden. " +
-			"Hat ein Spieler einen Pasch, so darf er die Menge an Schlücken verteilen die auf einem Würfel steht. " +
-			"Eine Ausnahme besteht darin, wenn der Spieler zwei sechsen würfelt, dann darf er die Summe aus beiden Würfeln verteilen. " +
-			"Hat ein Spieler die Summe 7 gewürfelt, muss sein linker Nachbar trinken, bei 9 der rechte Nachbar. " +
-			"Diese Möglichkeiten sind kummulierbar (Bsp.: wenn jemand 3 & 4 würfelt muss der linke Nachbar und der Woody trinken.";
-		return s;
+		return context.getString(R.string.woody_help_message);
 	}
 }

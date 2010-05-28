@@ -1,31 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <string name="app_name">Trinkspiele</string>
 <color name="hintergrundFarbeWoodroid">#B37A4D</color>
 <color name="TextColorWoodroid">#000000</color>
-
 <color name="hintergrundFarbeAssRennen">#006600</color>
 <color name="white">#FFFFFF</color>
 <color name="black">#000000</color>
 <color name="TextColorAssrennen">#000000</color>
-
-
-<dimen name="titelGroesse">30px</dimen>
 <color name="simonTextColor">#FFFFFF</color>
 <color name="simonBackgroundColor">#000000</color>
-
-<string name="ok">OK</string>
-<string name="cancel">Cancel</string>
-<string name="add_title">Add Constant</string>
-<string name="delete_title">Delete Constant: Are You Sure?</string>
 <color name="siebenSaeuftBackground">#FF6600</color>
 <color name="siebenSaeuftTextColor">#000000</color>
 <color name="bigKingBackgroundColor">#006600</color>
 <color name="bigKingTextColor">#000000</color>
 <color name="kartenOrakelBackground">#000000</color>
 <color name="kartenOrakelTextColor">#FFFFFF</color>
+
+<dimen name="titelGroesse">30px</dimen>
 <dimen name="titelPadding">10px</dimen>
 <dimen name="titelTextSize">30px</dimen>
-</resources>
 
+<string name="app_name">DrinkOMat</string>
+
+<string name="delete_title">Delete Constant: Are You Sure?</string>
+<string name="add_title">Add Constant</string>
+<string name="abbrechen">Cancel</string><string name="ok">Ok</string>
+<string name="hilfe">help</string>
+<string name="kritischer_fehler">Critical error!!!</string>
+<string name="zum_hauptmenue">Return to Main Menu</string>
+<string name="beenden">Quit</string>
+
+<string name="karten_herz">Hearts</string>
+<string name="karten_karo">Diamonds</string>
+<string name="karten_kreuz">Clubs</string>
+<string name="karten_pik">Spades</string>
+<string name="karten_bube">Jack</string>
+<string name="karten_dame">Queen</string>
+<string name="karten_koenig">King</string>
+<string name="karten_ass">Ace</string>
+<string name="karten_deck_enthaelt_zu_wenig_karten">Pile is empty</string>
+
+<string name="woody_woody">Woody</string>
+<string name="woody_zu_beginn_muss_ein_woody_gewaehlt_werden__">before you can begin, you have to choose a woody</string>
+<string name="woody_aktueller_spieler">actual player</string>
+<string name="woody_wuerfeln">throw dices</string>
+<string name="woody_wer_ist_woody">who is woody</string>
+<string name="woody_neuen_woody_bestimmen">choose a new Woody</string>
+<string name="woody_woody_bestimmen">choose a Woody</string>
+<string name="woody_woody_ist">Woody is</string>
+<string name="woody_ist_dran_mit_wuerfeln">\'s turn</string>
+<string name="woody_muss_trinken">has to drink</string>
+<string name="woody_der_woody">the Woody</string>
+<string name="woody_nichts_passiert">nothing happens</string>
+<string name="woody_darf_einen_neuen_woody_waehlen">has to choose a new Woody</string>
+<string name="woody_er_pasch">" paired"</string>
+<string name="woody_schluecke_verteilen">sips</string>
+<string name="woody_darf_einen_schluck_verteilen">must distribute 1 sip</string>
+<string name="woody_darf">must distribute</string>
+<string name="woody_und">and</string>
+<string name="woody_s_linker_nachbar">\'s left neighboor</string>
+<string name="woody_s_rechter_nachbar">\'s right neighboor</string>
+<string name="woody_muessen_trinken">have to drink</string>
+<string name="woody_alle_nehmen_einen_Schluck">everybody takes a sip</string>
+<string name="woody_jackpot">JACKPOT!!!</string>
+<string name="woody_Der_woody">The Woody</string>
+<string name="woody_help_message">At the beginning of the game, somebody has to volunteerly be the Woody. The Woody always has to drink if somebody else than him throws a 3. If the Woody throws a 3 himself, he must choose a new Woody. The Woody can manually be changed at the Options-Menu at any time. If a player throwed a pair, he must distribute as many sips as the number on one dice. An Exception of that rule occurs if a player has thrown a pair of sixes, then he must distribute 12 sips. If a player throws a 7, his left neighboor has to take a sip, if he throws a 9, his right neigboor has to. </string><string name="woody___nur_eng__its">"it\'s "</string>
+
+<string name="orakel_Diese_und_die_vorige_karte_sind_gleichwertig_nichts_passiert">This and the previous Card have equal values,\nnothing happens\n\n</string>
+<string name="orakel_karte_tatsaechlich_hoeher">The card\'s value is smaller,\nyou were right.\n\n</string>
+<string name="orakel_karte_leider_tiefer">The card\'s value is smaller,\nyou were wrong.\n\n</string>
+<string name="orakel_karte_tatsaechlich_tiefer">The card\'s value is smaller,\nyou were right.\n\n</string>
+<string name="orakel_karte_leider_hoeher">The card\'s value is smaller,\nyou were wrong.\n\n</string>
+<string name="orakel_glauben_sie_karte_hoeher_oder_tiefer">Do you think, the next card you draw,\nis smaller or higher than the actual card?</string>
+<string name="orakel_help_message">It\'s simple.\nJust try to make a right guess on the next card.</string>
+<string name="orakel_richtige">correct:</string>
+<string name="orakel_falsche">wrong:</string>
+<string name="orakel_richtige_O">correct: 0</string>
+<string name="orakel_falsche_O">wrong: 0</string>
+<string name="orakel_karten_durch_stapel_um_neustart">The Pile is empty, click on the pile to restart the game.</string>
+<string name="orakel_tiefer">Smaller</string>
+<string name="orakel_hoeher">Higher</string>
+<string name="orakel_karten_orakel">Card Oracle</string>
+<string name="orakel_klicke_stapel_um_zu_beginnen">Click on the pile to start</string>
+<string name="orakel_resultat">Result</string>
+
+<string name="assrennen_ass_rennen">Ace Race</string>
+
+<string name="bigkingscup_big_kings_cup">Big King\'s Cup</string>
+
+<string name="meier_meier">Meier</string>
+
+<string name="siebensaeuft_siebensaeuft">Seven drinks</string>
+
+<string name="simon_says_simon_says">Simon says</string>
+
+<string name="trinkspiele_titel">Drink games</string>
+<string name="trinkspiele_zu_wenig_spieler_vorhanden">You have to add more Players</string>
+<string name="trinkspiele_du_musst_noch_mindestens">You have to add at least</string>
+<string name="trinkspiele_noch_spieler_hinzufuegen">more Players</string>
+<string name="trinkspiele_spieler_hinzufuegen">add Player</string>
+<string name="trinkspiele_du_musst_noch_mindestens_1_spieler_hinzufuegen">You have to add at least 1 more Player</string>
+<string name="trinkspiele_spieler_entfernen">Remove Player</string>
+<string name="trinkspiele_wurde_entfernt">has been removed</string>
+<string name="trinkspiele_fehler_name_darf_max_zwanzig_zeichen_enthalten">failed: Players must not have more than 20 letters</string>
+<string name="trinkspiele_gib_den_namen_des_neuen_spielers_ein">Type in the name of the new Player</string>
+<string name="trinkspiele_es_sind_keine_spieler_vorhanden">Player's list is already empty</string>
+</resources>

@@ -3,19 +3,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
+    android:layout_height="fill_parent">
     
 <TextView 
 	android:id="@+id/Titel" 
     android:layout_width="fill_parent" 
     android:layout_height="wrap_content" 
-    android:text="Trinkspiele"
-    android:gravity="center" android:textSize="30px" android:textColor="@color/white"/>
+    android:text="@string/trinkspiele_titel"
+    android:gravity="center" 
+    android:textSize="30px"
+    android:textColor="@color/white"/>
     
 <ListView 
 	android:id="@android:id/list" 
 	android:layout_width="fill_parent" 
 	android:layout_height="fill_parent"
-	android:drawSelectorOnTop="false" android:dividerHeight="5px"/>
+	android:drawSelectorOnTop="false" 
+	android:dividerHeight="5px"/>
 </LinearLayout>

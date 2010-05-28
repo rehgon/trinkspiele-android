@@ -33,7 +33,7 @@ public class KartenOrakloid extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.kartenorakel);
 
-		orakel = new KartenOrakel();
+		orakel = new KartenOrakel(getApplicationContext());
 		ausgabe = (TextView) findViewById(R.id.kartenOrakelAusgabe);
 		tieferButton = (Button) findViewById(R.id.kartenOrakeltieferButton);
 		hoeherButton = (Button) findViewById(R.id.kartenOrakelHoeherButton);
@@ -70,7 +70,7 @@ public class KartenOrakloid extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				karte = orakel.kartenZiehen(1);
-				if (karte[0].equals("Deck enthält zu wenig Karten"))
+				if (karte[0].equals(getString(R.string.karten_deck_enthaelt_zu_wenig_karten)))
 					reset();
 				else
 					zugMachen(false);
@@ -83,7 +83,7 @@ public class KartenOrakloid extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				karte = orakel.kartenZiehen(1);
-				if (karte[0].equals("Deck enthält zu wenig Karten"))
+				if (karte[0].equals(getString(R.string.karten_deck_enthaelt_zu_wenig_karten)))
 					reset();
 				else
 					zugMachen(true);
@@ -97,51 +97,42 @@ public class KartenOrakloid extends Activity {
 		orakel.paint(orakel, image, symbol, wert);
 		ausgabe.setText(orakel.spieleKartenOrakel(karte[0], hoeherButtonGedrückt));
 
-		richtigLabel.setText("Richtige: " + orakel.getAnzahlRichtigeTreffer());
-		falschLabel.setText("Falsche: " + orakel.getAnzahlFalscheTreffer());
+		richtigLabel.setText(getString(R.string.orakel_richtige) + " " + orakel.getAnzahlRichtigeTreffer());
+		falschLabel.setText(getString(R.string.orakel_falsche) + " " + orakel.getAnzahlFalscheTreffer());
 
 		progress.incrementProgressBy(1);
 	}
 
 	private void reset() {
 		resultatAnzeigen();
-		ausgabe.setText("Alle Karten durch, klicken sie auf den Stapel, "
-				+ "um neu zu starten");
+		ausgabe.setText(getString(R.string.orakel_karten_durch_stapel_um_neustart));
 		istNeuesSpiel = true;
 		image.setImageResource(R.drawable.deckblatt);
 		hoeherButton.setVisibility(4);
 		tieferButton.setVisibility(4);
 		progress.setProgress(0);
 
-		orakel = new KartenOrakel();
-		richtigLabel.setText("Richtige: 0");
-		falschLabel.setText("Falsche: 0");
+		orakel = new KartenOrakel(getApplicationContext());
+		richtigLabel.setText(getString(R.string.orakel_richtige) + " 0");
+		falschLabel.setText(getString(R.string.orakel_richtige) + " 0");
 	}
 	
 	private void resultatAnzeigen() {
 		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-		dialog.setTitle("Resultat");
+		dialog.setTitle(getString(R.string.orakel_resultat));
 		String message = 
-			"Richtig prophezeit:\n " + orakel.getAnzahlRichtigeTreffer() + " mal\n\n" +
-			"Falsch prophezeit:\n " + orakel.getAnzahlFalscheTreffer() + " mal\n\n";
-		if (orakel.getAnzahlRichtigeTreffer() > 32)
-			message += "Titel:\nGott";
-		else if (orakel.getAnzahlRichtigeTreffer() > 26) {
-			message += "Titel:\nPassables Orakel";
-		}
-		else {
-			message += "Titel:\nScharlatan";
-		}
+			getString(R.string.orakel_richtige) + " " + orakel.getAnzahlRichtigeTreffer() + "\n" +
+			getString(R.string.orakel_falsche) + " " + orakel.getAnzahlFalscheTreffer();
 		dialog.setMessage(message);
-		dialog.setPositiveButton("Ok", null);
+		dialog.setPositiveButton(getString(R.string.ok), null);
 		dialog.show();
 	}
 	
 	//Erstellt die Optionen für das Menü
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.info);
-		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.close);
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, getString(R.string.hilfe)).setIcon(R.drawable.ic_menu_info);
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, getString(R.string.zum_hauptmenue)).setIcon(R.drawable.ic_menu_close);
 		return (super.onCreateOptionsMenu(menu));
 	}
 

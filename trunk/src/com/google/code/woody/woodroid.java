@@ -45,20 +45,24 @@ public class woodroid extends Activity implements View.OnClickListener {
 		setContentView(R.layout.woody);
 
 		wuerfelnButton = (Button) findViewById(R.id.Button01);
+		wuerfelnButton.setText(getText(R.string.woody_wuerfeln));
 		wuerfelnButton.setOnClickListener((OnClickListener) this);
+		
 		ausgabe = (TextView) findViewById(R.id.ausgabe);
+		
 		werIstWoodyLabel = (TextView) findViewById(R.id.WerIstWoodyLabel);
 		aktuellerSpieler = (TextView) findViewById(R.id.aktuellerSpieler);
+		
 		wuerfelEinsImage = (ImageView) findViewById(R.id.wuerfelEinsImage);
 		wuerfelZweiImage = (ImageView) findViewById(R.id.wuerfelZweiImage);
 
-		woody = new Woody();
+		woody = new Woody(getApplicationContext());
 		
 		//Setzt den aktuellen Spieler am Anfang zufällig
-		aktuellerSpieler.setText("Aktueller Spieler: " + woody.spielerAmAnfangBestimmen());
+		aktuellerSpieler.setText(getString(R.string.woody_aktueller_spieler) + ": " + woody.spielerAmAnfangBestimmen());
 		
-		ausgabe.setText("Zu Beginn muss ein Woody gewählt werden, auf den Button klicken um fortzufahren");
-		wuerfelnButton.setText("neuen Woody wählen");
+		ausgabe.setText(getString(R.string.woody_zu_beginn_muss_ein_woody_gewaehlt_werden__));
+		wuerfelnButton.setText(getString(R.string.woody_woody_bestimmen));
 
 		
 		// Sensor Initialisierung
@@ -77,6 +81,10 @@ public class woodroid extends Activity implements View.OnClickListener {
 		mSensorManager.registerListener(mSensorListener, mSensorManager
 				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
 				SensorManager.SENSOR_DELAY_NORMAL);
+		
+		//wieder löschen
+		ausgabe.setText(ausgabe.getText());
+		
 	}
 
 	@Override
@@ -95,15 +103,16 @@ public class woodroid extends Activity implements View.OnClickListener {
 		if (woody.getNeuerWoody() || woody.getWerIstWoody() == "") {
 			neuenWoodyBestimmen();
 			woody.setNeuerWoody(false);
-			wuerfelnButton.setText("würfeln");
+			wuerfelnButton.setText(getString(R.string.woody_wuerfeln));
 		} 
 		else {
 
 			woody.wuerfeln(2);
 			
+			//Aktualisiert die Labels, sowie die Ausgabe
 			werIstWoodyLabel
-					.setText("Wer ist woody: " + woody.getWerIstWoody());
-			aktuellerSpieler.setText("Aktueller Spieler: "
+					.setText(getString(R.string.woody_wer_ist_woody) + " " + woody.getWerIstWoody());
+			aktuellerSpieler.setText(getString(R.string.woody_aktueller_spieler) + " "
 					+ Spieler.getAktuellerSpieler());
 			ausgabe.setText(woody.auswerten(woody.getWuerfelZahl(0)
 					+ woody.getWuerfelZahl(1)));
@@ -113,7 +122,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 
 			// Wird noch vor dem AlertDialog angezeigt
 			if (woody.getNeuerWoody()) {
-				wuerfelnButton.setText("neuen Woody bestimmen");
+				wuerfelnButton.setText(getString(R.string.woody_neuen_woody_bestimmen));
 			}
 		}
 	}
@@ -125,16 +134,16 @@ public class woodroid extends Activity implements View.OnClickListener {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
 		if (woody.getWerIstWoody() == "")
-			builder.setTitle("Woody bestimmen");
+			builder.setTitle(getString(R.string.woody_woody_bestimmen));
 		else
-			builder.setTitle("Neuen Woody bestimmen");
+			builder.setTitle(getString(R.string.woody_neuen_woody_bestimmen));
 		builder.setItems(items, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				woody.setWerIstWoody(which);
-				werIstWoodyLabel.setText("Wer ist woody: "
+				werIstWoodyLabel.setText(getString(R.string.woody_wer_ist_woody) + " "
 						+ woody.getWerIstWoody());
-				ausgabe.setText("Woody ist " + woody.getWerIstWoody() + ". " + 
-						Spieler.getAktuellerSpieler() + " ist dran mit würfeln");
+				ausgabe.setText(getString(R.string.woody_woody_ist) + " " + woody.getWerIstWoody() + ". " + 
+						getString(R.string.woody___nur_eng__its) + Spieler.getAktuellerSpieler() + getString(R.string.woody_ist_dran_mit_wuerfeln));
 			}
 		});
 		builder.show();
@@ -143,9 +152,9 @@ public class woodroid extends Activity implements View.OnClickListener {
 	//Erstellt die Optionen für das Menü
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_NEUER_WOODY, Menu.NONE, "Neuen Woody wählen").setIcon(R.drawable.add);
-		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(R.drawable.info);
-		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(R.drawable.close);
+		menu.add(Menu.NONE, ID_NEUER_WOODY, Menu.NONE, getString(R.string.woody_neuen_woody_bestimmen)).setIcon(R.drawable.ic_menu_refresh);
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, getString(R.string.hilfe)).setIcon(R.drawable.ic_menu_info);
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, getString(R.string.zum_hauptmenue)).setIcon(R.drawable.ic_menu_close);
 		return (super.onCreateOptionsMenu(menu));
 	}
 

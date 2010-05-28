@@ -32,7 +32,9 @@
 		<activity 
 			android:name="com.google.code.kartenOrakel.KartenOrakloid"
 			android:screenOrientation="portrait"></activity>
-<activity android:name="com.google.code.meier.Meieroid"></activity>
+		<activity 
+			android:name="com.google.code.meier.Meieroid"></activity>
+			
 </application>
 
 	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
