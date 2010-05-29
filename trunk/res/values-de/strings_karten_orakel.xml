@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="orakel_Diese_und_die_vorige_karte_sind_gleichwertig_nichts_passiert">Diese und die vorige Karte sind gleichwertig,\nnichts passiert.\n\n</string>
+<string name="orakel_karte_tatsaechlich_hoeher">Die Karte ist tatsächlich höher,\nsie lagen richtig.\n\n</string>
+<string name="orakel_karte_leider_tiefer">Die Karte ist leider tiefer,\nsie lagen falsch.\n\n</string>
+<string name="orakel_karte_tatsaechlich_tiefer">Die Karte ist tatsächlich tiefer,\nsie lagen richtig.\n\n</string>
+<string name="orakel_karte_leider_hoeher">Die Karte ist leider höher,\nsie lagen falsch.\n\n</string>
+<string name="orakel_glauben_sie_karte_hoeher_oder_tiefer">Glauben sie die nächste Karte, die sie ziehen\nwird höher oder tiefer sein als diese?</string>
+<string name="orakel_help_message">Simples Spiel für zwischendurch. Es geht einfach darum zu raten ob die nächste Karte höher oder tiefer sein wird als die aktuelle Karte.</string>
+<string name="orakel_richtige">Richtige:</string>
+<string name="orakel_falsche">Falsche:</string>
+<string name="orakel_richtige_O">Richtige: 0</string>
+<string name="orakel_falsche_O">Falsche: 0</string>
+<string name="orakel_karten_durch_stapel_um_neustart">Alle Karten durch, klicken sie auf den Stapel, um neu zu starten.</string>
+<string name="orakel_tiefer">Tiefer</string>
+<string name="orakel_hoeher">Höher</string>
+<string name="orakel_karten_orakel">Karten Orakel</string>
+<string name="orakel_klicke_stapel_um_zu_beginnen">Klicke auf den Stapel um zu beginnen</string>
+<string name="orakel_resultat">Resultat</string>
+</resources>
