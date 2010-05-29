@@ -33,6 +33,6 @@
 <string name="beenden">Quit</string>
 <string name="fortschritt">Progress:</string>
 <string name="wirklich_beenden_titel">Really?</string>
-<string name="wirklich_beenden">Do you really want to return to the main menu? All your stats will be reseted.</string>
+<string name="wirklich_beenden_message">Do you really want to return to the main menu? All your stats will be reseted.</string>
 
 </resources>
