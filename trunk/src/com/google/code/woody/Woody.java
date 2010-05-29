@@ -1,7 +1,6 @@
 package com.google.code.woody;
 
 import java.util.Random;
-
 import android.content.Context;
 
 import com.google.code.trinkspiele.R;
@@ -15,7 +14,7 @@ public class Woody extends Wuerfelspiel {
 	private Context context;
 
 	public Woody(Context context) {
-		super();
+		super(context);
 		werIstWoody = "";
 		neuerWoody = false;
 		this.context = context;
@@ -173,10 +172,5 @@ public class Woody extends Wuerfelspiel {
 		int spielerIndex = generator.nextInt(Spieler.getSpielerNameArrayList().size());
 		String welcherSpieler = Spieler.getSpielerNameArrayList().get(spielerIndex);
 		return welcherSpieler;
-	}
-	
-	//Setzt den Text für die Spielerklärung
-	public String getHelpMessage() {
-		return context.getString(R.string.woody_help_message);
 	}
 }

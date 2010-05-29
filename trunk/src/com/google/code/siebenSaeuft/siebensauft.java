@@ -2,6 +2,7 @@ package com.google.code.siebenSaeuft;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -20,7 +21,7 @@ public class siebensauft extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.siebensaeuft);
-        neuesSpiel = new SiebenSauftLogik();
+        neuesSpiel = new SiebenSauftLogik(getApplicationContext());
         textfenster=(TextView)findViewById(R.id.Textausgabe);
         wuerfel1=(ImageView)findViewById(R.id.ImageView01);
         wuerfel2=(ImageView)findViewById(R.id.ImageView02);
@@ -35,7 +36,7 @@ public class siebensauft extends Activity {
 				if (ausgabe == "Spiel zu Ende\nDanke fürs spielen") {
 					textfenster.setText(ausgabe);
 					wuerfeln.setText("neustart");
-					neuesSpiel = new SiebenSauftLogik();
+					neuesSpiel = new SiebenSauftLogik(getApplicationContext());
 				}
 				else{
 					wuerfeln.setText("Würfeln");
@@ -44,4 +45,13 @@ public class siebensauft extends Activity {
 			}
 		});
     }
+    
+    @Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	    	neuesSpiel.wirklichBeendenDialog(this);
+	    	return true;
+	    }
+	    return false;
+	}
 }

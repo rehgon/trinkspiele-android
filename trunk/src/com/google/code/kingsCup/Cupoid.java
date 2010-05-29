@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.google.code.trinkspiele.R;
 import com.google.code.trinkspiele.Spieler;
-import com.google.code.trinkspiele.Trinkspiele;
 
 public class Cupoid extends Activity {
 	private static final int ID_KLOKARTE_ENTFERNEN = 0;
@@ -128,6 +127,15 @@ public class Cupoid extends Activity {
 			}
 		});
 	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	    	cup.wirklichBeendenDialog(this);
+	    	return true;
+	    }
+	    return false;
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -151,7 +159,7 @@ public class Cupoid extends Activity {
 			cup.createHelperDialog(this, cup.getHelpMessage());
 			return true;
 		case ID_BEENDEN:
-			startActivity(new Intent(this, Trinkspiele.class));
+			cup.wirklichBeendenDialog(this);
 			return true;
 		}
 		return false;
