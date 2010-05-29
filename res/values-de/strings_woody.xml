@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="woody_zu_beginn_muss_ein_woody_gewaehlt_werden__">Zu Beginn muss ein Woody gewählt werden, auf den Button klicken um fortzufahren</string>
+<string name="woody_aktueller_spieler">Aktueller Spieler</string>
+<string name="woody_wuerfeln">würfeln</string>
+<string name="woody_wer_ist_woody">Wer ist Woody</string>
+<string name="woody_neuen_woody_bestimmen">Neuen Woody bestimmen</string>
+<string name="woody_woody_bestimmen">Woody bestimmen</string>
+<string name="woody_woody_ist">Woody ist</string>
+<string name="woody_ist_dran_mit_wuerfeln">" ist dran mit würfeln"</string>
+<string name="woody_woody">Woody</string>
+<string name="woody_muss_trinken">muss trinken</string>
+<string name="woody_der_woody">der Woody</string>
+<string name="woody_nichts_passiert">Nichts passiert</string>
+<string name="woody_darf_einen_neuen_woody_waehlen">darf einen neuen Woody wählen</string>
+<string name="woody_er_pasch">er Pasch</string>
+<string name="woody_schluecke_verteilen">Schlücke verteilen</string>
+<string name="woody_darf_einen_schluck_verteilen">darf 1 Schluck verteilen</string>
+<string name="woody_darf">darf</string>
+<string name="woody_und">und</string>
+<string name="woody_s_linker_nachbar">\'s linker Nachbar</string>
+<string name="woody_s_rechter_nachbar">\'s rechter Nachbar</string>
+<string name="woody_muessen_trinken">müssen trinken</string>
+<string name="woody_alle_nehmen_einen_Schluck">alle nehmen einen Schluck</string>
+<string name="woody_jackpot">JACKPOT!!!</string>
+<string name="woody_Der_woody">Der Woody</string>
+<string name="woody_help_message">Es wird reihum, offen gewürfelt. Zu Beginn muss sich jemand freiwillig zum Woody ernennen. Der Woody trinkt immer wenn eine 3 in einem Würfel vorkommt oder wenn die Summe 3 ergibt. Wenn der Woody selbst eine 3 würfelt, darf er einen neuen Woody wählen. Der Woody kann auch jederzeit über das Optionsmenü geändert werden. Hat ein Spieler einen Pasch, so darf er die Menge an Schlücken verteilen die auf einem Würfel steht. Eine Ausnahme besteht darin, wenn der Spieler zwei sechsen würfelt, dann darf er die Summe aus beiden Würfeln verteilen. Hat ein Spieler die Summe 7 gewürfelt, muss sein linker Nachbar trinken, bei 9 der rechte Nachbar. Diese Möglichkeiten sind kummulierbar (Bsp.: wenn jemand 3 &amp; 4 würfelt muss der linke Nachbar und der Woody trinken.</string>
+<string name="woody___nur_eng__its"></string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="karten_herz">Herz</string>
+<string name="karten_karo">Karo</string>
+<string name="karten_kreuz">Kreuz</string>
+<string name="karten_pik">Pik</string>
+<string name="karten_bube">Bube</string>
+<string name="karten_dame">Dame</string>
+<string name="karten_koenig">König</string>
+<string name="karten_ass">Ass</string>
+<string name="karten_deck_enthaelt_zu_wenig_karten">Deck enthält zu wenig Karten</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="trinkspiele_titel">Trinkspiele</string>
+<string name="trinkspiele_zu_wenig_spieler_vorhanden">Zu wenig Spieler vorhanden</string>
+<string name="trinkspiele_du_musst_noch_mindestens">Du musst noch mindestens</string>
+<string name="trinkspiele_noch_spieler_hinzufuegen">Spieler hinzufügen</string>
+<string name="trinkspiele_spieler_hinzufuegen">Spieler hinzufügen</string>
+<string name="trinkspiele_du_musst_noch_mindestens_1_spieler_hinzufuegen">Du muss noch mindestens 1 Spieler hinzufügen</string>
+<string name="trinkspiele_spieler_entfernen">Spieler entfernen</string>
+<string name="trinkspiele_wurde_entfernt">wurde entfernt</string>
+<string name="trinkspiele_fehler_name_darf_max_zwanzig_zeichen_enthalten">Fehler: Name darf maximal 20 Zeichen enthalten</string>
+<string name="trinkspiele_gib_den_namen_des_neuen_spielers_ein">Gib den Namen des neuen Spielers ein:</string>
+<string name="trinkspiele_es_sind_keine_spieler_vorhanden">Es sind keine Spieler vorhanden</string>
+</resources>
