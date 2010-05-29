@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,6 +52,15 @@ public class Trinkspiele extends ListActivity {
         Spieler.getSpielerNameArrayList().add("Raffael Affolter");
         Spieler.getSpielerNameArrayList().add("Amaury Lemaerchal");
     }
+    
+    @Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	    	System.exit(0);
+	    	return true;
+	    }
+	    return false;
+	}
     
     public void onListItemClick(ListView parent, View v, int position, long id) {
     	if (trinkspieleListe[position].equals(getString(R.string.assrennen_ass_rennen))) {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<string name="orakel_Diese_und_die_vorige_karte_sind_gleichwertig_nichts_passiert">Diese und die vorige Karte sind gleichwertig,\nnichts passiert.\n\n</string>
+<string name="orakel_Diese_und_die_vorige_karte_sind_gleichwertig_nichts_passiert">Diese und die vorige Karte sind gleichwertig,\naber es gibt trotzdem einen Punkt.\n\n</string>
 <string name="orakel_karte_tatsaechlich_hoeher">Die Karte ist tatsächlich höher,\nsie lagen richtig.\n\n</string>
 <string name="orakel_karte_leider_tiefer">Die Karte ist leider tiefer,\nsie lagen falsch.\n\n</string>
 <string name="orakel_karte_tatsaechlich_tiefer">Die Karte ist tatsächlich tiefer,\nsie lagen richtig.\n\n</string>

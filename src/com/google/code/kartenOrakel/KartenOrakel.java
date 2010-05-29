@@ -57,6 +57,7 @@ public class KartenOrakel extends KartenSpiel {
 		if (keinFrischesSpiel) {
 			if (super.kartenWertBestimmen(karten[0]) == super.kartenWertBestimmen(karten[1])) {
 				ausgabe += context.getString(R.string.orakel_Diese_und_die_vorige_karte_sind_gleichwertig_nichts_passiert);
+				anzahlRichtigeTreffer++;
 			}
 			else if (hoeherButtonGeklickt) {
 				if (super.istHoeher(karten[0], karten[1])) {
