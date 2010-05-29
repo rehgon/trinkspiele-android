@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="trinkspiele_titel">Drink games</string>
+<string name="trinkspiele_zu_wenig_spieler_vorhanden">You have to add more Players</string>
+<string name="trinkspiele_du_musst_noch_mindestens">You have to add at least</string>
+<string name="trinkspiele_noch_spieler_hinzufuegen">more Players</string>
+<string name="trinkspiele_spieler_hinzufuegen">add Player</string>
+<string name="trinkspiele_du_musst_noch_mindestens_1_spieler_hinzufuegen">You have to add at least 1 more Player</string>
+<string name="trinkspiele_spieler_entfernen">Remove Player</string>
+<string name="trinkspiele_wurde_entfernt">has been removed</string>
+<string name="trinkspiele_fehler_name_darf_max_zwanzig_zeichen_enthalten">failed: Players must not have more than 20 letters</string>
+<string name="trinkspiele_gib_den_namen_des_neuen_spielers_ein">Type in the name of the new Player</string>
+<string name="trinkspiele_es_sind_keine_spieler_vorhanden">Player\'s list is already empty</string>
+</resources>

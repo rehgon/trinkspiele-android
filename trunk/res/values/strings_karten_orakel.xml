@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="orakel_Diese_und_die_vorige_karte_sind_gleichwertig_nichts_passiert">This and the previous Card have equal values,\nnothing happens\n\n</string>
+<string name="orakel_karte_tatsaechlich_hoeher">The card\'s value is higher,\nyou were right.\n\n</string>
+<string name="orakel_karte_leider_tiefer">The card\'s value is smaller,\nyou were wrong.\n\n</string>
+<string name="orakel_karte_tatsaechlich_tiefer">The card\'s value is smaller,\nyou were right.\n\n</string>
+<string name="orakel_karte_leider_hoeher">The card\'s value is smaller,\nyou were wrong.\n\n</string>
+<string name="orakel_glauben_sie_karte_hoeher_oder_tiefer">Do you think, the next card you draw,\nis smaller or higher than the actual card?</string>
+<string name="orakel_help_message">It\'s simple.\nJust try to make a right guess on the next card.</string>
+<string name="orakel_richtige">correct:</string>
+<string name="orakel_falsche">wrong:</string>
+<string name="orakel_richtige_O">correct: 0</string>
+<string name="orakel_falsche_O">wrong: 0</string>
+<string name="orakel_karten_durch_stapel_um_neustart">The Pile is empty, click on the pile to restart the game.</string>
+<string name="orakel_tiefer">Smaller</string>
+<string name="orakel_hoeher">Higher</string>
+<string name="orakel_karten_orakel">Card Oracle</string>
+<string name="orakel_klicke_stapel_um_zu_beginnen">Click on the pile to start</string>
+<string name="orakel_resultat">Result</string>
+</resources>
