@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +20,6 @@ import android.widget.TextView;
 
 import com.google.code.trinkspiele.R;
 import com.google.code.trinkspiele.Spieler;
-import com.google.code.trinkspiele.Trinkspiele;
 
 public class woodroid extends Activity implements View.OnClickListener {
 	private static final int ID_NEUER_WOODY = 0;
@@ -59,6 +58,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 		woody = new Woody(getApplicationContext());
 		
 		//Setzt den aktuellen Spieler am Anfang zufällig
+		werIstWoodyLabel.setText(getString(R.string.woody_wer_ist_woody) + ": ");
 		aktuellerSpieler.setText(getString(R.string.woody_aktueller_spieler) + ": " + woody.spielerAmAnfangBestimmen());
 		
 		ausgabe.setText(getString(R.string.woody_zu_beginn_muss_ein_woody_gewaehlt_werden__));
@@ -92,6 +92,16 @@ public class woodroid extends Activity implements View.OnClickListener {
 		mSensorManager.unregisterListener(mSensorListener);
 		super.onStop();
 	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	    	woody.wirklichBeendenDialog(this);
+	    	return true;
+	    }
+	    return false;
+	}
+
 
 	public void onClick(View v) {
 		handleEvent();
@@ -111,8 +121,8 @@ public class woodroid extends Activity implements View.OnClickListener {
 			
 			//Aktualisiert die Labels, sowie die Ausgabe
 			werIstWoodyLabel
-					.setText(getString(R.string.woody_wer_ist_woody) + " " + woody.getWerIstWoody());
-			aktuellerSpieler.setText(getString(R.string.woody_aktueller_spieler) + " "
+					.setText(getString(R.string.woody_wer_ist_woody) + ": " + woody.getWerIstWoody());
+			aktuellerSpieler.setText(getString(R.string.woody_aktueller_spieler) + ": "
 					+ Spieler.getAktuellerSpieler());
 			ausgabe.setText(woody.auswerten(woody.getWuerfelZahl(0)
 					+ woody.getWuerfelZahl(1)));
@@ -140,7 +150,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 		builder.setItems(items, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				woody.setWerIstWoody(which);
-				werIstWoodyLabel.setText(getString(R.string.woody_wer_ist_woody) + " "
+				werIstWoodyLabel.setText(getString(R.string.woody_wer_ist_woody) + ": "
 						+ woody.getWerIstWoody());
 				ausgabe.setText(getString(R.string.woody_woody_ist) + " " + woody.getWerIstWoody() + ". " + 
 						getString(R.string.woody___nur_eng__its) + Spieler.getAktuellerSpieler() + getString(R.string.woody_ist_dran_mit_wuerfeln));
@@ -170,10 +180,10 @@ public class woodroid extends Activity implements View.OnClickListener {
 			neuenWoodyBestimmen();
 			return true;
 		case ID_BEENDEN:
-			startActivity(new Intent(this, Trinkspiele.class));
+			woody.wirklichBeendenDialog(this);
 			return true;
 		case ID_HELP:
-			woody.createHelperDialog(this, woody.getHelpMessage());
+			woody.createHelperDialog(this, getString(R.string.woody_help_message));
 		}
 		return false;
 	}

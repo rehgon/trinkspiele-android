@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -31,7 +32,7 @@ public class Meieroid extends Activity {
 		image = (ImageView) findViewById(R.id.meierImage);
 		wuerfelEins = (ImageView) findViewById(R.id.wuerfelEinsImage);
 		wuerfelZwei = (ImageView) findViewById(R.id.wuerfelZweiImage);
-		meier = new Meier();
+		meier = new Meier(this);
 		image.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
@@ -49,6 +50,15 @@ public class Meieroid extends Activity {
 				}
 			}
 		});
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	    	meier.wirklichBeendenDialog(this);
+	    	return true;
+	    }
+	    return false;
 	}
 	
 	public CharSequence[] makeCharSequenceNumbers() {

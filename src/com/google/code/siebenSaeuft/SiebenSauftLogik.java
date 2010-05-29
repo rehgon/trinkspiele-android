@@ -1,5 +1,7 @@
 package com.google.code.siebenSaeuft;
 
+import android.content.Context;
+
 import com.google.code.trinkspiele.Wuerfelspiel;
 
 
@@ -9,9 +11,9 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 	private int quersumme, maxPunkteBisEnde, ergebnissWurf, gesamtErgebnis;
 	boolean saufen = false;
 	private String ausgabe;
-	public SiebenSauftLogik()
+	public SiebenSauftLogik(Context context)
 	{
-		super();
+		super(context);
 		quersumme = 0;
 		ergebnissWurf = 0;
 		maxPunkteBisEnde = 100;

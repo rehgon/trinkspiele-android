@@ -1,16 +1,20 @@
 package com.google.code.meier;
 import java.util.Random;
 
+import android.content.Context;
+
 import com.google.code.trinkspiele.Spieler;
+import com.google.code.trinkspiele.Wuerfelspiel;
 
 
-public class Meier {
+public class Meier extends Wuerfelspiel{
 	
 	private int wuerfel1, wuerfel2, ergebnis, vorigeZahl, gelogeneZahl;
 	private Random zufallsZahl = new Random();
 	private boolean zuBeginnLuegen, zahlZuTief, glaubtDassGelogen;
 	
-	public Meier() {
+	public Meier(Context context) {
+		super(context);
 		wuerfel1 = 0;
 		wuerfel2 = 0;
 		ergebnis = 0;

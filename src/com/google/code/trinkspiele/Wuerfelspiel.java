@@ -2,6 +2,7 @@ package com.google.code.trinkspiele;
 
 import java.util.Random;
 
+import android.content.Context;
 import android.widget.ImageView;
 
 public abstract class Wuerfelspiel extends Spiel {
@@ -21,7 +22,8 @@ public abstract class Wuerfelspiel extends Spiel {
 	};
 	
 	
-	public Wuerfelspiel() {
+	public Wuerfelspiel(Context context)
+	{
 		wuerfelGenerator = new Random();
 		wuerfelZahl = new int[10];
 		ergebnis = 0;
