@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="bigkingscup_big_kings_cup">Big King\'s Cup</string>
+<string name="bigkingscup_um_das_spiel_zu_starten_button_klicken">Click on the button to start the game</string>
+<string name="bigkingscup_kings_cup">KING'S CUP</string>
+<string name="bigkingscup_erklaerung">Explanation:</string>
+<string name="bigkingscup_alle_karten_durch">Pile is empty</string>
+<string name="bigkingscup_klicke_auf_den_button_um_nue_zu_starten">Click on the Button to restart</string>
+<string name="bigkingscup_karte_ziehen">draw a card</string>
+<string name="bigkingscup_erklaeung_zu_kategoerie">Explanation to the Category</string>
+<string name="bigkingscup_klokarte">TOILET CARD</string>
+<string name="bigkingscup_question_master">QUESTION MASTER</string>
+<string name="bigkingscup_thumb_master">THUMB MASTER</string>
+<string name="bigkingscup_klokarte_entfernen">Remove toilet card</string>
+<string name="bigkingscup_keine_klokarten_vorhanden">There are no toilet cards</string>
+<string name="bigkingscup_klokarte_von">Toilet card of</string>
+<string name="bigkingscup_wurde_entfernt">has been removed</string>
+<string name="bigkingscup_alle_trinken">EVERYBODY DRINKS</string>
+<string name="bigkingscup_kategorie">CATEGORY</string>
+<string name="bigkingscup_reim">RHYME</string>
+<string name="bigkingscup_counter">COUNTER</string>
+<string name="bigkingscup_fettnaepfchen">SELF PUNCH</string>
+<string name="bigkingscup_regel_ausdenken">RULE CREATOR</string>
+<string name="bigkingscup_zehn_schluecke_verteilen">DISTRIBUTE 10 SIPS</string>
+<string name="bigkingscup_maenner_trinken">MEN DRINK</string>
+<string name="bigkingscup_maedels_trinken">GIRLS DRINK</string>
+<string name="bigkingscup_kritischer_fehler">CRITICAL ERROR</string>
+<string name="bigkingscup_case_eins">Everybody drinks</string>
+<string name="bigkingscup_case_zwei">The Player chooses a Genre(as for instance alcohol-labels, cigarette-labels, movies, etc.) and names a term out of this genre. Now in turn, every player has to name another different term out of this genre, as long as somebody makes a mistake (repeats am already names term or similar). This Player has to drink.</string>
+<string name="bigkingscup_case_drei">The Player chooses a word of his choice (table for example). Now in turn, every player has to name another word, that rhymes with the word chosen (fable for example). The first player who makes a mistake has to drink.</string>
+<string name="bigkingscup_case_vier">The Player who draws a 4 is the Question Master. Other Player's aren't anymore allowed to answer questions to that Player. Nonetheless if somebody does, he has to drink. The Player keeps the Question Master title as long as somebody else draws a 4</string>
+<string name="bigkingscup_case_fuenf">The Player chooses a number between 3 and 9. Now in turn everbody has to count from 1 upwards, but if the number to name is divisible or contains the chosen number there has not to be named the number, but a previously determined word. For example if the choosen number is 3 and the word is "DrinkOMat". actual player starts and says 1, next player says 2, next player now has to say "SaufOMat", then 4, 5, "SaufOMat", and so on. First Player who makes a mistake has to drink</string>
+<string name="bigkingscup_case_sechs">Only a Player with a Toilet Card has the possibility to go to the toilet. The card is in his possession and can be redeemed at any time. Toilet Cards can be removed at the options menu</string>
+<string name="bigkingscup_case_sieben">The Player has to drink</string>
+<string name="bigkingscup_case_acht">The Player becomes the Thumb Master. As long as he has this status, at any time of the game he can put his thumb on the table. Now every Player has to do the same, but the last who does so, has to drink.</string>
+<string name="bigkingscup_case_neun">The Player can create his own rule, that is active during the rest of the game.</string>
+<string name="bigkingscup_case_zehn">The Player must distribute 10 sips to the other Players.</string>
+<string name="bigkingscup_case_elf">All guys have to drink.</string>
+<string name="bigkingscup_case_zwoelf">All Girls have to drink.</string>
+<string name="bigkingscup_case_dreizehn_eins">has to put the content of his glass in the Big King\'s cup and then has to drink the whole cup</string>
+<string name="bigkingscup_case_dreizehn_zwei">The Player fills a big glass (the Big King's Cup) with a drink of his choice to a quarter. Next Player who draws a king has to fill it to a half and so on, till the fourth king has been drawn. The Player who has done so, has to put his own beverage into the cup and drink it all</string>
+<string name="bigkingscup_als_naechstes_ist">It\'s</string>
+<string name="bigkingscup_dran">\'s turn</string>
+<string name="bigkingscup_help_message">You need:\n-enough beverages\n-a quite big cup\n\n The Players draw one card in turn. Every card value has a different rule, that has to be fulfilled. You find the explanation of the Rules, when you click on the button beneath the current drawn card. After all cards have been passed, all states are been reseted</string>
+
+</resources>

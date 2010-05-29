@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="karten_herz">Hearts</string>
+<string name="karten_karo">Diamonds</string>
+<string name="karten_kreuz">Clubs</string>
+<string name="karten_pik">Spades</string>
+<string name="karten_bube">Jack</string>
+<string name="karten_dame">Queen</string>
+<string name="karten_koenig">King</string>
+<string name="karten_ass">Ace</string>
+<string name="karten_deck_enthaelt_zu_wenig_karten">Pile is empty</string>
+</resources>
