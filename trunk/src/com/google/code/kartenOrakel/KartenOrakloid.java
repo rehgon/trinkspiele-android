@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -90,6 +91,15 @@ public class KartenOrakloid extends Activity {
 			}
 		});
 	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
+	    	orakel.wirklichBeendenDialog(this);
+	    	return true;
+	    }
+	    return false;
+	}
 
 	private void zugMachen(boolean hoeherButtonGedrückt) {
 		String symbol = orakel.kartenSymbolBestimmen(karte[0]);
@@ -145,7 +155,7 @@ public class KartenOrakloid extends Activity {
 	private boolean applyMenuChoice(MenuItem item) {
 		switch (item.getItemId()) {
 			case ID_BEENDEN:
-				startActivity(new Intent(this, Trinkspiele.class));
+				orakel.wirklichBeendenDialog(this);
 				return true;
 			case ID_HELP:
 				orakel.createHelperDialog(this, orakel.getHelpMessage());
