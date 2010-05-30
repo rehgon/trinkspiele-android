@@ -1,5 +1,6 @@
 package com.google.code.trinkspiele;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,16 +23,15 @@ public abstract class Spiel {
 	
 	public void wirklichBeendenDialog(final Context context) {
 		
-		this.contex = context;
 		AlertDialog.Builder dialog = new AlertDialog.Builder(context);
 		dialog.setTitle(context.getString(R.string.wirklich_beenden_titel));
-		Log.v("Spiel", "dialog created and showed.");
-		dialog.setMessage(context.getString(R.string.wirklich_beenden_message));
+		dialog.setMessage(context.getString(R.string.wirklich_zum_hauptmenue_message));
 		dialog.setPositiveButton(context.getString(R.string.ok), new DialogInterface.OnClickListener() {
 			
 			public void onClick(DialogInterface dialog, int which) {
-				System.exit(0);
+				((Activity) context).finish();
 				context.startActivity(new Intent(context, Trinkspiele.class));
+				Log.v("Spiel", "Neue Trinkspiel activity");
 			}
 		});
 		dialog.setNegativeButton(context.getString(R.string.abbrechen), null);

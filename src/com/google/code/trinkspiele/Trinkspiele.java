@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,31 +45,26 @@ public class Trinkspiele extends ListActivity {
         setListAdapter(new ArrayAdapter<String>(this, 
         		android.R.layout.simple_list_item_1,
         		trinkspieleListe));
-        //wieder löschen
-        Spieler.getSpielerNameArrayList().add("Remo Blättler");
-        Spieler.getSpielerNameArrayList().add("Simon Illi");
-        Spieler.getSpielerNameArrayList().add("Raffael Affolter");
-        Spieler.getSpielerNameArrayList().add("Amaury Lemaerchal");
+        
+        if (Spieler.getSpielerNameArrayList().size() == 0) {
+        	//wieder löschen
+            Spieler.getSpielerNameArrayList().add("Player 01");
+            Spieler.getSpielerNameArrayList().add("Player 02");
+        }
     }
     
-    @Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-	    if ((keyCode == KeyEvent.KEYCODE_BACK)) {
-	    	System.exit(0);
-	    	return true;
-	    }
-	    return false;
-	}
-    
     public void onListItemClick(ListView parent, View v, int position, long id) {
+    	boolean zuWenigSpieler = false;
     	if (trinkspieleListe[position].equals(getString(R.string.assrennen_ass_rennen))) {
 			startActivity(new Intent(this, assRennen.class));
     	}
     	else if (trinkspieleListe[position].equals(getString(R.string.bigkingscup_big_kings_cup))) {
 			if (Spieler.getSpielerNameArrayList().size() > 1)
 				startActivity(new Intent(this, Cupoid.class));
-			else
+			else {
 				zuWenigSpieler(2);
+				zuWenigSpieler = true;
+			}
     	}
     	else if (trinkspieleListe[position].equals(getString(R.string.orakel_karten_orakel))) {
     		startActivity(new Intent(this, KartenOrakloid.class));
@@ -78,8 +72,10 @@ public class Trinkspiele extends ListActivity {
     	else if (trinkspieleListe[position].equals(getString(R.string.meier_meier))) {
     		if (Spieler.getSpielerNameArrayList().size() > 1)
 				startActivity(new Intent(this, Meieroid.class));
-			else
+			else {
 				zuWenigSpieler(2);
+				zuWenigSpieler = true;
+			}
     	}
     	else if (trinkspieleListe[position].equals(getString(R.string.siebensaeuft_siebensaeuft))) {
     		startActivity(new Intent(this, siebensauft.class));
@@ -90,12 +86,19 @@ public class Trinkspiele extends ListActivity {
     	else if (trinkspieleListe[position].equals(getString(R.string.woody_woody))) {
 			if (Spieler.getSpielerNameArrayList().size() > 1)
 				startActivity(new Intent(this, woodroid.class));
-			else
+			else {
 				zuWenigSpieler(2);
+				zuWenigSpieler = true;
+			}
 		}
 		else {
 			Toast.makeText(this, (getString(R.string.kritischer_fehler)), Toast.LENGTH_LONG).show();
+			zuWenigSpieler = true; //nicht ganz korrekt, aber es geht halt auf so
 		}
+    	//Trinkspiel Activity beenden, aber nur wenn genügend Spieler vorhanden sind
+    	if (zuWenigSpieler == false) {
+    		finish();
+    	}
 	}
     
     private void zuWenigSpieler(int wievieleMindestens) {
@@ -145,7 +148,8 @@ public class Trinkspiele extends ListActivity {
 			dialog.show();
 			return true;
 		case 2:
-			System.exit(0);
+			dialog = wirklichBeendenDialog();
+			dialog.show();
 			return true;
 		}
 		return (false);
@@ -195,5 +199,21 @@ public class Trinkspiele extends ListActivity {
 				dialog.setPositiveButton(getString(R.string.ok), null);
 			}
 			return dialog;
+	}
+	
+	private AlertDialog.Builder wirklichBeendenDialog() {
+		
+		AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+		dialog.setTitle(getString(R.string.wirklich_beenden_titel));
+		dialog.setMessage(getString(R.string.wirklich_beenden_message));
+		dialog.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) {
+				finish();
+				System.exit(0);
+			}
+		});
+		dialog.setNegativeButton(getString(R.string.abbrechen), null);
+		return dialog;
 	}
 }
