@@ -11,6 +11,7 @@
 <string name="beenden">Beenden</string>
 <string name="fortschritt">Fortschritt:</string>
 <string name="wirklich_beenden_titel">Wirklich?</string>
-<string name="wirklich_beenden_message">Möchten sie wirklich ins Hauptmenü zurück? Alle Spieldaten werden zurückgesetzt.</string>
+<string name="wirklich_zum_hauptmenue_message">Möchten sie wirklich ins Hauptmenü zurück? Alle Spieldaten werden zurückgesetzt.</string>
+<string name="wirklich_beenden_message">Möchten sie wirklich beenden? Alle Daten werden gelöscht.</string>
 
 </resources>
