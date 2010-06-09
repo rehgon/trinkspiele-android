@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="meier_meier">Meier</string>
+<string name="meier_viel_spass_mit_Meier">Viel Spass bei Meier</string>
+<string name="meier_ist_dran_alle_anderen_spieler_haben_wegzuschauen"> ist dran,\nalle anderen Spieler haben wegzuschauen</string>
+<string name="meier_du_hast">Du hast</string>
+<string name="meier_gewuerfelt">gewürfelt</string>
+<string name="meier_moechtest_du_gleich_zu_beginn_luegen">Möchtest du gleich zu Beginn lügen</string>
+<string name="meier_die_zahl_ist_tiefer_als_die_des_vorigen_spielers_du_musst_luegen">Die Zahl ist tiefer als die des vorigen Spielers, du musst lügen</string>
+<string name="meier_die_zahl_ist_hoeher_als_die_des_letzten_spielers_moechtest_du_trotzdem_luegen">Die Zahl ist höher als die des vorigen Spielers, möchtest du trotzdem lügen</string>
+<string name="meier_die_zahl_ist_gleich_hoch_wie_die_des_vorigen_spielers_du_musst_luegen">Die Zahl ist gleich hoch wie die des vorigen Spielers, du musst lügen</string>
+<string name="meier_glauben_sie">Glauben sie</string>
+<string name="meier_dass_er">dass er</string>
+<string name="meier_gewuerfelt_hat">gewürfelt hat</string>
+<string name="meier_falsch">Falsch</string>
+<string name="meier_hatte_wirklich">hatte wirklich</string>
+<string name="meier_du_musst_trinken">du musst trinken</string>
+<string name="meier_richtig">Richtig</string>
+<string name="meier_hatte_in_wirklichkeit">hatte in Wirklichkeit</string>
+<string name="meier_er_muss_trinken">er muss trinken</string>
+<string name="meier_waehle_eine_zahl">Wähle eine Zahl</string>
+<string name="meier_du_hast_meier_gewuerfelt">Du hast Meier gewürfelt</string>
+<string name="meier_muss_trinken">muss trinken</string>
+<string name="meier_du_hast_meier_angesagt_und_gelogen_du_musst_trinken">&quot;Du hast Meier angesagt, aber gelogen.\nDu musst trinken&quot;</string>
 </resources>

@@ -41,6 +41,12 @@ public class Spieler {
 		else
 			aktuellerSpielerIndex++;
 	}
+	public static void decrementAktuellerSpieler() {
+		if (aktuellerSpielerIndex == 0)
+			aktuellerSpielerIndex = getSpielerNameArrayList().size() - 1;
+		else
+			aktuellerSpielerIndex--;
+	}
 	
 	public static void spielerHinzufuegen(String name) {
 		spielerNameListe.add(name);

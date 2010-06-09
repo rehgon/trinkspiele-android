@@ -26,6 +26,9 @@
 <string name="add_title">Add Constant</string>
 <string name="abbrechen">Cancel</string>
 <string name="ok">Ok</string>
+<string name="ja">Yes</string>
+<string name="nein">No</string>
+<string name="neues_spiel">new game</string>
 <string name="neustart">Restart</string>
 <string name="hilfe">Help</string>
 <string name="kritischer_fehler">Critical error!!!</string>

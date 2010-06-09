@@ -4,6 +4,9 @@
 
 <string name="abbrechen">Abbrechen</string>
 <string name="ok">Ok</string>
+<string name="ja">Ja</string>
+<string name="nein">Nein</string>
+<string name="neues_spiel">Neues Spiel</string>
 <string name="neustart">Nuestart</string>
 <string name="hilfe">Hilfe</string>
 <string name="kritischer_fehler">Kritischer Fehler!!!</string>

@@ -2,7 +2,6 @@ package com.google.code.kartenOrakel;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -14,7 +13,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.code.trinkspiele.R;
-import com.google.code.trinkspiele.Trinkspiele;
 
 public class KartenOrakloid extends Activity {
 	private static final int ID_HELP = 0;
@@ -124,7 +122,7 @@ public class KartenOrakloid extends Activity {
 
 		orakel = new KartenOrakel(getApplicationContext());
 		richtigLabel.setText(getString(R.string.orakel_richtige) + " 0");
-		falschLabel.setText(getString(R.string.orakel_richtige) + " 0");
+		falschLabel.setText(getString(R.string.orakel_falsche) + " 0");
 	}
 	
 	private void resultatAnzeigen() {
