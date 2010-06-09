@@ -102,7 +102,6 @@ public class Meieroid extends Activity {
 				+ context.getString(R.string.meier_ist_dran_alle_anderen_spieler_haben_wegzuschauen));
 		builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				ersterZug();
 			}
@@ -127,14 +126,12 @@ public class Meieroid extends Activity {
 
 			builder.setPositiveButton(getString(R.string.ja), new DialogInterface.OnClickListener() {
 				
-				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					luegenDialog(meier.getErgebnis());
 				}
 			});
 			builder.setNegativeButton(getString(R.string.nein), new DialogInterface.OnClickListener() {
 				
-				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					naechsterSpielerDran();
 				}
@@ -174,7 +171,6 @@ public class Meieroid extends Activity {
 				wahlObLuegenOderNicht = true;
 				builder.setNegativeButton(getString(R.string.nein), new DialogInterface.OnClickListener() {
 					
-					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						naechsterSpielerDran();
 					}
@@ -191,7 +187,6 @@ public class Meieroid extends Activity {
 			
 			builder.setPositiveButton(positiveButtonText, new DialogInterface.OnClickListener() {
 				
-				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					if (wahlObLuegenOderNicht)
 						luegenDialog(meier.getErgebnis());
@@ -210,7 +205,6 @@ public class Meieroid extends Activity {
 		builder.setMessage(Spieler.getAktuellerSpieler() + " " + context.getString(R.string.meier_ist_dran_alle_anderen_spieler_haben_wegzuschauen) + ".");
 		builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				glaubeFrage();
 			}
@@ -229,7 +223,6 @@ public class Meieroid extends Activity {
 		
 		builder.setPositiveButton(getString(R.string.ja), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				
 				meier.setGlaubtDassGelogen(false);
@@ -244,7 +237,6 @@ public class Meieroid extends Activity {
 		});
 		builder.setNegativeButton(getString(R.string.nein), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				meier.setGlaubtDassGelogen(true);
 				wurfAuswerten();
@@ -266,7 +258,6 @@ public class Meieroid extends Activity {
 		
 		builder.setPositiveButton(getString(R.string.neues_spiel), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				meier.setErgebnis(0);
 				meier.setVorigeZahl(0);
@@ -277,7 +268,6 @@ public class Meieroid extends Activity {
 		});
 		builder.setNegativeButton(getString(R.string.zum_hauptmenue), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				meier.wirklichBeendenDialog(context);	
 			}
@@ -290,7 +280,6 @@ public class Meieroid extends Activity {
 		builder.setMessage(Spieler.getAktuellerSpieler() + " " + context.getString(R.string.meier_ist_dran_alle_anderen_spieler_haben_wegzuschauen) + ".");
 		builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				ersterZug();
 			}
@@ -331,7 +320,6 @@ public class Meieroid extends Activity {
 			
 		builder.setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
 			
-			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				if (meier.getErgebnis() == 21)
 					Spieler.incrementAktuellerSpieler();
