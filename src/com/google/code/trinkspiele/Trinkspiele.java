@@ -50,6 +50,8 @@ public class Trinkspiele extends ListActivity {
         	//wieder löschen
             Spieler.getSpielerNameArrayList().add("Player 01");
             Spieler.getSpielerNameArrayList().add("Player 02");
+            Spieler.getSpielerNameArrayList().add("Player 03");
+            Spieler.getSpielerNameArrayList().add("Player 04");
         }
     }
     
