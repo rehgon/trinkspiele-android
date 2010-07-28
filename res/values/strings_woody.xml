@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="woody_woody">Woody</string>
-<string name="woody_zu_beginn_muss_ein_woody_gewaehlt_werden__">before you can begin, you have to choose a woody</string>
+<string name="woody_zu_beginn_muss_ein_woody_gewaehlt_werden__">at first, you have to choose a woody</string>
 <string name="woody_aktueller_spieler">current player</string>
 <string name="woody_wuerfeln">throw dices</string>
-<string name="woody_wer_ist_woody">who is woody</string>
+<string name="woody_wer_ist_woody">Woody</string>
 <string name="woody_neuen_woody_bestimmen">choose a new Woody</string>
 <string name="woody_woody_bestimmen">choose a Woody</string>
 <string name="woody_woody_ist">Woody is</string>
@@ -25,4 +25,5 @@
 <string name="woody_jackpot">JACKPOT!!!</string>
 <string name="woody_Der_woody">The Woody</string>
 <string name="woody_help_message">At the beginning of the game, somebody has to volunteerly be the Woody. The Woody always has to drink if somebody else than him throws a 3. If the Woody throws a 3 himself, he must choose a new Woody. The Woody can manually be changed at the Options-Menu at any time. If a player throwed a pair, he must distribute as many sips as the number on one dice. An Exception of that rule occurs if a player has thrown a pair of sixes, then he must distribute 12 sips. If a player throws a 7, his left neighboor has to take a sip, if he throws a 9, his right neigboor has to. </string><string name="woody___nur_eng__its">"it\'s "</string>
+<drawable name="woody_button_normal">@drawable/button_wood_selector</drawable>
 </resources>

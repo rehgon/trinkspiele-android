@@ -3,30 +3,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" 
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="@color/hintergrundFarbeWoodroid">
+	android:layout_height="fill_parent" android:background="@drawable/background_wood">
 	
 	<TextView 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
 		android:id="@+id/titelLabel" 
-		android:textSize="30px" 
 		android:text="WOODY" 
 		android:textColor="@color/TextColorWoodroid" 
 		android:padding="10px" 
-		android:gravity="center" android:shadowRadius="2" android:shadowColor="#FFFFFF"/>
+		android:gravity="center" android:shadowColor="#FFFFFF" android:shadowRadius="4" android:textStyle="bold" android:textSize="40px"/>
 	<TextView 
 		android:layout_height="wrap_content" 
 		android:id="@+id/WerIstWoodyLabel" 
 		android:paddingLeft="5px" 
 		android:textColor="@color/TextColorWoodroid" 
-		android:layout_width="fill_parent" android:paddingRight="5px" android:textSize="16px" android:text="@string/woody_wer_ist_woody"/>
+		android:layout_width="fill_parent" android:paddingRight="5px" android:text="@string/woody_wer_ist_woody" android:shadowColor="#FFFFFF" android:shadowRadius="4" android:textSize="30px"/>
 		
 	<TextView 
 		android:id="@+id/aktuellerSpieler"
 		android:layout_height="wrap_content" 
 		android:paddingLeft="5px" 
 		android:textColor="@color/TextColorWoodroid" 
-		android:layout_width="fill_parent" android:paddingRight="5px" android:textSize="16px" android:text="@string/woody_aktueller_spieler"/>
+		android:layout_width="fill_parent" android:paddingRight="5px" android:text="@string/woody_aktueller_spieler" android:shadowColor="#FFFFFF" android:shadowRadius="4" android:textSize="30px"/>
 		
 	<TableLayout 
 		android:layout_height="wrap_content"
@@ -34,8 +33,7 @@
 		android:gravity="center">
 		
 		<TableRow 
-			android:gravity="center" 
-			android:padding="10px">	
+			android:gravity="center" android:paddingTop="20px">	
 			
 			<ImageView 
 				android:id="@+id/wuerfelEinsImage"
@@ -58,16 +56,18 @@
 		android:layout_height="wrap_content" 
 		android:text=" " 
 		android:layout_gravity="center" 
-		android:paddingBottom="10px"
 		android:textColor="@color/TextColorWoodroid" 
 		android:layout_width="fill_parent" 
-		android:gravity="center" android:textSize="15px" android:lines="3"/>
+		android:lines="3" android:shadowColor="#FFFFFF" android:shadowRadius="4" android:textSize="25px" android:gravity="center" android:padding="10px"/>
 		
 	<Button 
 		android:id="@+id/Button01"
 		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center" android:text="@string/woody_wuerfeln"></Button>
+		android:text="@string/woody_wuerfeln" android:layout_height="wrap_content" android:layout_gravity="bottom|center"></Button>
 
 
+
+
+
+<ImageButton android:id="@+id/ImageButton01" android:layout_height="wrap_content" android:layout_gravity="center" android:layout_width="wrap_content" android:background="@drawable/woody_button_normal"></ImageButton>
 </LinearLayout>

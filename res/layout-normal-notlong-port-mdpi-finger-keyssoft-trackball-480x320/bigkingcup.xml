@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
  	android:layout_width="fill_parent"
- 	android:layout_height="fill_parent" android:background="@color/bigKingBackgroundColor">
+ 	android:layout_height="fill_parent" android:background="@drawable/background_green">
 
 	<TextView 
 		android:id="@+id/bigKingTitel" 

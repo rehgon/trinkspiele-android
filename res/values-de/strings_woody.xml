@@ -3,7 +3,7 @@
 <string name="woody_zu_beginn_muss_ein_woody_gewaehlt_werden__">Zu Beginn muss ein Woody gewählt werden, auf den Button klicken um fortzufahren</string>
 <string name="woody_aktueller_spieler">Aktueller Spieler</string>
 <string name="woody_wuerfeln">würfeln</string>
-<string name="woody_wer_ist_woody">Wer ist Woody</string>
+<string name="woody_wer_ist_woody">Woody</string>
 <string name="woody_neuen_woody_bestimmen">Neuen Woody bestimmen</string>
 <string name="woody_woody_bestimmen">Woody bestimmen</string>
 <string name="woody_woody_ist">Woody ist</string>
@@ -26,4 +26,5 @@
 <string name="woody_Der_woody">Der Woody</string>
 <string name="woody_help_message">Es wird reihum, offen gewürfelt. Zu Beginn muss sich jemand freiwillig zum Woody ernennen. Der Woody trinkt immer wenn eine 3 in einem Würfel vorkommt oder wenn die Summe 3 ergibt. Wenn der Woody selbst eine 3 würfelt, darf er einen neuen Woody wählen. Der Woody kann auch jederzeit über das Optionsmenü geändert werden. Hat ein Spieler einen Pasch, so darf er die Menge an Schlücken verteilen die auf einem Würfel steht. Eine Ausnahme besteht darin, wenn der Spieler zwei sechsen würfelt, dann darf er die Summe aus beiden Würfeln verteilen. Hat ein Spieler die Summe 7 gewürfelt, muss sein linker Nachbar trinken, bei 9 der rechte Nachbar. Diese Möglichkeiten sind kummulierbar (Bsp.: wenn jemand 3 &amp; 4 würfelt muss der linke Nachbar und der Woody trinken.</string>
 <string name="woody___nur_eng__its"></string>
+<drawable name="woody_button_normal">@drawable/button_wood_selector_de</drawable>
 </resources>
