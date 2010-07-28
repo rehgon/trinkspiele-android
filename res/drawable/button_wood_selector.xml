@@ -4,5 +4,5 @@
            android:drawable="@drawable/deckblatt" /> <!-- pressed -->
      <item android:state_focused="true"
            android:drawable="@drawable/herz10" /> <!-- focused -->
-     <item android:drawable="@drawable/herz2" /> <!-- default -->
+     <item android:drawable="@drawable/button_wood" /> <!-- default -->
  </selector>
