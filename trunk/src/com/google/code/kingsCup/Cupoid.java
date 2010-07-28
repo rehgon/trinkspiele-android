@@ -54,7 +54,7 @@ public class Cupoid extends Activity {
 		erklaerung = (Button) findViewById(R.id.bigKingErklaerungButton);
 		erklaerung.setOnClickListener(new OnClickListener() {
 
-			//Klick auf den "Erklärung" Button
+			//Bei Klick auf den "Erklärung" Button
 			public void onClick(View v) {
 				
 				// Eine nicht editierbare Seek Bar soll angezeigt werden, wenn ein König

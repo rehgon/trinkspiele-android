@@ -42,6 +42,7 @@ public class KartenOrakloid extends Activity {
 		progress = (ProgressBar) findViewById(R.id.progressBarKarten);
 		istNeuesSpiel = true;
 
+
 		//onclick listener für Kartenstapel
 		image.setOnClickListener(new View.OnClickListener() {
 			

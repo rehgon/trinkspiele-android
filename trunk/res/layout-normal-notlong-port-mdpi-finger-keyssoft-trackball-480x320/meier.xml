@@ -3,7 +3,7 @@
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="fill_parent" 
   android:layout_width="fill_parent"
-  android:orientation="vertical">
+  android:orientation="vertical" android:background="@drawable/background_wood">
   
 	<TextView
 		android:layout_height="wrap_content" 
@@ -11,7 +11,7 @@
 		android:text="Meier" 
 		android:gravity="center" 
 		android:padding="@dimen/titelPadding" 
-		android:textSize="@dimen/titelTextSize"/>
+		android:textSize="@dimen/titelTextSize" android:typeface="serif"/>
 		
 	<ImageView
 		android:id="@+id/meierImage"

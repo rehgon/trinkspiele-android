@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -27,7 +28,7 @@ public class woodroid extends Activity implements View.OnClickListener {
 	private static final int ID_BEENDEN = 2;
 
 	Button wuerfelnButton;
-	TextView ausgabe, werIstWoodyLabel, aktuellerSpieler;
+	TextView titelLabel, ausgabe, werIstWoodyLabel, aktuellerSpieler;
 	ImageView wuerfelEinsImage, wuerfelZweiImage;
 	AlertDialog.Builder dialog;
 
@@ -47,10 +48,19 @@ public class woodroid extends Activity implements View.OnClickListener {
 		wuerfelnButton.setText(getText(R.string.woody_wuerfeln));
 		wuerfelnButton.setOnClickListener((OnClickListener) this);
 		
+		titelLabel = (TextView) findViewById(R.id.titelLabel);
 		ausgabe = (TextView) findViewById(R.id.ausgabe);
-		
 		werIstWoodyLabel = (TextView) findViewById(R.id.WerIstWoodyLabel);
 		aktuellerSpieler = (TextView) findViewById(R.id.aktuellerSpieler);
+		
+		//Setzt die Custom Fonts
+	    Typeface titel_typeFace = Typeface.createFromAsset(getAssets(), "fonts/font_titel_chops.ttf");
+	    Typeface text_typeFace = Typeface.createFromAsset(getAssets(), "fonts/font_text_bigblocko.ttf");
+	    titelLabel.setTypeface(titel_typeFace);
+	    ausgabe.setTypeface(text_typeFace);
+	    werIstWoodyLabel.setTypeface(text_typeFace);
+	    aktuellerSpieler.setTypeface(text_typeFace);
+	    wuerfelnButton.setTypeface(text_typeFace);
 		
 		wuerfelEinsImage = (ImageView) findViewById(R.id.wuerfelEinsImage);
 		wuerfelZweiImage = (ImageView) findViewById(R.id.wuerfelZweiImage);
