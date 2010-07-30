@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="siebensaeuft_siebensaeuft">Sieben säuft</string>
+<string name="siebensaeuft_eswurde">Es wurde</string>
+<string name="siebensaeuft_geworfen">geworfen.\n</string>
+<string name="siebensaeuft_punktestandzurzeit">Punkte Stand zur Zeit:</string>
+<string name="siebensaeuft_bittewuerfeln">Bitte würfeln.\n</string>
+<string name="siebensaeuft_spielende">Spiel zu Ende\nDanke fürs spielen</string>
+<string name="siebensaeuft_nichttrinken">Es muss nicht getrunken werden\n</string>
+<string name="siebensaeuft_trinken">Es muss getrunken werden\n</string>
+<string name="siebensaeuft_quersumme7">Quersumme ist 7\n</string>
+<string name="siebensaeuft_punktestanddurch7">Der Punktestand ist durch 7 teilbar,\n</string>
+<string name="siebensaeuft_durch7teilbar">durch 7 teilbar\n</string>
+<string name="siebensaeuft_nicht">nicht </string>
+<string name="siebensaeuft_diezahlist">Die geworfene Zahl ist </string>
 </resources>
