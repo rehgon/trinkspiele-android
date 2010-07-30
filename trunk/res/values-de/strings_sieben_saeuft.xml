@@ -15,4 +15,6 @@
 <string name="siebensaeuft_diezahlist">Die geworfene Zahl ist </string>
 <string name="siebensaeuft_zumstartenbitte">Zum starten bitte Button drücken.</string>
 <string name="siebensaeuft_wuerfeln">Würfeln</string>
+<string name="siebensaeuft_hilfe">jabber</string>
+<string name="siebensaeuft_neustart">Neustart</string>
 </resources>
