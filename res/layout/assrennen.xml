@@ -11,11 +11,10 @@
 	<TextView 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" 
-		android:text="Ass Rennen"
 		android:textSize="30px" 
 		android:gravity="center"
 		android:paddingBottom="20px" 
-		android:paddingTop="10px" android:textColor="@color/TextColorAssrennen"/>
+		android:paddingTop="10px" android:textColor="@color/TextColorAssrennen" android:typeface="sans" android:text="@string/assrennen_ass_rennen"/>
 
 	<TableLayout 
 		android:id="@+id/TableLayout01"
@@ -27,17 +26,16 @@
 		android:id="@+id/ImageView01"
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content"
-		android:src="@drawable/deckblatt"/>
+		android:src="@drawable/deckblatt" android:adjustViewBounds="true"/>
 		
 	<TextView 
 		android:layout_height="wrap_content"
 		android:gravity="center" 
 		android:layout_width="fill_parent"
 		android:paddingBottom="10px" 
-		android:text="Bitte neue Karte ziehen"
 		android:id="@+id/TextAusgabe" 
 		android:lines="6" 
-		android:paddingTop="10px" android:textColor="@color/TextColorAssrennen"/>
+		android:paddingTop="10px" android:textColor="@color/TextColorAssrennen" android:text="@string/assrennen_bitteneuekarte"/>
 
 	<Button 
 		android:id="@+id/Button01" 
