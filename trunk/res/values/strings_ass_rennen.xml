@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="assrennen_ass_rennen">Ace Race</string>
+<string name="assrennen_help">jabber</string>
+<string name="assrennen_siehaben">You've drawn</string>
+<string name="assrennen_gezogennichtspassiert">.\nNothing happens and it is the next player's turn.</string>
+<string name="assrennen_spielende">There arent any aces left in the deck.\nThe game is over.</string>
+<string name="assrennen_gezogendiesist">\nThis is the</string>
+<string name="assrennen_erste">first</string>
+<string name="assrennen_zweite">second</string>
+<string name="assrennen_dritte">third</string>
+<string name="assrennen_vierte">fourth</string>
+<string name="assrennen_ass">ace.</string>
+<string name="assrennen_esmuss">\nYou have to drink</string>
+<string name="assrennen_getrunkenwerden">now.\n</string>
+<string name="assrennen_nächstekarte">new card</string>
+<string name="assrennen_neustart">restart</string>
+<string name="assrennen_bitteneuekarte">Please draw a new card.</string>
 </resources>
