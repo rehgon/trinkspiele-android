@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="assrennen_ass_rennen">Ass Rennen</string>
+<string name="assrennen_help">Es wird nacheinander eine Karte gezogen.\nWenn ein Ass gezogen wurde muss getrunken werden.\nDie Menge die getrunken werden muss, hängt von der Anzahl gezogener Asse ab.\nBeim ersten Ass wird 1/4 getrunken und bei jedem weiteren Ass wird zusätzlich 1/4 getrunken.</string>
+<string name="assrennen_siehaben">Sie haben</string>
+<string name="assrennen_gezogennichtspassiert">gezogen.\nNichts passiert und der nächste Spieler ist dran.</string>
+<string name="assrennen_spielende">Es wurden alle Asse aus dem Deck gezogen. \nDas Spiel ist beendet</string>
+<string name="assrennen_gezogendiesist">gezogen.\nDies ist das</string>
+
+<string name="assrennen_erste">erste</string>
+<string name="assrennen_zweite">zweite</string>
+<string name="assrennen_dritte">dritte</string>
+<string name="assrennen_vierte">vierte</string>
+<string name="assrennen_ass">Ass.</string>
+<string name="assrennen_esmuss">\nEs muss</string>
+<string name="assrennen_getrunkenwerden"> getrunken werden.\n</string>
+<string name="assrennen_nächstekarte">neue Karte</string>
+<string name="assrennen_neustart">Neustart</string>
+<string name="assrennen_bitteneuekarte">Bitte neue Karte ziehen.</string>
 </resources>
