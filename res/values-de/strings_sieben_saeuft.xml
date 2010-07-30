@@ -13,4 +13,6 @@
 <string name="siebensaeuft_durch7teilbar">durch 7 teilbar\n</string>
 <string name="siebensaeuft_nicht">nicht </string>
 <string name="siebensaeuft_diezahlist">Die geworfene Zahl ist </string>
+<string name="siebensaeuft_zumstartenbitte">Zum starten bitte Button drücken.</string>
+<string name="siebensaeuft_wuerfeln">Würfeln</string>
 </resources>
