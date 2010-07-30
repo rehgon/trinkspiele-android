@@ -146,6 +146,11 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 		return ausgabe;
 	}
 	
-	
+	public String help()
+	{
+		ausgabe = context.getString(R.string.siebensaeuft_hilfe);
+		
+		return ausgabe;
+	}
 
 }
