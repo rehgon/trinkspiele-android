@@ -3,6 +3,7 @@ package com.google.code.assrennen;
 import android.content.Context;
 
 import com.google.code.trinkspiele.KartenSpiel;
+import com.google.code.trinkspiele.R;
 
 public class AssRennenLogik extends KartenSpiel {
 	private int aceCounter;
@@ -43,15 +44,15 @@ public class AssRennenLogik extends KartenSpiel {
 				aktuellesKartenSymbol = kartenSymbolBestimmen(karte[0]);
 				aktuellerKartenWert = kartenWertBestimmen(karte[0]);
 				kartenHalter = karte;
-			if(karte[0].contains("Ass")) {
+			if(karte[0].contains(("Ass"))||(karte[0].contains("Ace"))) {
 				aceCounter++;
-				String[] welchesAss = { "erste", "zweite", "dritte", "vierte" };
-				ausgabe += "Sie haben \"" + karte[0] + "\" gezogen.\nDies ist das " + welchesAss[aceCounter - 1] + " Ass.\nEs muss " + aceCounter + "/4 getrunken werden.\n";
+				String[] welchesAss = {context.getString(R.string.assrennen_erste), context.getString(R.string.assrennen_zweite), context.getString(R.string.assrennen_dritte),context.getString(R.string.assrennen_vierte) };
+				ausgabe += context.getString(R.string.assrennen_siehaben) + " \"" + karte[0] + "\" " +context.getString(R.string.assrennen_gezogendiesist) +" " + welchesAss[aceCounter - 1] +" "+ context.getString(R.string.assrennen_ass)+" "+ context.getString(R.string.assrennen_esmuss) +" "+ aceCounter + "/4 " +context.getString(R.string.assrennen_getrunkenwerden);
 				if (aceCounter == 4)
-					ausgabe += "Es wurden alle Asse aus dem Deck gezogen\nDas Spiel ist beendet";		
+					ausgabe += context.getString(R.string.assrennen_spielende);		
 			}
 			else
-				ausgabe += "Sie haben \"" + karte[0] + "\" gezogen\nNichts passiert und der nächste Spieler ist dran";
+				ausgabe += context.getString(R.string.assrennen_siehaben)+" \"" + karte[0] + "\" " + context.getString(R.string.assrennen_gezogennichtspassiert);
 			return ausgabe;
 		}
 		
@@ -59,9 +60,9 @@ public class AssRennenLogik extends KartenSpiel {
 	}
 	public String help()
 	{
-		String ausgabe = 	"Es wird nacheinander eine Karte gezogen. Wenn ein Ass gezogen wurde muss getrunken werden." +
+		String ausgabe = context.getString(R.string.assrennen_help);	/*"Es wird nacheinander eine Karte gezogen. Wenn ein Ass gezogen wurde muss getrunken werden." +
 							" Die Menge die getrunken werden muss, hängt von der Anzahl gezogener Asse ab." +
-							"Beim ersten Ass wird 1/4 getrunken und bei jedem weiteren Ass wird zusätzlich 1/4 getrunken.";
+							"Beim ersten Ass wird 1/4 getrunken und bei jedem weiteren Ass wird zusätzlich 1/4 getrunken.";*/
 		return ausgabe;
 	}
 }
