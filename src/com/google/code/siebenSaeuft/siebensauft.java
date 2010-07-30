@@ -31,15 +31,17 @@ public class siebensauft extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String ausgabe = neuesSpiel.chat();
-				neuesSpiel.paint(neuesSpiel, wuerfel1, 0);
+				neuesSpiel.paint(neuesSpiel, wuerfel1, 1);
 				neuesSpiel.paint(neuesSpiel, wuerfel2, 1);
-				if (ausgabe == "Spiel zu Ende\nDanke fürs spielen") {
+				if (ausgabe == getString(R.string.siebensaeuft_spielende)) {
 					textfenster.setText(ausgabe);
 					wuerfeln.setText("neustart");
 					neuesSpiel = new SiebenSauftLogik(getApplicationContext());
 				}
 				else{
 					wuerfeln.setText("Würfeln");
+					neuesSpiel.paint(neuesSpiel, wuerfel1, neuesSpiel.getWuerfelZahl(0));
+					neuesSpiel.paint(neuesSpiel, wuerfel2, neuesSpiel.getWuerfelZahl(1));
 					textfenster.setText(ausgabe);
 				}
 			}

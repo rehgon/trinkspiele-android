@@ -2,6 +2,7 @@ package com.google.code.siebenSaeuft;
 
 import android.content.Context;
 
+import com.google.code.trinkspiele.R;
 import com.google.code.trinkspiele.Wuerfelspiel;
 
 
@@ -11,9 +12,12 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 	private int quersumme, maxPunkteBisEnde, ergebnissWurf, gesamtErgebnis;
 	boolean saufen = false;
 	private String ausgabe;
+	Context context;
+	
 	public SiebenSauftLogik(Context context)
 	{
 		super(context);
+		this.context = context;
 		quersumme = 0;
 		ergebnissWurf = 0;
 		maxPunkteBisEnde = 100;
@@ -36,15 +40,15 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 
 	public  String prüfeObdurch7teilbar(int ergebnis)
 	{
-		String ausgabe = "Die geworfene Zahl ist ";
+		String ausgabe = context.getString(R.string.siebensaeuft_diezahlist);
 		if(ergebnis % 7 == 0)
 			this.saufen = true;
 		else
 		{
-			ausgabe += "nicht ";
+			ausgabe += " "+context.getString(R.string.siebensaeuft_nicht);
 			this.saufen = false;
 		}
-		ausgabe += "durch 7 teilbar\n";
+		ausgabe += " "+context.getString(R.string.siebensaeuft_durch7teilbar);
 		return ausgabe;
 	}
 	public String prüfeObErgebnissDurch7Teilbar(int gesammtErgebniss)
@@ -52,9 +56,13 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 		String ausgabe = "";
 		if(gesammtErgebniss % 7 == 0)
 		{
-			ausgabe +="Der Punktestand ist durch 7 teilbar,\n";
+			ausgabe += context.getString(R.string.siebensaeuft_punktestanddurch7);
 			this.saufen = true;
 		
+		}
+		else if(this.saufen == true)
+		{
+			this.saufen = true;
 		}
 		else {
 			this.saufen = false;
@@ -87,7 +95,7 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 		if(quersumme == 7)
 		{
 			this.saufen = true;
-			ausgabe += "Quersumme ist 7\n";
+			ausgabe += context.getString(R.string.siebensaeuft_quersumme7);
 		}
 		else if(this.saufen == true) //lässt eine schon bestehendes saufen == true bestehen
 		{
@@ -110,11 +118,11 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 		String ausgabe = "";
 		if(saufen == true)
 		{
-			return ausgabe += " Es muss getrunken werden\n";
+			return ausgabe += context.getString(R.string.siebensaeuft_trinken);
 			
 		}
 		else{
-			return ausgabe += "Es muss nicht getrunken werden\n";
+			return ausgabe += context.getString(R.string.siebensaeuft_nichttrinken);
 		}
 	}
 	public String chat()
@@ -122,18 +130,18 @@ public class SiebenSauftLogik extends Wuerfelspiel {
 		ausgabe = "";
 		wuerfeln(2);
 		calculate(getWuerfelZahl(0), getWuerfelZahl(1));
-		ausgabe += "Es wurde eine " + getCalculate() + " geworfen.\n";
+		ausgabe += context.getString(R.string.siebensaeuft_eswurde)+ " " + getCalculate() +" "+ context.getString(R.string.siebensaeuft_geworfen);
 		gesamtErgebnis += getWuerfelZahl(0) + getWuerfelZahl(1);
-		ausgabe +="Punkte Stand zur Zeit: " + getGesamtErgebnis() + "\n";
+		ausgabe +=context.getString(R.string.siebensaeuft_punktestandzurzeit) +" " + getGesamtErgebnis() + "\n";
 		ausgabe += prüfeObdurch7teilbar(getErgebnis());
 		ausgabe += prüfeObErgebnissDurch7Teilbar(getGesamtErgebnis());
 		pruefeQuersumme(getGesamtErgebnis());
-		ausgabe += saufOmat( getQuersumme());
+		ausgabe += saufOmat(getQuersumme());
 		ausgabe += mussGesoffenWerden(this.saufen);
-		ausgabe += "Bitte würfeln\n";
+		ausgabe += context.getString(R.string.siebensaeuft_bittewuerfeln);
 
 		if (maxPunkteBisEnde <= getGesamtErgebnis()) {
-			ausgabe = "Spiel zu Ende\nDanke fürs spielen";
+			ausgabe = context.getString(R.string.siebensaeuft_spielende);
 		}
 		return ausgabe;
 	}
