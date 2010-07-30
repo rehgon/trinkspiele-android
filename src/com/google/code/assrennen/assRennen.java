@@ -56,14 +56,14 @@ public class assRennen extends Activity {
 				}
 
 				if (neuesSpiel.getAceCounter() == 4) {
-					naechsteKarte.setText("Neustart");
+					naechsteKarte.setText(getString(R.string.assrennen_neustart));
 					counter = 1;
 					neuesSpiel = new AssRennenLogik(getApplicationContext());
 				} else if (counter == 1) {
 					counter = 0;
 					restarting();
 				} else
-					naechsteKarte.setText("nächste Karte");
+					naechsteKarte.setText(getString(R.string.assrennen_nächstekarte));
 			}
 		});
 
@@ -81,14 +81,14 @@ public class assRennen extends Activity {
 	private void restarting() {
 		naechsteKarte.setText("neue Karte");
 		karte.setImageResource(R.drawable.deckblatt);
-		textFenster.setText("restart");
+		textFenster.setText(getString(R.string.assrennen_neustart));
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, ID_HELP, Menu.NONE, "Hilfe").setIcon(
+		menu.add(Menu.NONE, ID_HELP, Menu.NONE, getString(R.string.hilfe)).setIcon(
 				R.drawable.ic_menu_info);
-		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, "Zum Hauptmenü").setIcon(
+		menu.add(Menu.NONE, ID_BEENDEN, Menu.NONE, getString(R.string.zum_hauptmenue)).setIcon(
 				R.drawable.ic_menu_close);
 		return (super.onCreateOptionsMenu(menu));
 	}
