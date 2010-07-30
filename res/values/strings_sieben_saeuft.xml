@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="siebensaeuft_siebensaeuft">Seven drinks</string>
+<string name="siebensaeuft_wuerfeln">throw dices</string>
+<string name="siebensaeuft_trinken">You have to drink\n</string>
+<string name="siebensaeuft_bittewuerfeln">Please throw the dices</string>
+<string name="siebensaeuft_spielende">Game Over</string>
+<string name="siebensaeuft_punktestandzurzeit">Actual score: </string>
+<string name="siebensaeuft_quersumme7">Cross total is 7\n</string>
+<string name="siebensaeuft_nichttrinken">You dont have to drink\n</string>
+<string name="siebensaeuft_punktestanddurch7">The score is divisible by 7\n</string>
+<string name="siebensaeuft_diezahlist">The score of the two dices is</string>
+<string name="siebensaeuft_nicht">not</string>
+<string name="siebensaeuft_durch7teilbar">divisible by 7\n</string>
+<string name="siebensaeuft_eswurde">a</string>
+<string name="siebensaeuft_geworfen">was rolled\n</string>
+<string name="siebensaeuft_zumstartenbitte">Please press the button to start the game</string>
+<string name="siebensaeuft_hilfe">jabber</string>
+<string name="siebensaeuft_neustart">restart</string>
 </resources>
