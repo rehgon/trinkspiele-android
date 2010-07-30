@@ -6,9 +6,9 @@
 
 
 	<TextView android:id="@+id/TextView01" android:textSize="30px"
-		android:text="Sieben säuft" android:layout_height="wrap_content"
+		android:layout_height="wrap_content"
 		android:layout_width="fill_parent" android:gravity="center"
-		android:paddingBottom="20px" android:textColor="@color/siebenSaeuftTextColor"></TextView>
+		android:paddingBottom="20px" android:textColor="@color/siebenSaeuftTextColor" android:text="@string/siebensaeuft_siebensaeuft" android:paddingTop="20px"></TextView>
 	<TableLayout android:layout_height="wrap_content"
 		android:gravity="center" android:layout_width="fill_parent">
 		<TableRow android:gravity="center">
@@ -21,10 +21,9 @@
 
 	<TextView android:layout_height="wrap_content"
 		android:gravity="center" android:layout_width="fill_parent"
-		android:text="Zum Starten bitte Button drücken" android:id="@+id/Textausgabe"
+		android:id="@+id/Textausgabe"
 		android:paddingTop="20px" android:paddingBottom="10px"
-		android:textColor="@color/siebenSaeuftTextColor" android:lines="5"></TextView>
+		android:textColor="@color/siebenSaeuftTextColor" android:text="@string/siebensaeuft_zumstartenbitte" android:lines="7"></TextView>
 	<Button android:id="@+id/Button01" android:layout_height="wrap_content"
-		android:layout_width="wrap_content" android:layout_gravity="center"
-		android:text="Würfeln"></Button>
+		android:layout_width="wrap_content" android:layout_gravity="center" android:text="@string/siebensaeuft_wuerfeln"></Button>
 </LinearLayout>
