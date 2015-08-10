@@ -1,0 +1,1 @@
+Sammlung verschiedener Trinkspiele, die über eine Navigation ausgewählt und gespielt werden können.
